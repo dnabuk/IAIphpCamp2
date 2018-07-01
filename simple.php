@@ -2,4 +2,4 @@
 
 $a = "hello world";
 
-echo $a;
+//echo $a;
