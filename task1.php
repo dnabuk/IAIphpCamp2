@@ -1,7 +1,24 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Michal
- * Date: 02.07.2018
- * Time: 13:56
- */
+echo 'Uczestnicze w "PHP CAMP" #2'. "\xA";
+echo '<br>';
+echo 'Na $BANK się czegoś nauczę'. "\xA";
+echo '<br>';
+echo 'Jak to usunąłeś C:\\\\moje_filmy?'. "\xA";
+echo '<br>';
+echo 'Szklanka jest w 1/n pełna'. "\xA";
+echo '<br>';
+echo 'Dla n=2 szklanka jest w ½ pełna'. "\xA";
+echo '<br>';
+echo 'I\'m a little mama\'s boy'. "\xA";
+echo '<br>';
+echo "Uczestnicze w \"PHP CAMP\"\r\n";
+echo '<br>';
+echo "Na \$BANK się czegoś nauczę\r\n";
+echo '<br>';
+echo "Jak to usunąłeś C:\\\\moje_filmy\r\n";
+echo '<br>';
+echo "Szklanka jest w 1/n pełna\r\n";
+echo '<br>';
+echo "Dla n=2 szklanka jest w ½ pełna\r\n";
+echo '<br>';
+echo "I'm a little mama's boy\r\n";
