@@ -4,12 +4,12 @@
 	$color2 = 'brown';
 		
 	echo '<table style="border-collapse: collapse">';
-	foreach (range(1, 20) as $col) {
+	foreach (range(0, 19) as $col) {
 		echo "<tr>";
 		foreach (range('A', 'T') as $row => $val) {
 			$tablica[$col][$row] = $col . $val;
 			
-			if ($col > 20 - $row) {
+			if ($col > 19 - $row) {
 				$color = $color2;
 			}
 			else {
