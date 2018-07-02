@@ -11,4 +11,10 @@ var_dump($camp);
 echo '<br>';
 $tab=[1,2,3,4,5];
 array_push($camp, $tab);
-var_dump($camp);1
+var_dump($camp);
+echo '<br>';
+
+foreach($camp as $klucz => $wartosc){
+	$camp[$klucz]= 'nie wazne';
+}
+var_dump($camp);
