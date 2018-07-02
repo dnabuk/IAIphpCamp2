@@ -13,7 +13,7 @@ show($camp);
 $camp[] = 'Kot ma Alę';
 show($camp);
 
-unset($camp[4]);
+unset($camp[5]);
 show($camp);
 
 $camp[] = 'Ale tez zawsze ma zawse \'jakieś ale\'';
