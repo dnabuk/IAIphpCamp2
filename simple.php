@@ -1,5 +1,7 @@
 <?php
 
-$a = "hello world";
-
-echo $a;
+class A{
+    public function sayHello(){
+        echo 'Hello';
+    }
+}
