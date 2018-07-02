@@ -9,10 +9,8 @@
 		foreach (range('A', 'T') as $row => $val) {
 			$tablica[$col][$row] = $col . $val;
 			
-			$size = 20;
-			
 			if (abs($col - $row) <= 10) {
-				if ($col + $row - $size/2 <= 0) {
+				if ($col + $row < 9) {
 					$color = $color2;
 				}
 				else {
