@@ -19,6 +19,7 @@ foreach (range(0, 19) as $liczba) {
 			echo '<td bgcolor="#FF0000">'.$liczba.$litera."</td>";
 		}
 	}
+	$licznik = $licznik + 1;
 	echo "<tr/>";
 }
 
