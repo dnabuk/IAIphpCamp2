@@ -4,10 +4,13 @@ table{
 }
 td{
 	width: 50px; height: 50px; border: solid 1px #000; vertical-align: top;
-	background: brown;
-}
-tr:nth-child(2n) td:nth-child(2n+1), tr:nth-child(2n+1) td:nth-child(2n) {
 	background: yellow;
+}
+/*tr:nth-child(2n) td:nth-child(2n+1), tr:nth-child(2n+1) td:nth-child(2n) {
+	background: brown;
+}*/
+.brown{
+	background: brown;
 }
 </style>
 <?php
@@ -30,7 +33,8 @@ function create_table($data){
 	for($i=0, $leni=sizeof($data); $i<$leni; $i++){
 		$buf.='<tr>';
 		for($j=0, $lenj=sizeof($data[$i]); $j<$lenj; $j++){
-			$buf.='<td>'.$data[$i][$j].'</td>';
+			
+			$buf.='<td'.(($i == $j || $leni-$j-1 == $i)? ' class="brown"':'').'>'.$data[$i][$j].'</td>';
 		}
 		$buf.='</tr>';
 	}
