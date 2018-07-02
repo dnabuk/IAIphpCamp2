@@ -13,9 +13,10 @@ for($x=0;$x<20;$x++){
 	echo '<tr>';
 	for($y=0;$y<20;$y++){
 		echo '<td ';
-		$c=$c-1;
-		$color=10-$x;	
-		if($c<$color && $c>$color){	
+		$c=1;
+		$color=9-$x;
+		$color2=$x-10;	
+		if($y<=$color || $y>=($color+20) || $y<=$color2 || $y>=($color2+20)){	
 						echo 'bgcolor="yellow"';
 		}else{
 
