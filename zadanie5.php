@@ -10,7 +10,7 @@ foreach ($dziwnaTablica[0] as $valX){
 	$i=0;
 	foreach ($dziwnaTablica[1] as $valY){
 		
-		if ($i>$j){
+		if ($i+$j<count($dziwnaTablica[0])/2){
 			echo '<td bgcolor=brown>'.$valX.$valY.'</td>';
 		} else {
 			echo '<td bgcolor=yellow>'.$valX.$valY.'</td>';
