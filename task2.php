@@ -1,0 +1,9 @@
+ad1 =2 int
+ad2 =-0.1 int
+ad3 =?
+ad4 = 31 int
+ad5 = 1 int
+ad6 = 2 int
+ad7 = 12 int
+ad8 = 21 int
+ad9 =?
