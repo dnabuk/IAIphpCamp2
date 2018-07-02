@@ -12,7 +12,22 @@ for($x=0;$x<20;$x++){
 for($x=0;$x<20;$x++){
 	echo '<tr>';
 	for($y=0;$y<20;$y++){
-		echo '<td>';
+		echo '<td ';
+		if($y%2==0){
+			if($x%2==0){
+
+				echo 'bgcolor="brown"';
+			
+
+
+		}else{
+			if($x%2!=0){
+				echo 'bgcolor="yellow"';
+			}
+		}
+			}
+		
+		echo '>';
 	echo $tablica[$x][$y];
 echo '</td>';
 
