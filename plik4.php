@@ -1,21 +1,12 @@
 <?php
-$letters = array(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T);
-
-echo "<table>";
-
+$letters="ABCDEFGHIJKLMNOPQRST";
+echo "<table style=\"border:1px;\">";
 for ($i = 0; $i <20; $i++){
-  echo "<tr>";
-
+echo "<tr>";
   for ($j = 0; $j <20; $j++){
       echo "<td>$i $letters[$j]</td>";
   }
-
-  echo "</tr>";
+echo "</tr>";
 }
-
-echo "</table>";
-
-
-
-
+echo "</table>"
  ?>
