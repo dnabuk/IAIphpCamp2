@@ -7,6 +7,13 @@ $tablica = [
     1.99 => "Szczecin",
     true => "Gniewomir" ];
 
-$camp = $tablica;
-
-var_dump($camp);
+$tablica[4] = "";
+var_dump($tablica);
+$tablica[] = 'Kot ma Alę';
+var_dump($tablica);
+unset($tablica[4]);
+var_dump($tablica);
+$tablica[] = 'Ala też ma zawsze \'jakieś ale\'';
+var_dump($tablica);
+$tablica[] = [1, 2, 3, 4, 5];
+var_dump($tablica);
