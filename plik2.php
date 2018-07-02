@@ -1,6 +1,6 @@
-string 11
-string 1-1.1
-string 1-0.3e3
-string 130 uczestników
-string 1#2 PHP Camp
-string 
+int 11
+float -0.1
+int 
+int 31
+int 1
+string 2
