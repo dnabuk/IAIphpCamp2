@@ -4,7 +4,7 @@ echo 'Uczestniczę w "PHP CAMP" #2';
 echo "</br>";
 echo 'Na $BANK się czegoś nauczę!';
 echo "</br>";
-echo 'Jak to usunąłeś C:\\moje_filmy?';
+echo 'Jak to usunąłeś C:\\\moje_filmy?';
 echo "</br>";
 echo 'Szklanka jest w 1/n pełna';
 echo "</br>";
