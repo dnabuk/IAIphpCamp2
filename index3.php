@@ -14,24 +14,24 @@ echo '<br>';
 $tablica[] = 'Kot ma Ale';
 unset($tablica[5]);
 $tablica[] = 'Ala tez ma zawsze jakies \'ale\'';
-$tablica[] = [1,2,3,4,5];
+$tablica[] = [1, 2, 3, 4, 5];
 var_dump($tablica);
 
 //foreach tablica as klucz => wartosc
 
 //$t1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
-$t1 = range(0,19);
-$t2 = range ('A','T');
+$t1 = range(0, 19);
+$t2 = range('A', 'T');
 var_dump($t1);
-var_dump ($t2);
+var_dump($t2);
 //$t2 = ['A','B'];
 echo '<br>';
 
-foreach($t1 as $t){
+foreach ($t1 as $t) {
     echo '<div>';
-    foreach ($t2 as $tt){
+    foreach ($t2 as $tt) {
         echo '<div style="display: inline-block; background-color:white; width: 50px; height: 50px; border: solid 1px black;">';
-        echo $t.$tt;
+        echo $t . $tt;
         echo '</div>';
     }
     echo '</div>';
