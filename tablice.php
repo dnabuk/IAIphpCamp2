@@ -9,8 +9,8 @@ $camp[true] = "Gniewko";
 
 $camp[4] = "Cztery";
 $camp[5] = 'Kot ma Alę';
-unset($camp[4]);
-$camp[6] = "Ala też zawsze ma 'jakieś ale'";
+unset($camp[5]);
+$camp[] = "Ala też zawsze ma 'jakieś ale'";
 
 for($i=1;$i<=5;$i++)
 {
