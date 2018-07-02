@@ -14,6 +14,5 @@ echo "Szklanka jest w 1\n pełna <br/>";
 echo "Dla n = 2 szklanka jest w ½ pełna <br/>";
 echo "I'm a little mama's boy <br/><br/>";
 
-echo '1' + 1;
 
 ?>
