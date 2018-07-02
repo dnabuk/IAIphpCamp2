@@ -18,9 +18,9 @@ show($camp);
 
 $camp[] = 'Ale tez zawsze ma zawse \'jakieś ale\'';
 show($camp);
-
+$camp[7] = array();
 for($i=1; $i<6; $i++){
-	$camp[$i] = $i;
+	$camp[7][$i] = $i;
 }
 show($camp);
 
