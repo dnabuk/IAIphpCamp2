@@ -11,4 +11,4 @@ var_dump($camp);
 echo '<br>';
 $tab=[1,2,3,4,5];
 array_push($camp, $tab);
-var_dump($camp);
+var_dump($camp);1
