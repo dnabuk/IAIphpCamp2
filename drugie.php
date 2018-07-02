@@ -14,7 +14,7 @@
 	$camp[] = "Kot ma Alę";
 	echo "<br/>";
 	var_dump($camp);
-	unset($camp[4]);
+	unset($camp[5]);
 	echo "<br/>";
 	var_dump($camp);
 	$camp[] = "Ala też ma zawsze 'jakies ale'";
@@ -24,6 +24,7 @@
 	$camp[] = $tablica_intow;
 	echo "<br/>";
 	var_dump($camp);
+
 ?>
 </body>
 </html>
