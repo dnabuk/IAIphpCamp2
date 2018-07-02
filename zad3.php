@@ -7,10 +7,13 @@ $b=4;
 $camp = array($a=>"Adrian",
 	 "1"=>"Pabisiak",
 	 "1.99"=>"Szczecin",
-	 true=>"Gwniewko");
-	 echo $camp;
+	 true=>"Gwniewko"
+	 );
+	// echo $camp;
+	 $camp[$b];
+	 $camp[5]="kot ma Alê";
+	 unset($camp[5]);
 	 
-	 //unset($camp['$b'])
 
 
 ?>
