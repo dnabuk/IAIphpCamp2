@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8261cf5d-5ff0-4b83-a001-306c3b75855b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tablica.php" beforeDir="false" afterPath="$PROJECT_DIR$/Tablica.php" afterDir="false" />
-    </list>
+    <list default="true" id="8261cf5d-5ff0-4b83-a001-306c3b75855b" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,29 +11,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="TabZad.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TabZad.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="task1.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tablica.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tablica.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plik.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plik.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            <state relative-caret-position="17">
+              <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -54,6 +42,7 @@
         <option value="$PROJECT_DIR$/plik.txt" />
         <option value="$PROJECT_DIR$/task1.php" />
         <option value="$PROJECT_DIR$/Tablica.php" />
+        <option value="$PROJECT_DIR$/TabZad.php" />
       </list>
     </option>
   </component>
@@ -111,19 +100,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.Tablica.php">
+  <component name="RunManager" selected="PHP Script.TabZad.php">
     <configuration name="Camp2" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner directory="$PROJECT_DIR$" />
     </configuration>
+    <configuration name="TabZad.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/TabZad.php" />
     <configuration name="Tablica.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Tablica.php" />
     <configuration name="task1.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/task1.php" />
     <list>
       <item itemvalue="PHP Script.task1.php" />
       <item itemvalue="PHPUnit.Camp2" />
       <item itemvalue="PHP Script.Tablica.php" />
+      <item itemvalue="PHP Script.TabZad.php" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="PHP Script.TabZad.php" />
         <item itemvalue="PHP Script.Tablica.php" />
         <item itemvalue="PHP Script.task1.php" />
         <item itemvalue="PHPUnit.Camp2" />
@@ -140,7 +132,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530532516425</updated>
-      <workItem from="1530532517628" duration="6358000" />
+      <workItem from="1530532517628" duration="9101000" />
     </task>
     <servers />
   </component>
@@ -150,7 +142,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6358000" />
+    <option name="totallyTimeSpent" value="9101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -213,17 +205,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tablica.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="36" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TabZad.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
         </state>
       </provider>
     </entry>
