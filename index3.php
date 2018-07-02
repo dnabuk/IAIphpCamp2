@@ -28,9 +28,18 @@ var_dump($t2);
 echo '<br>';
 
 foreach ($t1 as $t) {
-    echo '<div>';
+    echo '<div style="">';
+    $i = $t;
     foreach ($t2 as $tt) {
-        echo '<div style="display: inline-block; background-color:white; width: 50px; height: 50px; border: solid 1px black;">';
+        if(($i % 2) == 0){
+            echo '<div style="display: inline-block; background-color:blue; width: 50px; height: 50px; border: solid 1px black;">';
+            $i++;
+
+        }else{
+            echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
+            $i++;
+        }
+
         echo $t . $tt;
         echo '</div>';
     }
