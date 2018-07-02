@@ -3,7 +3,7 @@ echo 'Uczestnicze w "PHP CAMP" #2'. "\xA";
 echo '<br>';
 echo 'Na $BANK się czegoś nauczę'. "\xA";
 echo '<br>';
-echo 'Jak to usunąłeś C:\\\\moje_filmy?'. "\xA";
+echo 'Jak to usunąłeś C:\\\moje_filmy?'. "\xA";
 echo '<br>';
 echo 'Szklanka jest w 1/n pełna'. "\xA";
 echo '<br>';
