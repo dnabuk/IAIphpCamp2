@@ -16,8 +16,8 @@
 				$color = $color1;
 			}
 						
-			echo '<td style="width: 50px; height: 50px; border: 1px solid black; ';
-			echo 'background-color: ' . $color . '">' . $tablica[$col][$row] . '</td>';
+			echo '<td style="width: 50px; height: 50px; border: 1px solid black; vertical-align: ';
+			echo 'top; background-color: ' . $color . '">' . $tablica[$col][$row] . '</td>';
 		}
 		echo "</tr>";
 	}
