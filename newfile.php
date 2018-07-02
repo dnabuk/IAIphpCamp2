@@ -19,9 +19,12 @@ echo "1 + '1'" ;
 
 //$array
 
-$camp = array(1=>'Bartłomiej','1'=>'Karasiewicz',1.99=>'Płock',TRUE='Gniewko')
-echo $camp
+$camp=Array(1=>'Bartłomiej','1'=>'Karasiewicz',1.99=>'Płock',bool='Gniewko',4=>'nowy','Kot ma alę',
+    "Kot też ma zawsze jakieś ale", 7=array(1,2,3,4,5));
+echo $camp;
 
+/*$imiona = Array('Marcin', 100 => 'Daniel', 200 => 'Magda', 'Paulina');
+echo $imiona;*/
 
 ?>
 
