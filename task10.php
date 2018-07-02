@@ -8,14 +8,12 @@
 		echo "<tr>";
 		foreach (range('A', 'T') as $row => $val) {
 			$tablica[$col][$row] = $col . $val;
-			/*if (($col + $row) % 2 == 0) {
-				$color = $color1;
+			
+			if ($col > 20 - $row) {
+				$color = $color2;
 			}
 			else {
-				$color = $color2;
-			}*/
-			if () {
-				
+				$color = $color1;
 			}
 						
 			echo "<td " . $color . ">" . $tablica[$col][$row] . "</td>";
