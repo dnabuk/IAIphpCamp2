@@ -1,6 +1,6 @@
 <?php
 function show($a){
-	echo '<p>'.$a.' = '.eval('return '.substr($a, 1, strlen($a)-1).';').'</p>';
+	echo '<p>'.$a.' = '.eval('return '.$a.';').'</p>';
 }
 
 show("1+'1'");
@@ -12,7 +12,7 @@ show("'1'+1");
 
 show("1.1+1");
 show("1+1.1");
-//show(1..1+1);
+show('1.'.'1+1');
 
 
 ?>
