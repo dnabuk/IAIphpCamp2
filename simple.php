@@ -1,5 +1,15 @@
 <?php
+/**
+* 
+*/
+class ClassName extends 
+{
+	
+	function __construct()
+	{
+		$a = "hello world";
+			}
+}
 
-$a = "hello world";
 
 //echo $a;
