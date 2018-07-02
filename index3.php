@@ -29,16 +29,11 @@ echo '<br>';
 
 foreach ($t1 as $t) {
     echo '<div style="">';
-    $i = $t;
+    $i = 1;
+    $d = 1;
     foreach ($t2 as $tt) {
-        if(($i % 2) == 0){
-            echo '<div style="display: inline-block; background-color:blue; width: 50px; height: 50px; border: solid 1px black;">';
-            $i++;
 
-        }else{
-            echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
-            $i++;
-        }
+        echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
 
         echo $t . $tt;
         echo '</div>';
