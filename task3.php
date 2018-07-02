@@ -11,7 +11,7 @@ $tablica[4] = "";
 var_dump($tablica);
 $tablica[] = 'Kot ma Alę';
 var_dump($tablica);
-unset($tablica[4]);
+unset($tablica[5]);
 var_dump($tablica);
 $tablica[] = 'Ala też ma zawsze \'jakieś ale\'';
 var_dump($tablica);
