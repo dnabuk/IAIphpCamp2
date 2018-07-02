@@ -20,7 +20,7 @@ $camp[] = "Kot ma Alę";
 var_dump ($camp);
 echo "<br>";
 
-unset ($camp[4]);
+unset ($camp[5]);
 
 var_dump ($camp);
 echo "<br>";
