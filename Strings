@@ -1,0 +1,8 @@
+<?php
+
+echo "Uczestniczę w "PHP Camp ";
+echo 'Na $BANK się czegoś nauczę!';
+echo 'Jak to usunąłeś C:\\moje_filmy?';
+echo "Szklanka jest w 1/n pełna";
+echo "Dla n = 2 szklanka jest w &frac12; pełna";
+echo "I'm little mama's boy";
