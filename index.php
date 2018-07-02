@@ -12,5 +12,3 @@ echo 'Dla n = 2 szklanka jest w ½ pełna';
 echo "</br>";
 echo "I'm a little mama's boy";
 
-
-$camp= array ["Dagmara","Tęga","Szczecin","Gniewomir"];
