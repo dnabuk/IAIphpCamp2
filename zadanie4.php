@@ -6,7 +6,7 @@ $camp[4]=null;
 array_push($camp, 'Kot ma Alę');
 var_dump($camp);
 echo '<br>';
-unset($camp[4]);
+unset($camp[5]);
 var_dump($camp);
 echo '<br>';
 array_push($camp, 'Ala też zawsze ma zawsze \'jakieś ale\'');
