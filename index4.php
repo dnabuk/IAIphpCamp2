@@ -7,7 +7,7 @@ var_dump($camp);
 $camp[]= "Kot ma Ale";
 echo "<br>";
 var_dump($camp);
-unset($camp[4]);
+unset($camp[5]);
 echo "<br>";
 var_dump($camp);
 $camp[]= "Ala tez zawsze ma zawsze 'jakies ale'";
