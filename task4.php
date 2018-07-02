@@ -4,6 +4,10 @@ table{
 }
 td{
 	width: 50px; height: 50px; border: solid 1px #000; vertical-align: top;
+	background: brown;
+}
+tr:nth-child(2n) td:nth-child(2n+1), tr:nth-child(2n+1) td:nth-child(2n) {
+	background: yellow;
 }
 </style>
 <?php
