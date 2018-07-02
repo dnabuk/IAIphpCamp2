@@ -10,7 +10,8 @@
 			$tablica[$col][$row] = $col . $val;
 			
 			if (abs($col - $row) <= 10) {
-				if ($col + $row < 9) {
+				if ($col + $row < 9 
+				|| $col + $row >= 30) {
 					$color = $color2;
 				}
 				else {
