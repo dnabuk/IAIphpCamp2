@@ -8,16 +8,16 @@
 	$camp[4]="wartosc";
 	var_dump($camp);
 	echo "<br/>";
-	$camp[5]='Kot ma Alę';
+	$camp[]='Kot ma Alę';
 	var_dump($camp);
 	echo "<br/>";
-	unset($camp[4]);
+	unset($camp[5]);
 	var_dump($camp);
 	echo "<br/>";
-	$camp[6]='Ala też zawsze ma zawsze &prime;jakieś ale&prime;';
+	$camp[]='Ala też zawsze ma zawsze &prime;jakieś ale&prime;';
 	var_dump($camp);
 	echo "<br/>";
-	$camp[7]=array(1,2,3,4,5);
+	$camp[]=array(1,2,3,4,5);
 	var_dump($camp);
 	echo "<br/>";
 ?>
