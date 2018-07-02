@@ -15,7 +15,7 @@ $camp[4] = "wartosc";
 var_dump ($camp);
 echo "<br>";
 
-$camp[5] = "Kot ma Alę";
+$camp[] = "Kot ma Alę";
 
 var_dump ($camp);
 echo "<br>";
@@ -25,13 +25,13 @@ unset ($camp[4]);
 var_dump ($camp);
 echo "<br>";
 
-$camp[6] = 'Ala zawsze ma \'jakieś ale';
+$camp[] = 'Ala zawsze ma \'jakieś ale';
 
 var_dump ($camp);
 echo "<br>";
 
-$array2 = 5;
-$camp[6] = $array2;
+$array2[] = [1,2,3,4,5];
+$camp[] = $array2;
 
 var_dump ($camp);
 
