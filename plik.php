@@ -16,3 +16,5 @@ I\'m a little mama\'s boy';
 echo $a;
 echo "<br><br>";
 echo $b;
+
+?>
