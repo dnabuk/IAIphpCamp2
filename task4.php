@@ -34,7 +34,17 @@ function create_table($data){
 		$buf.='<tr>';
 		for($j=0, $lenj=sizeof($data[$i]); $j<$lenj; $j++){
 			
-			$buf.='<td'.(($i == $j || $leni-$j-1 == $i)? ' class="brown"':'').'>'.$data[$i][$j].'</td>';
+			if(
+				$leni/2 == $j-$i ||
+				$lenj/2 == $i-$j || 
+				$lenj/2-$j == $i ||
+				$lenj-$j+$leni/2-1 == $i
+				){
+				$class = ' class="brown"';
+			}else{
+				$class = '';
+			}
+			$buf.='<td'.$class.'>'.$data[$i][$j].'</td>';
 		}
 		$buf.='</tr>';
 	}
