@@ -1,5 +1,8 @@
 int 2
-float-0.1
+float -0.1
 int -299
 int 31
 int 12
+int 2
+float 2.1
+float 2.1
