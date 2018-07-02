@@ -14,5 +14,5 @@ echo '<br>';
 unset($tablica[4]);
 $tablica[] = 'Kot ma Ale';
 $tablica[] = 'Ala tez ma zawsze jakies \'ale\'';
-$tablica[] = $t = [1,2,3,4,5];
+$tablica[] = [1,2,3,4,5];
 var_dump($tablica);
