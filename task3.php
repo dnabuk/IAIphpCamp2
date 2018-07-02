@@ -6,8 +6,27 @@ $camp = array(
 	true	=> 'Gniewko'
 );
 
-echo '<pre>';
-var_dump($camp);
-echo '</pre>';
 
+$camp[4] = '??';
+show($camp);
+
+$camp[] = 'Kot ma Alę';
+show($camp);
+
+unset($camp[4]);
+show($camp);
+
+$camp[] = 'Ale tez zawsze ma zawse \'jakieś ale\'';
+show($camp);
+
+for($i=1; $i<6; $i++){
+	$camp[$i] = $i;
+}
+show($camp);
+
+function show($a){
+	echo '<pre>';
+	var_dump($a);
+	echo '</pre>';
+}
 ?>
