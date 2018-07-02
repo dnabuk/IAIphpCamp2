@@ -11,8 +11,8 @@ $tablica = [
 
 var_dump($tablica);
 echo '<br>';
-unset($tablica[4]);
 $tablica[] = 'Kot ma Ale';
+unset($tablica[5]);
 $tablica[] = 'Ala tez ma zawsze jakies \'ale\'';
 $tablica[] = [1,2,3,4,5];
 var_dump($tablica);
