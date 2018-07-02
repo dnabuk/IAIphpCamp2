@@ -7,6 +7,5 @@ $tablica = [
     true => 'Gniewomir'
 ];
 
-$camp = Array($tablica);
-
+$camp = $tablica;
 var_dump($camp);
