@@ -27,6 +27,8 @@
 			else $kolor = 1;
 		}
 		$zmienna .= "</tr>";
+		if($kolor == 1) $kolor =0;
+			else $kolor = 1;
 	}
 	$zmienna .= "</table>";
 	echo $zmienna;
