@@ -33,12 +33,13 @@ function create_table($data){
 	for($i=0, $leni=sizeof($data); $i<$leni; $i++){
 		$buf.='<tr>';
 		for($j=0, $lenj=sizeof($data[$i]); $j<$lenj; $j++){
-			
+			$leni2_1 = $leni/2;
+			$lenj2_1 = $leni/2;
 			if(
-				$leni/2 == $j-$i ||
-				$lenj/2 == $i-$j || 
-				$lenj/2-$j == $i ||
-				$lenj-$j+$leni/2-1 == $i
+				$leni2_1 == $j-$i ||
+				$lenj2_1 == $i-$j || 
+				$lenj2_1-$j == $i ||
+				$lenj-$j+$leni2_1-1 == $i
 				){
 				$class = ' class="brown"';
 			}else{
