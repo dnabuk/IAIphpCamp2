@@ -1,7 +1,7 @@
 <?php
 $tablica1 = range(0,19);
 $tablica2 = range("A", "T");
-echo '<table border="1" width="100%" height="100%">';
+echo '<table border="1" width="75%" height="100%">';
 foreach($tablica1 as $key1 => $value1)
 {
 	echo '<tr>';
