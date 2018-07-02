@@ -29,7 +29,6 @@ echo '<br>';
 
 foreach ($t1 as $t) {
     echo '<div style="">';
-    $i = $t;
     foreach ($t2 as $tt) {
         if($i >-1){
             echo '<div style="display: inline-block; background-color:blue; width: 50px; height: 50px; border: solid 1px black;">';
@@ -39,6 +38,9 @@ foreach ($t1 as $t) {
             echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
             $i--;
         }
+
+        echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
+
 
         echo $t . $tt;
         echo '</div>';
