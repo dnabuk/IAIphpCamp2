@@ -31,13 +31,13 @@ foreach ($t1 as $t) {
     echo '<div style="">';
     $i = $t;
     foreach ($t2 as $tt) {
-        if(($i % 2) == 0){
+        if($i >-1){
             echo '<div style="display: inline-block; background-color:blue; width: 50px; height: 50px; border: solid 1px black;">';
-            $i++;
+            $i--;
 
         }else{
             echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
-            $i++;
+            $i--;
         }
 
         echo $t . $tt;
