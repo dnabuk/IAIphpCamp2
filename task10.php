@@ -8,14 +8,15 @@ for($x=0;$x<20;$x++){
 
 
 }}
-
+$c=0;
 for($x=0;$x<20;$x++){
 	echo '<tr>';
 	for($y=0;$y<20;$y++){
 		echo '<td ';
-	$color=$x-$y;				
-	if($color>=0){
-					echo 'bgcolor="yellow"';
+		$c=$c-1;
+		$color=10-$x;	
+		if($c<$color && $c>$color){	
+						echo 'bgcolor="yellow"';
 		}else{
 
 			echo 'bgcolor="Brown"';
