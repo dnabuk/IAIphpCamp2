@@ -37,7 +37,7 @@ echo $liczby;
 foreach ( $liczby as $indeks )
 {
     foreach ($litery as $indeks2)
-    echo "$indeks.$indeks2\n";
+    echo "$indeks$indeks2\n";
 }
 
 
