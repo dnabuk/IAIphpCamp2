@@ -8,23 +8,30 @@ foreach (range(0, 19) as $number) {
 }
 //var_dump($table);
 $i=0;
-$y=0;
+$y=true;
 echo "<table>";
 foreach (range(0, 19) as $x) {
     echo "<tr>";
     foreach (range(0, 19) as $y) {
-        if ($y == 0) {
+        if ($y == true) {
             if ($i % 2 == 1) {
                 echo "<td  style='border: 1px solid black; background: yellow'>";
             } else {
                 echo "<td  style='border: 1px solid black; background: red'>";
             }
         }
+        else{
+            if ($i % 2 == 1) {
+                echo "<td  style='border: 1px solid black; background: red'>";
+            } else {
+                echo "<td  style='border: 1px solid black; background: yellow'>";
+            }
+        }
         echo "<p>".$table[$i]."</p>";
         echo "</td>";
-        $i++;
     }
     echo "</tr>";
+    $y=!$y;
 
 }
 echo "</table>";
