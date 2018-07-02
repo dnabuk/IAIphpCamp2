@@ -9,7 +9,7 @@ echo '<br>';
 unset($camp[4]);
 var_dump($camp);
 echo '<br>';
-array_push($camp, 'Ala też zawsze ma zawsze \'jakieśale\'');
+array_push($camp, 'Ala też zawsze ma zawsze \'jakieś ale\'');
 var_dump($camp);
 echo '<br>';
 $tab = [1, 2, 3, 4, 5];
