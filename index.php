@@ -6,7 +6,7 @@
 	$e='Dla n=2 szklanka jest w ½ pełna';
 	$f='I&prime;m littlee mama&prime;s boy';
 	$br="<br/>";
-print($a.$br.$b.$br.$c.$br.$d.$br.$e.$br.$f.$br.$br);
+	print($a.$br.$b.$br.$c.$br.$d.$br.$e.$br.$f.$br.$br);
 
 
 	$a="Uczestniczę w &Prime;PHP CAMP&Prime; #2";
@@ -15,6 +15,6 @@ print($a.$br.$b.$br.$c.$br.$d.$br.$e.$br.$f.$br.$br);
 	$d="Szklanka jest w 1/n pełna";
 	$e="Dla n=2 szklanka jest w ½ pełna";
 	$f="I&prime;m littlee mama&prime;s boy";
-print($a.$br.$b.$br.$c.$br.$d.$br.$e.$br.$f);
+	print($a.$br.$b.$br.$c.$br.$d.$br.$e.$br.$f);
 
 ?>
