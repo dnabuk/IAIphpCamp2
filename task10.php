@@ -2,16 +2,18 @@
 	$tablica = array();
 	$color1 = 'yellow';
 	$color2 = 'brown';
-		
+	
+	$size = 20;
+	
 	echo '<table style="border-collapse: collapse">';
-	foreach (range(0, 19) as $col) {
+	foreach (range(0, $size-1) as $col) {
 		echo "<tr>";
-		foreach (range('A', 'T') as $row => $val) {
+		foreach (range('A', chr($size-1+ord('A'))) as $row => $val) {
 			$tablica[$col][$row] = $col . $val;
-			
-			if (abs($col - $row) <= 10) {
-				if ($col + $row < 9 
-				|| $col + $row >= 30) {
+						
+			if (abs($col - $row) <= $size/2) {
+				if ($col + $row < $size/2 - 1 
+				|| $col + $row >= $size*1.5) {
 					$color = $color2;
 				}
 				else {
