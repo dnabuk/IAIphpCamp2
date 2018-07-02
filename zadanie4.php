@@ -1,0 +1,17 @@
+<?php
+$camp = [1=>'Paweł','1'=>'Lica', 1.00=>'Bydgoszcz', true=>'Gniewomir'];
+var_dump($camp);
+echo '<br>';
+$camp[4]=null; 
+array_push($camp, 'Kot ma Alę');
+var_dump($camp);
+echo '<br>';
+unset($camp[4]);
+var_dump($camp);
+echo '<br>';
+array_push($camp, 'Ala też zawsze ma zawsze \'jakieśale\'');
+var_dump($camp);
+echo '<br>';
+$tab = [1, 2, 3, 4, 5];
+array_push($camp, $tab);
+var_dump($camp);
