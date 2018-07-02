@@ -9,11 +9,11 @@
 		foreach (range('A', 'T') as $row => $val) {
 			$tablica[$col][$row] = $col . $val;
 			
-			if ($col > 19 - $row) {
-				$color = $color2;
+			if (abs($col - $row) <= 10) {
+				$color = $color1;
 			}
 			else {
-				$color = $color1;
+				$color = $color2;
 			}
 						
 			echo '<td style="width: 50px; height: 50px; border: 1px solid black; vertical-align: ';
