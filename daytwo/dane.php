@@ -16,7 +16,7 @@
 
 <br>
 <div class="container">
-<h3>Zarejestruj się</h3>
+    <h3><span class="fa fa-user"></span> Zarejestruj się</h3>
 
     <form action="dane.php" method="post", name= 'form1', class="form-horizontal">
         <div class="form-group">
