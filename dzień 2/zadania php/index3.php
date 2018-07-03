@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 } 
 if(isset($_GET['edytuj']))
 {
-	$id = $_GET['edytuj'];
+	$id = (int) $_GET['edytuj'];
 	
 	$sql = "SELECT * FROM clients WHERE id = $id";
 	$result = $conn->query($sql);
@@ -48,7 +48,6 @@ if(isset($_GET['edytuj']))
 	<textarea rows="4" cols="50" name="notes">'.$klient['notes'].'</textarea>  
 	<br/><input type="submit" value="Wyślij!" name="zapisz">
 	</form><br/><br/>';	
-
 }
 else
 {
