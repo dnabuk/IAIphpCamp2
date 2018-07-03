@@ -1,30 +1,39 @@
 <?php
+session_start();
 include('config.php');
+if (isset($_POST['client_name']) && isset($_POST['client_surname'])) {
 
-if(isset($_GET['id'])) {
+}else{
+    $_SESSION['tok'] = password_hash(bin2hex(random_bytes(32)),PASSWORD_BCRYPT);
+    $token = $_SESSION['tok'];
+}
+if (isset($_GET['id'])) {
     $id = $_GET['id'];
+
+    //bin2hex(random_bytes(32);
 
 
     $sql = 'SELECT * FROM `clients` WHERE id = ?';
     $c = GetPDO()->prepare($sql);
-    $c->bindParam(1,$id);
+    $c->bindParam(1, $id);
     $c->execute();
 
     $result = $c->fetchAll();
-    foreach($result as $row){
+    foreach ($result as $row) {
 
     }
     ?>
     <form action='index7.php' method='POST'> <!-- odwoluje sie do samego siebie -->
-        Imię::<input type="text" name="client_name" value="<?=$row['name']?>"><br>
-        Nazwisko:<input type="text" name="client_surname" value="<?=$row['surname']?>"><br>
-        Płeć:<select name="client_gender" value="<?=$row['gender']?>">
+        Imię::<input type="text" name="client_name" value="<?= $row['name'] ?>"><br>
+        Nazwisko:<input type="text" name="client_surname" value="<?= $row['surname'] ?>"><br>
+        Płeć:<select name="client_gender" value="<?= $row['gender'] ?>">
             <option value="male">male</option>
             <option value="female">female
             <option value="unknown">unknown</option>
         </select><br>
-        Data urodzenia:<input type="date" name="client_date" value="<?=$row['date_of_birth']?>"><br>
-        <input type="text" name="client_order" value="<?=$row['orders_count']?>">
+        Data urodzenia:<input type="date" name="client_date" value="<?= $row['date_of_birth'] ?>"><br>
+        <input type="text" name="client_order" value="<?= $row['orders_count'] ?>">
+        <input type="hidden" name ="client_token" value="<?=$token?>">
         <input type="submit">
     </form>
     <?php
@@ -36,11 +45,10 @@ if (isset($_POST['client_name']) && isset($_POST['client_surname'])) {
     $clientgender = $_POST['client_gender'];
     $clientbirth = $_POST['client_date'];
     $clientorder = $_POST['client_order'];
-    echo $clientname.'<br>';
-    echo $clientsurname.'<br>';
-    echo $clientgender.'<br>';
-    echo $clientbirth.'<br>';
-    echo $clientorder.'<br>';
+    if(!(hash_equals($_SESSION['tok'],$_POST['client_token']))){
+        echo 'Zly token!';
+        exit;
+    }
     //$clientd
     /*
      $clientname = mysqli_real_escape_string($_POST['client_name']);
