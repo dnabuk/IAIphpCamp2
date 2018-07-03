@@ -7,15 +7,8 @@ $cc = mysqli_connect('localhost','root','','phpcamp_hrzadzinski'); // zrobione p
 $get = mysqli_real_escape_string($cc,$_GET['page']);
 $pdo = GetPDO();
 if(isset($get)){
-    if($get == 1){
-
-        $lim = 100;
-        $off = 0;
-    }else if($get == 2){
-
-        $lim = 100;
-        $off = 100;
-    }
+    $off = ($get * 100)-100;
+    $lim = 100;
 }
 $sql = 'SELECT * FROM `clients` LIMIT '.$lim.' OFFSET '.$off.'';
 
