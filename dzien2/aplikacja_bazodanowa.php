@@ -32,7 +32,6 @@
 	$nowa .= " " . $kod ." " .$panstwo ." " .$notki;
 
     //echo $nowa;
-	
 	$query = "insert into clients (name, surname, gender, date_of_birth, orders_count, street, city, postcode, country, notes)
 				values (\"$imie\", \"$nazwisko\", \"$plec\", \"$data\", \"$liczbazam\", \"$ulica\", \"$miasto\", \"$kod\", \"$panstwo\", \"$notki\")";
 	
