@@ -1,6 +1,10 @@
 <?php
 
-$link = mysqli_connect("localhost", "root", "");
+//$link = mysqli_connect("localhost", "root", "");
+//wcześniej źle utworzyłem użytkownika
+
+$link = mysqli_connect("localhost", "php", "dlTPxr4tHUmefOMR");
+
 mysqli_select_db($link, "phpcamp_plica");
 
 $query = "SELECT * FROM `clients` WHERE 1 limit 15";
