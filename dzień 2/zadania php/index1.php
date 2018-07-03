@@ -1,5 +1,10 @@
+<?php
+$panstwa = array("Polska", "USA", "Kanada", "Niemcy", "Rosja", "Indie", "Belgia");
+$los = rand(0, (count($panstwa)-1));
+?>
+
 <h1>Dodaj się do naszej bazy dancyh :)</h1>
-<form action="/index1.php">
+<form action="./index1.php" method="POST">
   Imię:<br/>
   <input type="text" name="name" placeholder="Wpisz imię"><br/>
   Nazwisko:<br/>
@@ -17,12 +22,20 @@
   Ulica:<br/>
   <input type="date" name="street"><br/>  
   Miasto:<br/>
-  <input type="date" name="city"><br/> 
-  
-  <br/><input type="submit" value="Zapisz mnie!">
+  <input type="date" name="city"><br/>
+  Kod pocztowy:<br/>
+  <input type="date" name="postcode"><br/>   
+  Państwo:<br/>
+  <input type="text" name="country" value="<?php echo $panstwa[$los]; ?>"><br/>  
+  Notatki:<br/>
+  <textarea rows="4" cols="50">Przykładowa notatka klienta :)</textarea>  
+  <br/><input type="submit" value="Zapisz klienta!">
 </form>
 <h2>Przykładowe 100 rekordów najnowszych :)</h2>
 <?php 
+
+print_r($_POST);
+
 $servername = 'localhost';
 $username = 'root';
 $password = '';
