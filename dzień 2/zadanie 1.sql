@@ -7,3 +7,7 @@ SELECT id, orders_count  FROM `clients` ORDER BY orders_count DESC LIMIT 1
 SELECT *  FROM `clients` WHERE `name` LIKE 'T%' OR `surname` LIKE 'T%'
 
 SELECT count(DISTINCT city) AS `ilosc`  FROM `clients`
+
+
+
+SELECT * FROM clients JOIN orders ON clients.id = orders.client_id WHERE date_of_birth >= '2000-01-01'
