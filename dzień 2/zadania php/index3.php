@@ -10,15 +10,19 @@ if ($conn->connect_error) {
 } 
 if(isset($_GET['edytuj']))
 {
-	$id = (int) $_GET['edytuj'];
+	$id = $_GET['edytuj'];
+	
+	$id = $conn->real_escape_string($id);	
 	
 	$sql = "SELECT * FROM clients WHERE id = $id";
 	$result = $conn->query($sql);
 	$klient = $result->fetch_assoc();	
 	
+	
+	
+	
+	
 	$date = new DateTime($klient['date_of_birth']);
-	
-	
 	echo '
 	<h1>Edytuj klienta nr '.$klient['id'].' :)</h1>
 	<form action="?edytuj='.$klient['id'].'" method="POST">
