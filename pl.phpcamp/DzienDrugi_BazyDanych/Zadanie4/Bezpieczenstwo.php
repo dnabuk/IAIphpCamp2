@@ -9,6 +9,8 @@ if (!$connect) {
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
+
+$_GET['id'] = (int) $_GET['id'];
 $query = 'SELECT * FROM clients WHERE id= ' . $_GET['id'];
 //$query = 'SELECT * FROM clients WHERE id= ' . mysqli_escape_string($connect, $_GET['id']);
 if ($result = $connect->query($query)){
