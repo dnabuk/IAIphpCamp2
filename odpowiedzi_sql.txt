@@ -10,7 +10,6 @@ select gender, count(*) from clients group by gender;
 Wybrać osobę z największą liczbą zamówień jednym zapytaniem (id = 978019)
 
 select id from clients order by orders_count desc limit 1
-select id, max(orders_count) from clients //źle wypisuje id 
 select id from clients where orders_count in (select max(orders_count) from clients);
 
 
