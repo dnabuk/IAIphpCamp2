@@ -1,25 +1,6 @@
 <?php
 
-$pdo = GetPDO();
-
-class Db
-{
-    public $host = 'localhost';
-    public $dbname = 'phpcamp_hrzadzinski';
-    public $dbacc = 'root';
-    public $dbpass = '';
-}
-
-function GetPDO()
-{
-    try {
-        $db = new Db;
-        return new PDO('mysql:host=' . $db->host . ';dbname=' . $db->dbname . '', $db->dbacc, $db->dbpass);
-    } catch (PDOException $e) {
-        echo 'SQL Connection ERROR! -> ' . $e->getMessage();
-    }
-}
-
+include('config.php'); //zawiera połączenie z pdo
 ?>
     <form action='index5.php' method='POST'> <!-- odwoluje sie do samego siebie -->
         Imię::<input type="text" name="client_name"><br>
