@@ -10,9 +10,9 @@ if ($conn->connect_error) {
 } 
 if(isset($_GET['edytuj']))
 {
-	$id = (int) $_GET['edytuj'];
+	$id = $_GET['edytuj'];
 	
-	$id = $conn->real_escape_string($id);	
+	//$id = (int) $conn->real_escape_string($id);	
 	
 	$sql = "SELECT * FROM clients WHERE id = $id";
 	$result = $conn->query($sql);
