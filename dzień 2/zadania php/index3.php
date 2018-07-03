@@ -20,7 +20,7 @@ if(isset($_GET['edytuj']))
 	
 	
 	echo '
-	<h1>Dodaj się do naszej bazy dancyh :)</h1>
+	<h1>Edytuj klienta nr '.$klient['id'].' :)</h1>
 	<form action="?edytuj='.$klient['id'].'" method="POST">
 	Imię:<br/>
 	<input type="text" name="name" value="'.$klient['name'].'"><br/>

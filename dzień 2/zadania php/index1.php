@@ -56,7 +56,7 @@ if(isset($_POST['zapisz']))
 	$street = protect($_POST['street']);
 	$city = protect($_POST['city']);
 	$postcode = protect($_POST['postcode']);	
-	$country = protect($_POST['country']);	
+	$country = protect(1);	
 	$notes = protect($_POST['notes']);
 	
 	$sql = "INSERT INTO `clients` (`id`, `name`, `surname`, `gender`, `date_of_birth`, `orders_count`, `street`, `city`, `postcode`, `country`, `notes`)
