@@ -48,8 +48,6 @@ function protect($string)
 #Zapisywanie klienta start
 if(isset($_POST['zapisz']))
 {
-	print_r($_POST);
-	
 	$name = protect($_POST['name']);
 	$surname = protect($_POST['surname']);
 	$gender = protect($_POST['gender']);

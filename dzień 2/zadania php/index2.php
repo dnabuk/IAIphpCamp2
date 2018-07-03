@@ -1,36 +1,3 @@
-<?php
-$panstwa = array("Polska", "USA", "Kanada", "Niemcy", "Rosja", "Indie", "Belgia");
-$los = rand(0, (count($panstwa)-1));
-?>
-
-<h1>Dodaj się do naszej bazy dancyh :)</h1>
-<form action="./index1.php" method="POST">
-  Imię:<br/>
-  <input type="text" name="name" placeholder="Wpisz imię"><br/>
-  Nazwisko:<br/>
-  <input type="text" name="surname" placeholder="Wpisz nazwisko"><br/>
-  Płeć:<br/>
-  <select>
-	  <option value="male">male</option>
-	  <option value="female">female</option>
-	  <option value="unknown">unknown</option>
-  </select><br/>
-  Data urodzenia:<br/>
-  <input type="date" name="date_of_birth"><br/>
-  Liczba zamówień:<br/>
-  <input type="text" name="orders_count" value="<?php echo rand(1, 10000); ?>" readonly="readonly"><br/>
-  Ulica:<br/>
-  <input type="text" name="street" placeholder="Ulica"><br/>  
-  Miasto:<br/>
-  <input type="text" name="city" placeholder="Miasto"><br/>
-  Kod pocztowy:<br/>
-  <input type="text" name="postcode" placeholder="Kod-Pocztowy"><br/>   
-  Państwo:<br/>
-  <input type="text" name="country" value="<?php echo $panstwa[$los]; ?>" placeholder="Państwo"><br/>  
-  Notatki:<br/>
-  <textarea rows="4" cols="50" name="notes">Przykładowa notatka klienta :)</textarea>  
-  <br/><input type="submit" value="Wyślij!" name="zapisz">
-</form><br/><br/>
 <?php 
 $servername = 'localhost';
 $username = 'root';
@@ -41,42 +8,35 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-function protect($string)
-{
-	return htmlspecialchars($string);
-}
-#Zapisywanie klienta start
-if(isset($_POST['zapisz']))
-{
-	print_r($_POST);
-	
-	$name = protect($_POST['name']);
-	$surname = protect($_POST['surname']);
-	$date_of_birth = protect($_POST['date_of_birth']);
-	$orders_count = protect($_POST['orders_count']);
-	$street = protect($_POST['street']);
-	$city = protect($_POST['city']);
-	$postcode = protect($_POST['postcode']);	
-	$country = protect($_POST['country']);	
-	$notes = protect($_POST['notes']);
-	
-	$sql = "INSERT INTO `clients` (`id`, `name`, `surname`, `gender`, `date_of_birth`, `orders_count`, `street`, `city`, `postcode`, `country`, `notes`)
-	VALUES (NULL, '$name', '$surname', '$gender', '$date_of_birth', '$orders_count', '$street', '$city', '$postcode', '$country', '$notes');";	
-	
-	if ($conn->query($sql) === TRUE)
-	{
-		echo '<h1><font color="red">Dodano klienta!</font></h1>';
-	}
-	else
-	{
-		echo 'Error: ' . $sql . '<br/>' . $conn->error;
-	}
-}
-#Zapisywanie klienta end
 #Wyświetlanie klienta start
-$sql = "SELECT * FROM clients ORDER BY id DESC LIMIT 100";
+$sql = "SELECT COUNT(id) AS rekordow FROM clients";
 $result = $conn->query($sql);
-echo '<h2>Przykładowe 100 rekordów najnowszych :)</h2>';
+$liczba_klientow = $result->fetch_assoc();
+$liczba_klientow = $liczba_klientow['rekordow'];
+$na_stronie = 100;
+$liczba_stron = ceil($liczba_klientow / $na_stronie);
+for($i=1; $i<=$liczba_stron; $i++)
+{
+	echo '<a href="?strona='.$i.'">Strona '.$i.'</a> | ';
+}
+
+if (isset($_GET['strona']))
+{
+	if ($_GET['strona'] < 1 || $_GET['strona'] > $liczba_stron){
+		$strona = 1;
+	}
+	else{
+		$strona = $_GET['strona'];
+	}
+}
+else{
+	$strona = 1;
+}
+
+$od = $na_stronie * ($strona - 1);
+$sql = "SELECT * FROM clients ORDER BY id DESC LIMIT $od , $na_stronie";
+$result = $conn->query($sql);
+echo '<h2>Strona '.$strona.' - rekordów '.$na_stronie.'</h2>';
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo 'id: ' . $row['id']. ' imie: ' .$row['name']. ' nazwisko: ' .$row['surname']. ' płeć: ' .$row['gender']. ' data urodzenia: ' .$row['date_of_birth']. '<br/>';
