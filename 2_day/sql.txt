@@ -1,0 +1,5 @@
+SELECT name, date_of_birth FROM `clients` WHERE gender= 'male' AND date_of_birth > '2000-01-01 00:00:00'
+SELECT count(*) FROM `clients` GROUP by gender
+SELECT * FROM `clients` order by orders_count DESC limit 1
+SELECT * FROM `clients` WHERE name like 't%' or surname like 't%'
+SELECT count(DISTINCT(city)) FROM `clients`
