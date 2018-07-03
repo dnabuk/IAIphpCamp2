@@ -15,12 +15,17 @@
 			$ilu_userow = $rezultat->num_rows;
 			if($ilu_userow>0)
 			{
+				echo '<table border="1" cellpadding="15" cellspacing="0">';
 				while($wiersz = $rezultat->fetch_assoc())
 				{
-					echo $wiersz['name']."        ";
-					echo $wiersz['surname']."</br>";
+					echo '<tr><td>';
+					echo $wiersz['name'];
+					echo '</td><td>';
+					echo $wiersz['surname'];
+					echo '</td><tr>';
 				}
 				$rezultat->free_result();
+				echo '</table>';
 				
 			} 
 			else 
