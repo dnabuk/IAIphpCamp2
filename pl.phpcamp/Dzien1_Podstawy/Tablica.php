@@ -1,4 +1,5 @@
 <?php
+echo '<pre>';
 $camp = [
     1 => 'Michał',
     '1' => 'Zakrzewski',
