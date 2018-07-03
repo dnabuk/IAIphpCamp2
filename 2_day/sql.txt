@@ -3,3 +3,10 @@ SELECT count(*) FROM `clients` GROUP by gender
 SELECT * FROM `clients` order by orders_count DESC limit 1
 SELECT * FROM `clients` WHERE name like 't%' or surname like 't%'
 SELECT count(DISTINCT(city)) FROM `clients`
+
+SELECT * from clients INNER JOIN orders ON clients.id=orders.client_id
+SELECT * from clients INNER JOIN orders ON clients.id=orders.client_id WHERE date_of_birth> '2000-01-01'
+
+SELECT * from clients LEFT JOIN orders ON clients.id=orders.client_id WHERE orders.client_id is null LIMIT 10
+SELECT * from clients LEFT JOIN orders ON clients.id=orders.client_id WHERE orders.putchased_items >10
+SELECT * from clients LEFT JOIN orders ON clients.id=orders.client_id GROUP BY clients.id HAVING SUM(orders.putchased_items) > 10
