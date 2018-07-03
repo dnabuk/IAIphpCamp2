@@ -29,6 +29,13 @@ if ($strona < $max) {
 
 if (!empty($_GET['edit'])) {
 	$eID = $_GET['edit'];
+} else {
+	$eID=null;
+}
+
+if (!empty($_POST)){
+	$eID=null;
+	
 }
 
 $query = "SELECT * FROM `clients` WHERE 1 limit $naStrone OFFSET ".($strona*$naStrone);
@@ -44,18 +51,26 @@ if (mysqli_num_rows($resultHandle) > 0) {
 		
 		echo '<tr><td>'.($strona*$naStrone+$i).'</td>';
 		echo '<td>'.$row['id'].'</td>';
-		if ($eId===$row['id']){
-		
+		if ($eID !== $row['id']){
+			echo '<td>'.$row['name'].'</td>';
+			echo '<td>'.$row['surname'].'</td>';
+			echo '<td>'.$row['gender'].'</td>';
+			echo '<td>'.preg_replace('/\s[0-9]{2}:[0-9]{2}:[0-9]{2}/', '', $row['date_of_birth']).'</td>';
+			echo '<td>'.$row['street'].'</td>';
+			echo '<td>'.$row['city'].'</td>';
+			echo '<td>'.$row['postcode'].'</td>';
+			echo '<td><a href="?s='.$strona.'&edit='.$row['id'].'">edytuj</a></td>';
+		} else {
+			echo '<form method="POST" action="index.php?s='.$strona.'">';
+			echo '<td><input type="text" name="name" value="'.$row['name'].'" /></td>';
+			echo '<td><input type="text" name="surnamename" value="'.$row['surname'].'" /></td>';
+			echo '<td>'.$row['gender'].'</td>'; //select.. tylko jak łatwo zrobić wartość domyślną i pozostałe, żeby się nie powtarzały.. No nic, nie ma zmiany płci.
+			echo '<td><input type="date" name="date_of_birth" value="'.preg_replace('/\s[0-9]{2}:[0-9]{2}:[0-9]{2}/', '', $row['date_of_birth']).'" /></td>';
+			echo '<td><input type="text" name="street" value="'.$row['street'].'" /></td>';
+			echo '<td><input type="text" name="city" value="'.$row['city'].'" /></td>';
+			echo '<td><input type="text" name="name" value="'.$row['postcode'].'" /></td>';
+			echo '<td><input type="submit" /></td></form>'; //zapis metodą post, jakiś token?
 		}
-		echo '<td>'.$row['name'].'</td>';
-		echo '<td>'.$row['surname'].'</td>';
-		echo '<td>'.$row['gender'].'</td>';
-		echo '<td>'.preg_replace('/\s[0-9]{2}:[0-9]{2}:[0-9]{2}/', '', $row['date_of_birth']).'</td>';
-		echo '<td>'.$row['street'].'</td>';
-		echo '<td>'.$row['city'].'</td>';
-		echo '<td>'.$row['postcode'].'</td>';
-		echo '<td><a href="?s='.$strona.'&edit='.$row['id'].'">edytuj</a></td>';
-		
 		/*
 		foreach ($row as $col){
 			echo '<td>'.preg_replace('/\s[0-9]{2}:[0-9]{2}:[0-9]{2}/', '', $col).'</td>'; //tak, poszedłem na łatwiznę ;)
