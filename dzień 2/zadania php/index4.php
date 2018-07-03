@@ -1,4 +1,13 @@
 <?php
+session_cache_expire(1);
+
+session_start();
+if(empty($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+}
+$token = $_SESSION['token'];
+
+
 $panstwa = array("Polska", "USA", "Kanada", "Niemcy", "Rosja", "Indie", "Belgia");
 $los = rand(0, (count($panstwa)-1));
 ?>
@@ -29,6 +38,7 @@ $los = rand(0, (count($panstwa)-1));
   <input type="text" name="country" value="<?php echo $panstwa[$los]; ?>" placeholder="Państwo"><br/>  
   Notatki:<br/>
   <textarea rows="4" cols="50" name="notes">Przykładowa notatka klienta :)</textarea>  
+  <input type="hidden" name="token" value="<?php echo $token; ?>">
   <br/><input type="submit" value="Wyślij!" name="zapisz">
 </form><br/><br/>
 <?php 
@@ -46,31 +56,45 @@ function protect($string)
 	$string = addslashes($string);
 	return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
 }
+
 #Zapisywanie klienta start
+
+
+
 if(isset($_POST['zapisz']))
 {
-	$name = protect($_POST['name']);
-	$surname = protect($_POST['surname']);
-	$gender = protect($_POST['gender']);
-	$date_of_birth = protect($_POST['date_of_birth']);
-	$orders_count = protect($_POST['orders_count']);
-	$street = protect($_POST['street']);
-	$city = protect($_POST['city']);
-	$postcode = protect($_POST['postcode']);	
-	$country = protect(1);	
-	$notes = protect($_POST['notes']);
-	
-	$sql = "INSERT INTO `clients` (`id`, `name`, `surname`, `gender`, `date_of_birth`, `orders_count`, `street`, `city`, `postcode`, `country`, `notes`)
-	VALUES (NULL, '$name', '$surname', '$gender', '$date_of_birth', '$orders_count', '$street', '$city', '$postcode', '$country', '$notes');";	
-	
-	if ($conn->query($sql) === TRUE)
+	if (!empty($_POST['token']))
 	{
-		echo '<h1><font color="red">Dodano klienta!</font></h1>';
+		if (hash_equals($_SESSION['token'], $_POST['token']))
+		{
+			$name = protect($_POST['name']);
+			$surname = protect($_POST['surname']);
+			$gender = protect($_POST['gender']);
+			$date_of_birth = protect($_POST['date_of_birth']);
+			$orders_count = protect($_POST['orders_count']);
+			$street = protect($_POST['street']);
+			$city = protect($_POST['city']);
+			$postcode = protect($_POST['postcode']);	
+			$country = protect(1);	
+			$notes = protect($_POST['notes']);
+			
+			$sql = "INSERT INTO `clients` (`id`, `name`, `surname`, `gender`, `date_of_birth`, `orders_count`, `street`, `city`, `postcode`, `country`, `notes`)
+			VALUES (NULL, '$name', '$surname', '$gender', '$date_of_birth', '$orders_count', '$street', '$city', '$postcode', '$country', '$notes');";	
+			
+			if ($conn->query($sql) === TRUE)
+			{
+				echo '<h1><font color="red">Dodano klienta!</font></h1>';
+			}
+			else
+			{
+				echo 'Error: ' . $sql . '<br/>' . $conn->error;
+			}
+		} else
+		{
+			 echo '<h2><font color="red">Nieporawny token!</font></h2>';
+		}
 	}
-	else
-	{
-		echo 'Error: ' . $sql . '<br/>' . $conn->error;
-	}
+	
 }
 #Zapisywanie klienta end
 #Wyświetlanie klienta start
