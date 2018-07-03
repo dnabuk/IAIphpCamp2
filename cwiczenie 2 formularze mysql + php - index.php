@@ -13,10 +13,11 @@ if (empty($_POST)){
 	echo '<option value="female">Kobieta</option>';
 	echo '<option value="unknown">Sam nie wiem</option>';
 	echo '</select><br />';
+	
 	echo 'Data urodzenia: <input type="date" size="20" name="birth_date" /><br />';
 	echo '<input type="text" size="20" name="city" placeholder="Miasto" /><br />';
 	
-}
+} else {
 
 $link = mysqli_connect("localhost", "php", "dlTPxr4tHUmefOMR");
 
@@ -39,4 +40,5 @@ if (mysqli_num_rows($resultHandle) > 0) {
 	echo '</table>';
 } else {
 	echo 'Brak wyników';
+}
 }
