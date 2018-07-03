@@ -1,4 +1,7 @@
 <?php
+/*
+ * Config bazy z PDO
+ */
 $pdo = GetPDO();
 
 class Db

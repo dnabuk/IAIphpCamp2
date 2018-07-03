@@ -1,4 +1,7 @@
 <?php
+/*
+ * Dodatkowy plik wykonujący forma z pliku index7.php
+ */
 include('config.php');
 session_start();
 
@@ -9,11 +12,11 @@ if (isset($_POST['client_send'])) {
     $clientbirth = $_POST['client_date'];
     $clientorder = $_POST['client_order'];
     if (!hash_equals($_SESSION['tok'], $_POST['client_token'])) {
-        echo 'Zly token!';
+        echo 'Zły token!';
         exit;
     }
     if (time() - $_SESSION['token_time'] > 60) {
-        echo 'token uplynal';
+        echo 'Upłynął czas ważności tokenu';
         exit;
     } else {
         $id = $_SESSION['id'];
@@ -28,5 +31,5 @@ if (isset($_POST['client_send'])) {
         $cd->execute();
     }
 } else {
-    echo 'wpisz imie!';
+    echo 'Brak przesłanych danych';
 }

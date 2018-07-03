@@ -1,4 +1,9 @@
 <?php
+/*
+ * Zadanie - stworzenie tablicy dwuwymiarowej i pokolorowanie jej
+ *
+ * Piramida oraz szachownica
+ */
 $tablica = [
     1 => 'Hubert',
     '1' => 'Rządziński',
@@ -6,7 +11,7 @@ $tablica = [
     true => 'Gniewomir',
     4 => '',
 ];
-//$tablica;
+
 var_dump($tablica);
 echo '<br>';
 $tablica[] = 'Kot ma Ale';
@@ -26,10 +31,10 @@ foreach ($t1 as $t) {
     $i = $t;
     echo '<div style="">';
     foreach ($t2 as $tt) {
-        if($i >-1){
+        if ($i > -1) {
             echo '<div style="display: inline-block; background-color:blue; width: 50px; height: 50px; border: solid 1px black;">';
             $i--;
-        }else{
+        } else {
             echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
             $i--;
         }
@@ -39,3 +44,24 @@ foreach ($t1 as $t) {
     }
     echo '</div>';
 }
+echo '<br>';
+foreach ($t1 as $t) {
+
+    echo '<div style="">';
+    $i = $t;
+    foreach ($t2 as $tt) {
+
+        if (($i % 2) == 0) {
+            echo '<div style="display: inline-block; background-color:blue; width: 50px; height: 50px; border: solid 1px black;">';
+            $i++;
+
+        } else {
+            echo '<div style="display: inline-block; background-color:red; width: 50px; height: 50px; border: solid 1px black;">';
+            $i++;
+        }
+
+        echo $t . $tt;
+        echo '</div>';
+    }
+}
+?>

@@ -1,5 +1,8 @@
 <?php
-
+/*
+ * Zadanie - form tworzący nowe elementy w bazie
+ *
+ */
 include('config.php'); //zawiera połączenie z pdo
 ?>
     <form action='index5.php' method='POST'> <!-- odwoluje sie do samego siebie -->
@@ -49,13 +52,6 @@ if (isset($_POST['client_name']) && isset($_POST['client_surname'])) {
     $c->bindParam(9, $clientorder);
     $c->bindParam(10, $clientorder);
     $c->execute();
-    /*$result = $c->fetchAll();
-    echo 'dd';
-    foreach ($result as $row) {
-        echo $clientname;
-        echo 'wszystko dobrze';
-    }*/
-
 } else {
     echo 'wpisz imie!';
 }

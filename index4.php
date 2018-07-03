@@ -1,4 +1,9 @@
 <?php
+/*
+ * Zadanie - Połączenie się z bazą przy pomocy PDO oraz Mysqli
+ *
+ * Zadanie 2 - Połączenie się z bazą i wykonanie operacji łączenia dwóch tabel
+ */
 include('config.php'); //zawiera połączenie z pdo
 
 $pdo = GetPDO();

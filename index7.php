@@ -1,4 +1,13 @@
 <?php
+/*
+ *  Zadanie polegające na wyświetleniu forma pozwalającego na edycje użytkownika
+ *  o id podanym poprzez metode GET
+ *  Przykład: ?id=975004
+ *
+ *  Form jest zabezpieczony tokenem który wygasa po 60 sekundach od załadowania strony
+ *
+ *
+ */
 session_start();
 include('config.php');
 if (isset($_POST['client_name']) && isset($_POST['client_surname'])) {
@@ -18,9 +27,7 @@ if (isset($_GET['id'])) {
     $c->execute();
 
     $result = $c->fetchAll();
-    foreach ($result as $row) {
-
-    }
+    foreach ($result as $row) {} // potrzebny do załadowania elementów $row
     ?>
     <form action='index7inc.php' method='POST'>
         Imię::<input type="text" name="client_name" value="<?= $row['name'] ?>"><br>
@@ -36,5 +43,4 @@ if (isset($_GET['id'])) {
         <input type="hidden" name="client_send" value="true">
         <input type="submit">
     </form>
-    <?php
-}
+    <?php } ?>
