@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>Clients</title>
+</head>
+<body>
+
+	<h2>Become a client!</h2><br/>
+
+	<form action="add.php" method="POST">
+
+		Name: <br/> <input type="text" name="name"/><br/>
+		Surname: <br/> <input type="text" name="surname"/><br/>
+		Gender: <br/> <select name="gender">
+			<option value="male">Male</option>
+  			<option value="female">Female</option>
+  			<option value="unknown">Unknown</option>
+  		</select><br/>
+  		Date of birth: <br/> <input type="date" name="date"/><br/>
+  		Street: <br/> <input type="text" name="street"/><br/>
+  		City: <br/> <input type="text" name="city"/><br/>
+  		Postcode: <br/> <input type="number" name="postcode"/><br/>
+  		Country: <br/> <input type="text" name="country" value="1"/><br/>
+  		Notes: <br/> <input type="text" name="notes"/><br/><br/>
+
+		
+		<input type="submit" value="Send" name="submit">
+
+
+	</form>
+
+</body>
+</html>
