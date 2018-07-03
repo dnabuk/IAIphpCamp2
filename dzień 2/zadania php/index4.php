@@ -1,11 +1,17 @@
 <?php
-session_cache_expire(1);
-
 session_start();
-if(empty($_SESSION['token'])) {
-    $_SESSION['token'] = bin2hex(random_bytes(32));
+
+$now = time();
+if (!isset($_SESSION['start']))
+{
+	$_SESSION['start'] = $now;
+	$_SESSION['token'] = bin2hex(random_bytes(32));
 }
-$token = $_SESSION['token'];
+else if($_SESSION['start'] > $now - 60)
+{
+	session_destroy();
+}
+
 
 
 $panstwa = array("Polska", "USA", "Kanada", "Niemcy", "Rosja", "Indie", "Belgia");
@@ -38,7 +44,7 @@ $los = rand(0, (count($panstwa)-1));
   <input type="text" name="country" value="<?php echo $panstwa[$los]; ?>" placeholder="Państwo"><br/>  
   Notatki:<br/>
   <textarea rows="4" cols="50" name="notes">Przykładowa notatka klienta :)</textarea>  
-  <input type="hidden" name="token" value="<?php echo $token; ?>">
+  <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
   <br/><input type="submit" value="Wyślij!" name="zapisz">
 </form><br/><br/>
 <?php 
