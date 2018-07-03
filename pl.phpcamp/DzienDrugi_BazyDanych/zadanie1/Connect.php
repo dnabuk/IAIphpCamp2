@@ -1,5 +1,5 @@
 <?php
-/*require_once "LoginDatabase.php";
+/*require_once "../LoginDatabase.php";
 
 $connect = mysqli_connect("$host", "$db_user", "$db_password", "$db_name");
 $connect->set_charset("utf8");
@@ -21,6 +21,7 @@ while ($row = mysqli_fetch_array($resultHandle)) {
     echo  '</pre>';
 }*/
 
+/*
 class Connect{
     private $host;
     private $db_user;
@@ -28,14 +29,39 @@ class Connect{
     private $db_name;
 
 
-    public function __construct($host, $db_user, $db_password, $db_name){
-        $this->host = $host;
-        $this->db_user = $db_user;
-        $this->db_password = $db_password;
-        $this->db_name = $db_name;
+    public function __construct(){
+        $this->host = "localhost";
+        $this->db_user = "root";
+        $this->db_password = "";
+        $this->db_name = "phpcamp_mzakrzewski";
+        mysqli_connect($this->host, $this->db_user, $this->db_password, $this->db_name);
     }
 
+
+
+    public function getHost()
+    {
+        return $this->host;
+    }
+
+    public function getDbUser()
+    {
+        return $this->db_user;
+    }
+
+    public function getDbPassword()
+    {
+        return $this->db_password;
+    }
+
+    public function getDbName()
+    {
+        return $this->db_name;
+    }
 }
+
+$newConnect = new Connect();*/
+
 
 
 
