@@ -34,11 +34,14 @@ $resultHandle = mysqli_query($link, $query);
 if (mysqli_num_rows($resultHandle) > 0) {
 	echo '<table>';
 	$i=0;
+	echo '<tr><td>nr</td><td>ID</td><td>Imię</td><td>Nazwisko</td><td>Płeć</td>';
+	echo '<td>Data urodzenia</td><td>Zamówienia</td><td>Ulica</td><td>Miasto</td><td>Kod pocztowy</td><td>1</td>';
     while($row = mysqli_fetch_assoc($resultHandle)) {
         //var_dump($row);
+		
 		echo '<tr><td>'.($strona*$naStrone+$i).'</td>';
 		foreach ($row as $col){
-			echo '<td>'.$col.'</td>';
+			echo '<td>'.preg_replace('/\s[0-9]{2}:[0-9]{2}:[0-9]{2}/', '', $col).'</td>'; //tak, poszedłem na łatwiznę ;)
 		}
 		echo '</tr>';
 		$i++;
