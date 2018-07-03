@@ -44,7 +44,7 @@ $zapytanie = mysqli_query($link, $query);
 	$wynik = mysqli_fetch_assoc($zapytanie);
 	$liczba_klientow = $wynik['ilosc'];
 $strony = ceil($liczba_klientow/$liczba_wierszy);
-echo "Liczba klientów: $liczba_klientow <br/><br/><br/>";
+echo "Liczba klientów: $liczba_klientow, liczba stron: $strony<br/><br/><br/>";
 if(isset($_GET['page']))$page = $_GET['page'];
 else $page = 1 ;
 echo "<div class=\"pagination\">";
@@ -73,9 +73,7 @@ else {
 	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.$strony.' > &gt;&gt; </a>'.' ';
 }
 
-echo "</div><br/><br/>";
-
-
+echo "</div><br/><br/><br/>";
 
 $offset = ($page-1) * $liczba_wierszy;
 
