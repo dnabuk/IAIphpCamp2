@@ -18,6 +18,7 @@ $name=$_POST['name'];
 $surname=$_POST['surname'];
 $gender=$_POST['gender'];
 $city=$_POST['city'];
+$randomNum=rand(3,4567);
 $sql = "INSERT INTO clients (name, surname, gender, city)
 VALUES ('$name','$surname','$gender','$city')";
 
