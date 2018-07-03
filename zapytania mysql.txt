@@ -6,3 +6,6 @@ SELECT DISTINCT `city` as 'Miasta' FROM `clients` where 1
 
 
 SELECT `name`, `surname`, c.id FROM clients c join orders o ON c.id = o.client_id
+
+SELECT `name`, `surname`, c.id, o.purchase_date, o.purchased_items FROM clients c join orders o ON c.id = o.client_id WHERE o.purchase_date > 1999-01-01
+SELECT `name`, `surname`, c.id, o.purchase_date, o.purchased_items FROM clients c join orders o ON c.id = o.client_id WHERE o.purchase_date < 1999-01-01
