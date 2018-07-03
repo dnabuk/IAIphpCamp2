@@ -12,3 +12,6 @@ SELECT `name`, `surname`, c.id, o.purchase_date, o.purchased_items FROM clients 
 
 SELECT * FROM clients c join orders o ON c.id = o.client_id WHERE o.client_id is null
 SELECT * FROM clients c join orders o ON c.id = o.client_id WHERE o.client_id is not null
+
+
+SELECT * FROM clients c join orders o ON c.id = o.client_id group by c.id having SUM(o.purchased_items) > 10
