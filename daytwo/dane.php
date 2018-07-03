@@ -76,7 +76,6 @@ if (!empty($_POST)) {
     $link = mysqli_connect("localhost", "dagmara", "", 'phpcamp_dtega');
 
 
-    var_dump($_POST);
     $name = filtruj($_POST['name'],$link);
     $surname = filtruj($_POST['surname'], $link);
     $gender = filtruj($_POST['gender'],$link);
@@ -89,6 +88,7 @@ if (!empty($_POST)) {
 
 
     print mysqli_insert_id($link);
+    echo '</br>';
     if ($wynik) {
         echo 'Prawidłowo dodano do bazy danych';
     } else {
