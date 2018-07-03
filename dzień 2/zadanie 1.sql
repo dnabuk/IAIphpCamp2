@@ -12,4 +12,4 @@ SELECT count(DISTINCT city) AS `ilosc`  FROM `clients`
 
 SELECT c.id, o.order_number FROM clients c INNER JOIN orders o  ON c.id = o.client_id WHERE c.date_of_birth >= '2000-01-01'
 
-SELECT * FROM clients c LEFT JOIN orders o  ON c.id = o.client_id WHERE o.client_id IS NULL
+SELECT * FROM clients c LEFT JOIN orders o  ON c.id = o.client_id GROUP BY c.id HAVING SUM(o.pucharsed_items)>10
