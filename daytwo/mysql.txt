@@ -7,3 +7,9 @@ SELECT * FROM `clients` ORDER BY `orders_count` DESC limit 1
 SELECT * FROM `clients` WHERE `name` LIKE 'T%' OR `surname` LIKE 'T%'
 
 SELECT COUNT(DISTINCT `city`) AS 'count' FROM `clients`
+
+JOIN:
+SELECT c.id FROM clients c INNER JOIN orders o ON c.id = o.client_id
+
+
+SELECT o.client_id, SUM(o.purchased_items), c.name FROM orders o JOIN clients c ON c.id = o.client_id GROUP BY client_id HAVING SUM(o.purchased_items) > 10
