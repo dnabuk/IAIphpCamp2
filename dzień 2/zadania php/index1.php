@@ -18,20 +18,19 @@ $los = rand(0, (count($panstwa)-1));
   Data urodzenia:<br/>
   <input type="date" name="date_of_birth"><br/>
   Liczba zamówień:<br/>
-  <input type="text" name="orders_count" value="<?php echo rand(1, 10000); ?>" disabled><br/>
+  <input type="text" name="orders_count" value="<?php echo rand(1, 10000); ?>" readonly="readonly"><br/>
   Ulica:<br/>
-  <input type="text" name="street"><br/>  
+  <input type="text" name="street" placeholder="Ulica"><br/>  
   Miasto:<br/>
-  <input type="text" name="city"><br/>
+  <input type="text" name="city" placeholder="Miasto"><br/>
   Kod pocztowy:<br/>
-  <input type="text" name="postcode"><br/>   
+  <input type="text" name="postcode" placeholder="Kod-Pocztowy"><br/>   
   Państwo:<br/>
-  <input type="text" name="country" value="<?php echo $panstwa[$los]; ?>"><br/>  
+  <input type="text" name="country" value="<?php echo $panstwa[$los]; ?>" placeholder="Państwo"><br/>  
   Notatki:<br/>
   <textarea rows="4" cols="50" name="notes">Przykładowa notatka klienta :)</textarea>  
-  <br/><input type="submit" value="Zapisz klienta!" name="zapisz">
+  <br/><input type="submit" value="Wyślij!" name="zapisz">
 </form><br/><br/>
-<h2>Przykładowe 100 rekordów najnowszych :)</h2>
 <?php 
 $servername = 'localhost';
 $username = 'root';
@@ -49,7 +48,7 @@ function protect($string)
 #Zapisywanie klienta start
 if(isset($_POST['zapisz']))
 {
-	var_dump($_POST);
+	print_r($_POST);
 	
 	$name = protect($_POST['name']);
 	$surname = protect($_POST['surname']);
@@ -61,10 +60,9 @@ if(isset($_POST['zapisz']))
 	$country = protect($_POST['country']);	
 	$notes = protect($_POST['notes']);
 	
+	$sql = "INSERT INTO `clients` (`id`, `name`, `surname`, `gender`, `date_of_birth`, `orders_count`, `street`, `city`, `postcode`, `country`, `notes`)
+	VALUES (NULL, '$name', '$surname', '$gender', '$date_of_birth', '$orders_count', '$street', '$city', '$postcode', '$country', '$notes');";	
 	
-	$sql = 'INSERT INTO clients (name, surname, gender, date_of_birth, orders_count, street, city, postcode, country, notes)
-	VALUES (`'.$name.'`, `'.$surname.'`, `'.$date_of_birth.'`, `'.$orders_count.'`, `'.$street.'`, `'.$city.'`, `'.$postcode.'`, `'.$country.'`, `'.$notes.'`)';
-
 	if ($conn->query($sql) === TRUE)
 	{
 		echo '<h1><font color="red">Dodano klienta!</font></h1>';
@@ -78,7 +76,7 @@ if(isset($_POST['zapisz']))
 #Wyświetlanie klienta start
 $sql = "SELECT * FROM clients ORDER BY id DESC LIMIT 100";
 $result = $conn->query($sql);
-
+echo '<h2>Przykładowe 100 rekordów najnowszych :)</h2>';
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo 'id: ' . $row['id']. ' imie: ' .$row['name']. ' nazwisko: ' .$row['surname']. ' płeć: ' .$row['gender']. ' data urodzenia: ' .$row['date_of_birth']. '<br/>';
