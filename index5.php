@@ -23,11 +23,11 @@ if (isset($_POST['client_name']) && isset($_POST['client_surname'])) {
     $clientgender = $_POST['client_gender'];
     $clientbirth = $_POST['client_date'];
     $clientorder = $_POST['client_order'];
-    echo $clientname.'<br>';
-    echo $clientsurname.'<br>';
-    echo $clientgender.'<br>';
-    echo $clientbirth.'<br>';
-    echo $clientorder.'<br>';
+    echo $clientname . '<br>';
+    echo $clientsurname . '<br>';
+    echo $clientgender . '<br>';
+    echo $clientbirth . '<br>';
+    echo $clientorder . '<br>';
     //$clientd
     /*
      $clientname = mysqli_real_escape_string($_POST['client_name']);
