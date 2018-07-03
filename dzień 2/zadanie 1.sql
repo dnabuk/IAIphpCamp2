@@ -10,4 +10,4 @@ SELECT count(DISTINCT city) AS `ilosc`  FROM `clients`
 
 
 
-SELECT * FROM clients JOIN orders ON clients.id = orders.client_id WHERE date_of_birth >= '2000-01-01'
+SELECT * FROM clients INNER JOIN orders ON clients.id = orders.client_id WHERE date_of_birth >= '2000-01-01'
