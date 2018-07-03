@@ -11,8 +11,8 @@ if (!$connect) {
 }
 
 $_GET['id'] = (int) $_GET['id'];
-$query = 'SELECT * FROM clients WHERE id= ' . $_GET['id'];
-//$query = 'SELECT * FROM clients WHERE id= ' . mysqli_escape_string($connect, $_GET['id']);
+//$query = 'SELECT * FROM clients WHERE id= ' . $_GET['id'];
+$query = 'SELECT * FROM clients WHERE id= ' . mysqli_escape_string($connect, $_GET['id']);
 if ($result = $connect->query($query)){
     if ($result->num_rows > 0){
         while ($row = $result->fetch_assoc()){
