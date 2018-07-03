@@ -14,8 +14,13 @@
 		$name = $_POST['name'];
 		$surname = $_POST['surname'];
 		$gender = $_POST['gender'];
+		$date_of_birth = $_POST['date_of_birth'];
+		$orders_count = $_POST['orders_count'];
+		$street = $_POST['street'];
 		$city = $_POST['city'];
-		if ($rezultat = @$link->query("INSERT INTO clients (name, surname, gender, city) VALUES ('$name', '$surname', '$gender', '$city')"))
+		$postcode = $_POST['postcode'];
+		$country = $_POST['country'];
+		if ($rezultat = @$link->query("INSERT INTO clients (name, surname, gender, date_of_birth, orders_count, street, city, postcode, country) VALUES ('$name', '$surname', '$gender', '$date_of_birth', '$orders_count', '$street', '$city', '$postcode', '$country')"))
 		{
 			
 				echo 'Dodano';
