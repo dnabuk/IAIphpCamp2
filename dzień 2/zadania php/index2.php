@@ -10,7 +10,7 @@ $los = rand(0, (count($panstwa)-1));
   Nazwisko:<br/>
   <input type="text" name="surname" placeholder="Wpisz nazwisko"><br/>
   Płeć:<br/>
-  <select name="gender">
+  <select>
 	  <option value="male">male</option>
 	  <option value="female">female</option>
 	  <option value="unknown">unknown</option>
@@ -52,7 +52,6 @@ if(isset($_POST['zapisz']))
 	
 	$name = protect($_POST['name']);
 	$surname = protect($_POST['surname']);
-	$gender = protect($_POST['gender']);
 	$date_of_birth = protect($_POST['date_of_birth']);
 	$orders_count = protect($_POST['orders_count']);
 	$street = protect($_POST['street']);
