@@ -15,30 +15,27 @@ if (empty($_POST)){
 	echo '</select><br />';
 	
 	echo 'Data urodzenia: <input type="date" size="20" name="birth_date" /><br />';
-	echo '<input type="text" size="20" name="city" placeholder="Miasto" /><br />';
-	
+	echo '<input type="submit" /></form>';
 } else {
 
 $link = mysqli_connect("localhost", "php", "dlTPxr4tHUmefOMR");
 
 mysqli_select_db($link, "phpcamp_plica");
 
-$query = "SELECT * FROM `clients` WHERE 1 limit 15";
+$imie=$_POST['name'];
+$nazwisko=$_POST['surname'];
+$ulica=$_POST['street'];
+$kod=$_POST['code'];
+$miasto=$_POST['city'];
+$plec=$_POST['gender'];
+$data=$_POST['birth_date'];
+
+//echo $imie.' '.$nazwisko.' '.$ulica.' '.$kod.' '.$miasto.' '.$plec.' '.$data;
+echo 'Witaj '.$imie.'!<br>Dziękujemy za rejestrację.';
+$query = "INSERT INTO `clients` (`id`, `name`, `surname`, `gender`, `date_of_birth`, 
+`orders_count`, `street`, `city`, `postcode`, `country`, `notes`) 
+VALUES (NULL, '$imie', '$nazwisko', '$plec', '$data', 
+floor(RAND()*(100)+3), '$ulica', '$miasto', '$kod', '1', '');";
 $resultHandle = mysqli_query($link, $query);
 
-if (mysqli_num_rows($resultHandle) > 0) {
-	echo '<table>';
-    while($row = mysqli_fetch_assoc($resultHandle)) {
-        //var_dump($row);
-		echo '<tr>';
-		foreach ($row as $col){
-			echo '<td>'.$col.'</td>';
-		}
-		echo '</tr>';
-		
-    }
-	echo '</table>';
-} else {
-	echo 'Brak wyników';
-}
 }
