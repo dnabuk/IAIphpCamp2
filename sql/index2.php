@@ -1,9 +1,10 @@
 <?php
+//@require_once "SqlClass.php";
     require_once "connect.php";
 
 $link = mysqli_connect($host, $db_log, $db_pass);
 mysqli_select_db($link, $db_name);
-$zapytanie = "SELECT `name` FROM `clients`";
+$zapytanie = "SELECT * FROM `clients`";
         echo "<br><br>";
         var_dump($zapytanie);
 $resultHandle = mysqli_query($link, $zapytanie);
@@ -16,7 +17,10 @@ $rowsAffected = mysqli_affected_rows($link);
     echo "<br><br>";
     var_dump($rowsAffected);
     while($data = mysqli_fetch_assoc($resultHandle)){
-        echo $data['name'];
+        foreach ($data as $key => $value) {
+            echo $value." ";
+
+        }
         echo "<br>";
     }
 
