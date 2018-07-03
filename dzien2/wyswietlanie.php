@@ -45,14 +45,38 @@ $zapytanie = mysqli_query($link, $query);
 	$liczba_klientow = $wynik['ilosc'];
 $strony = ceil($liczba_klientow/$liczba_wierszy);
 echo "Liczba klientów: $liczba_klientow <br/><br/><br/>";
-echo "<div class=\"pagination\">";
-for($i=1; $i <= $strony; $i ++)
-{
-	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=' . $i . '>'.$i.'</a>'.' ';
-}
-echo "</div><br/><br/>";
 if(isset($_GET['page']))$page = $_GET['page'];
 else $page = 1 ;
+echo "<div class=\"pagination\">";
+if($page == 1)
+{
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=1 > &lt;&lt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=' . $page . '>'.$page.'</a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.($page+1).' > &gt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.$strony.' > &gt;&gt; </a>'.' ';
+	
+}
+
+else if($page == $strony)
+{
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=1 > &lt;&lt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.($page-1).' > &lt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=' . $page . '>'.$page.'</a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.$strony.' > &gt;&gt; </a>'.' ';
+}
+
+else {
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=1 > &lt;&lt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.($page-1).' > &lt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page=' . $page . '>'.$page.'</a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.($page+1).' > &gt; </a>'.' ';
+	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.$strony.' > &gt;&gt; </a>'.' ';
+}
+
+echo "</div><br/><br/>";
+
+
+
 $offset = ($page-1) * $liczba_wierszy;
 
 $query = "select * from clients limit $liczba_wierszy offset $offset ";
