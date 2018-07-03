@@ -26,7 +26,8 @@
         echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
         exit;
     }
-    $query = "SELECT `name`, `surname` FROM `clients`";
+    //$query = "SELECT `name`, `surname` FROM `clients`";
+    $query = "SELECT * FROM clients LEFT JOIN orders ON clients.id=orders.client_id GROUP BY clients.id HAVING SUM(orders.purchased_items) > 10";
     $result = $connect->query($query);
     if (!$result) {
         echo "Error: Unable to connect to MySQL." . PHP_EOL;
