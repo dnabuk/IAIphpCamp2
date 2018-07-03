@@ -4,7 +4,8 @@ include('config.php');
 
 $cc = mysqli_connect('localhost','root','','phpcamp_hrzadzinski'); // zrobione po to aby móc użyć mysqlirealescapestring
 
-$get = mysqli_real_escape_string($cc,$_GET['page']);
+//$get = mysqli_real_escape_string($cc,$_GET['page']);
+$get = $cc->real_escape_string($_GET['page']);
 $pdo = GetPDO();
 if(isset($get)){
     $off = ($get * 100)-100;
