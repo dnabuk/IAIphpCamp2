@@ -3,3 +3,6 @@ SELECT `gender`, count(`gender`) AS 'cnt' FROM `clients` Group by `gender`
 SELECT `id` FROM `clients` ORDER BY `orders_count` DESC LIMIT 1
 SELECT 'T...', COUNT(*) FROM `clients` WHERE `name` like 'T%' OR `surname` like 'T%'
 SELECT DISTINCT `city` as 'Miasta' FROM `clients` where 1
+
+
+SELECT `name`, `surname`, c.id FROM clients c join orders o ON c.id = o.client_id
