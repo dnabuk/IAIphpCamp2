@@ -23,7 +23,7 @@
 		if ($rezultat = @$link->query("INSERT INTO clients (name, surname, gender, date_of_birth, orders_count, street, city, postcode, country) VALUES ('$name', '$surname', '$gender', '$date_of_birth', '$orders_count', '$street', '$city', '$postcode', '$country')"))
 		{
 			
-				echo 'Dodano';
+				echo 'Dodano</br><a href="formularz.html">powrot</a>';
 		} 
 		else 
 		{
