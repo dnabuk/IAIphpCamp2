@@ -15,6 +15,20 @@
 	}
 	
 
+	.edyt{
+		background-color: #FF0080;
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+		border: 1px solid #ddd;
+	}
+	
+	.usun{
+		background-color: red;
+	}
+	
 	.pagination a {
 		color: black;
 		float: left;
@@ -87,7 +101,7 @@ $query = "select * from clients limit $liczba_wierszy offset $offset ";
 			<td style=\"width:90px\">PŁEĆ</td><td style=\"width:180px\">DATA URODZENIA</td>
 			<td style=\"width:100px\">LICZBA ZAMÓWIEŃ</td><td style=\"width:200px\">ULICA</td>
 			<td style=\"width:150px\">MIASTO</td><td style=\"width:100px\">KOD POCZTOWY</td>
-			<td style=\"width:100px\">PAŃSTWO</td><td>NOTATKI</td></tr>";
+			<td style=\"width:100px\">PAŃSTWO</td><td>NOTATKI</td><td style=\"width:200px;\">AKCJA</td></tr>";
 			
 	while($wynik = mysqli_fetch_assoc($zapytanie)){
 		$nowa .= "<tr><td>$j</td>";
@@ -95,10 +109,20 @@ $query = "select * from clients limit $liczba_wierszy offset $offset ";
 		$nowa .= "<td>" . $wynik['name'] . " </td><td> ". $wynik['surname'];
 		$nowa .= " </td><td> " . $wynik['gender'] . " </td><td> "  . $wynik['date_of_birth'];
 		$nowa .= " </td><td> " . $wynik['orders_count'] . " </td><td> " .$wynik['street']. " </td><td> ". $wynik['city'];	
-		$nowa .= " </td><td> ". $wynik['postcode'] . " </td><td> " . $wynik['country'] . "</td><td>" . $wynik['notes'] ." </td></tr> ";
+		$nowa .= " </td><td> ". $wynik['postcode'] . " </td><td> " . $wynik['country'] . "</td><td>" . $wynik['notes'] ." </td>";
+		$nowa .= '<td><input type="hidden" name ="hidden" value="'.$wynik['id'].'"/> <button name=\"edyt\" id=\"'.$wynik['id'].'\"style=\"width:80px;\">EDYTUJ</button>';
+		$nowa .= '<a href="?delete='.$wynik['id'].'">USUŃ</a></td></tr> ';
 	}
 	$nowa .= "</table>";
 	echo $nowa;
+	
+	if(isset($_GET['delete']))
+	{
+		$query = "delete from clients where id =".$_GET['delete'];
+		$zapytanie = mysqli_query($link, $query);
+		echo "<script>alert(\"Usunięty użytkownik\");</script>";
+		header("Location: wyswietlanie.php");
+	}
 ?>
 </body>
 </html>
