@@ -1,5 +1,5 @@
 <?php
-/*require_once "../LoginDatabase.php";
+require_once "../LoginDatabase.php";
 
 $connect = mysqli_connect("$host", "$db_user", "$db_password", "$db_name");
 $connect->set_charset("utf8");
@@ -19,7 +19,7 @@ while ($row = mysqli_fetch_array($resultHandle)) {
     echo '<pre>';
     var_dump($row);
     echo  '</pre>';
-}*/
+}
 
 /*
 class Connect{
