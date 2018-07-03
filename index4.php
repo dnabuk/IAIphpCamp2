@@ -2,16 +2,17 @@
 include('config.php'); //zawiera połączenie z pdo
 
 $pdo = GetPDO();
-$sql = 'SELECT * FROM `clients` LIMIT 10';
+$sql = 'SELECT c.id FROM clients c INNER JOIN zamowienia o ON c.id = o.client_id GROUP BY c.id HAVING SUM(o.purchased_items) > 10';
 $c = GetPDO()->prepare($sql);
 $c->execute();
 $result = $c->fetchAll();
 
 foreach($result as $row) {
-    echo $row['name'].' '.$row['surname'].'<br>';
+    //echo $row['name'].' '.$row['surname'].'<br>';
+    echo $row['id'].'<br>';
 }
 
-
+/*
 echo'<br>';
 
 $cc = mysqli_connect('localhost','root','','phpcamp_hrzadzinski');
@@ -25,3 +26,4 @@ foreach($result2 as $row2){
     //echo var_dump($row2);
 }
 
+*/
