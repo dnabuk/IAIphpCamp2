@@ -1,12 +1,26 @@
 <?php
-    $litery = range("A","T");
-    for($i=0; $i<20; $i++)
+    for( $j = 0; $j < 20; $j++ ) // kolumna
     {
-        foreach($litery as $j)
+        echo '<div style="display: inline-block; white-space: nowrap;">';
+        foreach(range('A','T') as $l)
         {
-            echo '<div style="display: inline-block; background-color:white; width: 50px; height: 50px; border: solid 1px black;">'.$i.$j.'</div>';
-            if($j == "T")
-                echo "<br>";
-        }
-    }      
+            $a = ord($l) + $j;
+            if( $a % 2 == 0 )
+            {
+                echo '<div style="display: inline-block; 
+                background-color:yellow; 
+                width: 50px; height: 50px; 
+                border: solid 1px black;">'.$j.$l.'</div>';
+            }
+            else
+            {
+                echo '<div style="display: inline-block; 
+                background-color:red; 
+                width: 50px; 
+                height: 50px; 
+                border: solid 1px black;">'.$j.$l.'</div>';
+            }      
+        } 
+        echo '</div>';
+    }
 ?>
