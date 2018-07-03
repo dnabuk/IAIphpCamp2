@@ -6,12 +6,15 @@ $username = "patrycjusz";
 $password = "1234";
 $dbname = "phpcamp_pnowaczyk";
 
+
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+
 
 $sql = "SELECT id, name, surname, city FROM clients WHERE orders_count<'50'";
 
