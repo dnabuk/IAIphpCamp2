@@ -31,5 +31,15 @@ class ProductBase{
         echo "Wołam z _call" . '<br/>';
     }
 
+    public function __isset($name)
+    {
+       echo "Sprawdzam wartość $name z __isset" . '<br/>';
+    }
+
+    public function __unset($name)
+    {
+        echo "Sprawdzam wartość $name z __unset" . '<br/>';
+    }
+
 
 }

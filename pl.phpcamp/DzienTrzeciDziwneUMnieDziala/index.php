@@ -21,7 +21,9 @@ echo '</pre>';
 
 $product2 = new VirtualProduct();
 $product2->testowe();
-
+//var_dump(isset());
+isset($product2->var1);
+unset($product2->var2);
 try{
     $product2->variable = 1;
 }catch (Exception $exception){
