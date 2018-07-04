@@ -22,7 +22,7 @@ public  $zalacznik_produktu,
     public function __destruct(){
         echo '<br>Wywołanie destruktora klasy wirtualny produkt';
     }
-
+/*8
     public function ustawProdukt($id,$nazwa,$zdjecie,$cena,$opis,$zalacznik,$klucz,$rozmiar){
         $this->id_produktu = $id;
         $this->nazwa_produktu = $nazwa;
@@ -39,5 +39,5 @@ public  $zalacznik_produktu,
     public function pobierzCene(){
         return $this->cena_produktu;
     }
-
+*/
 }
