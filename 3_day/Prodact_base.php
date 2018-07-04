@@ -31,7 +31,12 @@ class Prodact_base
 		
 		//echo "podana wartość nie istnieje";
 	}
-	}/*
+	}
+	public function __get($name){
+		return $this->{$name};
+	}
+
+	/*
 	public function Setcena($cena)
 	{
 		$this->cena=$cena;
@@ -64,7 +69,7 @@ class Prodact_base
 	public function Setid($id)
 	{
 		$this->id=$id;
-	}*/
+	}
 	public function Getid()
 	{
 		return $this->id;
@@ -96,7 +101,7 @@ class Prodact_base
 	public function Getproducent()
 	{
 		return $this->producent;
-	}
+	}*/
 	function __destruct()
 	{
 

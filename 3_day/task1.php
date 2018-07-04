@@ -11,7 +11,7 @@ $vprod->a=1;
 }catch(Exception $e){
 	var_dump($e);
 }
-//$prod->Setcena(1000);
+$prod->cena=1000;
 //$prod->Setwaga(10000000);
 //$prod->Setopis('Opis');
 //$prod->Setname('Kubeczek');
@@ -27,6 +27,6 @@ $vprod->a=1;
 
 var_dump($prod);
 var_dump($vprod);
-//echo $vprod->cena;
+echo $prod->cena;
 echo "bangla";
 //die();
