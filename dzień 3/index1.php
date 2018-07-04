@@ -12,7 +12,8 @@ try{
 	//$product->ProductNamee = '123';
 	//echo $product->ProductNameeee;	
 	
-	$product->runTest('abstrakcja1', 'abstrakcja2');
+	$test = $product->ProductId('NewProductId');
+	echo $test;
 	
 } catch (Exception $e) {
     echo 'Caught exception: <b>',  $e->getMessage(), "</b><br/>";
