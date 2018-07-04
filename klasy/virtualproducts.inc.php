@@ -1,12 +1,9 @@
 <?php
-class VirtualProducts {
+require_once('productbase.php');
 
-    public $id_produktu,
-        $nazwa_produktu,
-        $zdjecie_produktu,
-        $cena_produktu,
-        $opis_produktu,
-        $zalacznik_produktu,
+class VirtualProducts extends Productbase {
+
+public  $zalacznik_produktu,
         $klucz_produktu,
         $rozmiar_produktu;
 

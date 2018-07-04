@@ -1,14 +1,12 @@
 <?php
+require_once('productbase.php');
 
-class Products
+class Products extends Productbase
 {
-
-    public $id_produktu,
-        $nazwa_produktu,
-        $zdjecie_produktu,
-        $cena_produktu,
+    public
         $opis_produktu,
         $wymiar_produktu;
+
 
     public function __construct()
     {

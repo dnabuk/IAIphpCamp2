@@ -6,6 +6,7 @@
  */
 require_once('klasy/products.inc.php');
 require_once('klasy/virtualproducts.inc.php');
+require_once('klasy/productbase.php');
 
 $product = new Products;
 $vp = new VirtualProducts;
