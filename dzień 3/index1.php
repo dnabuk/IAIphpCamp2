@@ -16,6 +16,7 @@ try{
 	//echo $test;
 	
 	isset($product->ProductName);
+	empty($product->ProductName);
 	unset($product->ProductName);
 	
 } catch (Exception $e) {
