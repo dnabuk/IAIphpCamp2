@@ -22,14 +22,6 @@ class Product{
      * @param $description
      */
     public function __construct(){
-        $this->id = "1";
-        $this->name = "Kubek";
-        $this->color = "zielony";
-        $this->price = 40;
-        $this->width = 9;
-        $this->height = 14;
-        $this->weight = 0.9;
-        $this->description = "Super kubek, który trzymał kiedyś ciepło";
     }
 
     public function __destruct(){
@@ -37,32 +29,134 @@ class Product{
     }
 
     /**
-     * @param int $price
+     * @return mixed
      */
-    public function setPrice($price){
-        $this->price = $price;
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
-     * @param string $name
+     * @param mixed $id
      */
-    public function setName($name){
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getPrice(){
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param mixed $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
         return $this->price;
     }
 
     /**
-     * @return string
+     * @param mixed $price
      */
-    public function getName(){
-        return $this->name;
+    public function setPrice($price)
+    {
+        $this->price = $price;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param mixed $weight
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+
 
 }
 
