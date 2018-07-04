@@ -37,12 +37,22 @@ class C extends A {
         return date('H:m:s');
     }
 }
-class G {
+class G { //można było extends
 
     public function test2()
     {
         return date('H:m:s');
     }
 }
-$name = $_GET['name'];
-var_Dump((new $name())->test());
+if (isset($_GET['name'])){
+	$name = strtoupper($_GET['name']);
+	switch ($name){
+		case 'A':
+		case 'B':
+		case 'C':
+		case 'D':
+		case 'E':var_Dump((new $name())->test()); break;
+		case 'A':var_Dump((new $name())->test2());
+		default: die;
+	}
+}
