@@ -3,7 +3,8 @@ error_reporting(E_ALL);
 
 class A {
     private $prefix = 'Pan(i)';
-    public static function printName($name)
+
+    public function printName($name)
     {
         $ret = '';
         if (strlen($name) > 5) {
@@ -16,4 +17,6 @@ class A {
     }
 }
 
-echo A::printName($_GET['name']);
+$object = new A;
+echo $object->printName($_GET['name']);
+//echo A::printName($_GET['name']);
