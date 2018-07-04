@@ -26,6 +26,8 @@ $vprod->Setwaga(10000000);
 
 //echo $vprod->Getcenavat();
 isset($prod->opis);
+echo $prod->opis;
+unset($prod->opis);
 var_dump($prod);
 var_dump($vprod);
 echo $prod->cena;

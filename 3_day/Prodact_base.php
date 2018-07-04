@@ -44,6 +44,10 @@ public function __isset($name)
 {
 	$this->{$name}='dane';
 }
+public function __unset($name)
+{
+	$this->{$name}=null;
+}
 
 	/*
 	public function Setcena($cena)
