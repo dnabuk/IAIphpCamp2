@@ -1,12 +1,15 @@
 <?php
 
-error_reporting(0);
+error_reporting(E_ALL);
 
-function foo($a)
+function foo($a = '')
 {
 	echo 'foo';
 }
-fo();
-var_Dump($value['a']['b']);
+foo();
+if(isset($value['a']['b'])){
+    var_Dump($value['a']['b']);
+}
+
 
 foo();
