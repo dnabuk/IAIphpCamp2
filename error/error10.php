@@ -12,8 +12,10 @@ class A {
         switch ($color) {
             case 'red':
                 $html = '<span style="color:red">' . $value. '</span>';
+				break;
             case 'blue':
                 $html = '<span style="color:blue">' . $value. '</span>';
+				break;
         }
 
         return $html;
