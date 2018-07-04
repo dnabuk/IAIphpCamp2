@@ -8,9 +8,10 @@ class A {
         foreach ($basket as $product) {
             $name .= $product['name'];
             $name .= ' , wartość pozycji ' . $product['quantity'] * $product['price'] . '<br>';
-
+            echo $name;
+            $name = ''; // < też rozwiazanie!
         }
-        echo $name;
+        //echo $name; // << też rozwiazanie
     }
 }
 
