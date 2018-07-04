@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 class Utils {
     public static function fooConstInit()
     {
-        define('FOO', 'foo');
+        defined('FOO') or define('FOO', 'foo');
     }
 }
 
