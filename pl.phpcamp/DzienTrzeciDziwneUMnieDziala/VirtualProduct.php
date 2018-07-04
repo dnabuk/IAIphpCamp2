@@ -1,6 +1,5 @@
 <?php
-class Product{
-
+class VirtualProduct{
     public $id;
     public $name;
     public $color;
