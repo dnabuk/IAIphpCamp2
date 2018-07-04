@@ -40,6 +40,10 @@ public function __call($name,$arg)
 {
 	echo "próba wywołania metody $name";
 }
+public function __isset($name)
+{
+	$this->{$name}='dane';
+}
 
 	/*
 	public function Setcena($cena)

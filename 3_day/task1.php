@@ -25,7 +25,7 @@ $vprod->Setwaga(10000000);
 //$vprod->Setname('PHP Storm');
 
 //echo $vprod->Getcenavat();
-
+isset($prod->opis);
 var_dump($prod);
 var_dump($vprod);
 echo $prod->cena;
