@@ -18,6 +18,8 @@ class Productbase
             throw new Exception('Nie ma takiej wartości');
         }
     }
-
+    public function __get($id){
+        echo '<br>'.$id;
+    }
 
 }
