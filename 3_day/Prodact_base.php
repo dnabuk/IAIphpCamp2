@@ -10,7 +10,7 @@ class Prodact_base
 	protected $opis;
 	protected $kategoria;
 	protected $waluta;
-	function __construct()
+	function __construct() // konstruktor wykonuje się w trakcie tworzenia obiektu
 	{
 		//$this->cena=200;
 		//$this->id=1;
@@ -20,36 +20,36 @@ class Prodact_base
 
 		//echo "construktor";
 	}
-	public function __set($name,$value)
+	public function __set($name,$value) // zastępuje ustawianie wartości uniwersalnie 
 	{
 		if(property_exists($this, $name)){
 		echo 'ustawiam '.$name.'  wartością '.$value;
 		
 		$this->{$name}=$value;
 	}else{
-		throw new Exception("podana wartość nie istnieje",10);
+		throw new Exception("podana wartość nie istnieje",10); // zwraca wyjątek
 		
 		//echo "podana wartość nie istnieje";
 	}
 	}
-	public function __get($name){
+	public function __get($name){ //zastępuje metody pobierania danch w uniwersalny sposób
 		return $this->{$name};
 	}
 
-public function __call($name,$arg)
+public function __call($name,$arg)//wywołuje się gdy niegdzie niema funkcji
 {
 	echo "próba wywołania metody $name";
 }
-public function __isset($name)
+public function __isset($name) //sprawdza czy zmienna jest ustawiona 
 {
 	$this->{$name}='dane';
 }
-public function __unset($name)
+public function __unset($name) // usuwa wartość zmienną
 {
 	$this->{$name}=null;
 }
 
-	/*
+	/* nie potrzebne jeśli korzystamy z funkcji magicznych __set oraz __get to dwie funkcje zastępują poniższy kod.
 	public function Setcena($cena)
 	{
 		$this->cena=$cena;
