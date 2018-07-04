@@ -37,7 +37,7 @@ class C extends A {
         return date('H:m:s');
     }
 }
-class G {
+class G extends A{
 
     public function test2()
     {
@@ -45,4 +45,5 @@ class G {
     }
 }
 $name = $_GET['name'];
+if ($name =='A' || $name=='B' || $name=='E' || $name=='D' ||$name=='C' || $name=='G')
 var_Dump((new $name())->test());

@@ -1,9 +1,9 @@
 <?php
 
-error_reporting(E_ALL);
+error_reporting( E_NOTICE | E_WARNING);
 
-if (!isset($value)) {
-    trigger_error('Brak zmiennej $value');
+if (!isset($value, $notice, $warning)) {
+    trigger_error('Brak zmiennej $value, $notice, $warning');
 }
 
-var_Dump($value['a']['b']);
+var_Dump($value['value']['notice']['warning']);

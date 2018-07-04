@@ -26,6 +26,11 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
     private function fn2($arg1, $arg2, $arg3, $arg4)
     {
         //
+    public function __debugInfo(){
+        return [
+            'id'=>$this->id,
+        ];
+    }
     }
 }
 
