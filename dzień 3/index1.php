@@ -7,14 +7,15 @@ $product = new ProductVirtual();
 try{
 	
 	$product->ProductName = '123';
-	echo $product->ProductName;
+	echo $product->ProductName.'<br/>';
 	
-	$product->ProductNamee = '123';
-	echo $product->ProductNameeee;	
-		
+	//$product->ProductNamee = '123';
+	//echo $product->ProductNameeee;	
+	
+	$product->runTest('abstrakcja1', 'abstrakcja2');
 	
 } catch (Exception $e) {
     echo 'Caught exception: <b>',  $e->getMessage(), "</b><br/>";
 }
 //var_dump($product);
-die('doszedlem do konca<br/>');
+die('<br/>doszedlem do konca<br/>');

@@ -34,5 +34,9 @@ class ProductBase{
 		else{
 			throw new Exception('Nie istnieje taki obiekt.');
 		}
-	}		
+	}
+    public function __call($name, $arguments){
+        echo "Calling object method '$name' "
+             . implode(', ', $arguments). "\n";
+    }	
 }
