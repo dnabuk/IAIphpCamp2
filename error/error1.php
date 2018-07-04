@@ -1,12 +1,13 @@
 <?php
 
-error_reporting(0);
+//error_reporting(0);
 
-function foo($a)
+function foo()
 {
 	echo 'foo';
 }
-fo();
-var_Dump($value['a']['b']);
+$value['a']['b']=1;
+foo();
+var_dump($value['a']['b']);
 
 foo();

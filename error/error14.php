@@ -39,10 +39,17 @@ class C extends A {
 }
 class G {
 
-    public function test2()
+    public function test()
     {
         return date('H:m:s');
     }
 }
 $name = $_GET['name'];
-var_Dump((new $name())->test());
+if((new $name())->test == 0){
+	throw new Exception('');
+}
+try{
+	var_dump((new $name())->test());
+}catch(Exception $e){
+	
+}

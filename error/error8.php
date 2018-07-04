@@ -5,11 +5,13 @@ class A {
     public function printName($basket)
     {
         $name = '';
+		echo '<br>';
         foreach ($basket as $product) {
             $name .= $product['name'];
             $name .= ' , wartość pozycji ' . $product['quantity'] * $product['price'] . '<br>';
-            echo $name;
+           
         }
+		 echo $name;
     }
 }
 
@@ -22,6 +24,6 @@ $basket = [
     ['productId' => 19879, 'quantity' => 41, 'name' => 'Product 4',  'price' => 0.19],
 ];
 
-var_Dump($basket);
+print_r($basket);
 $objA->printName($basket);
 

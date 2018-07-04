@@ -6,11 +6,11 @@ class A {
 
     public function printInfo($name, $validateName)
     {
-        if ($validateName == true) {
-            if ( strpos('Mateusz', $name)) {
+        if ($validateName == 1) {
+            if (strpos($_GET['name'], 'Mateusz') === 0) {
                 //sprawdzamy czy imie mateusz znajduje sie w przekazanej nazwie
                 echo 'Witaj Mateusz!';
-            } else {
+            } else if(strpos($_GET['name'], 'Mateusz') === false){
                 echo 'To nie Ty Mateusz!';
             }
         } else {
@@ -18,8 +18,5 @@ class A {
         }
     }
 }
-
-
-
-
+var_dump(strpos($_GET['name'], 'Mateusz'));
 (new A)->printInfo($_GET['name'], $_GET['validateName']);

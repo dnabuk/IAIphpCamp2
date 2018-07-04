@@ -37,5 +37,5 @@ if ($_GET['number']%2 == 1) {
     echo 'parzysta';
 }
 
-
+debug_backtrace();
 

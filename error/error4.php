@@ -1,9 +1,10 @@
 <?php
 
 error_reporting(E_ALL);
-
+error_reporting(E_WARNING);
+error_reporting(E_PARSE);
 class A {
-    private $a = 'a';
+    private $a='a';
     private $variable1 = 'variable';
     private $variable2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eleifend consectetur bibendum. Nullam finibus feugiat purus at porta. Quisque sodales, ipsum vel venenatis hendrerit, lorem odio bibendum velit, mollis convallis purus dui in eros. Sed ultricies eget dolor et tempor. Maecenas in ullamcorper erat. Nunc malesuada placerat neque sit amet aliquam. Ut pharetra diam in ex mollis, a molestie tellus tristique. Donec fringilla sollicitudin turpis, eget sodales sapien commodo sit amet. Donec neque dui, efficitur sed ipsum vel, tempor laoreet mauris. Proin ut mauris rutrum, tristique ex eu, tincidunt lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean tortor eros, tincidunt quis leo vel, condimentum ultricies ipsum. Morbi a massa enim. Nulla feugiat tempus nunc. Donec sagittis nec sapien a blandit.
 
@@ -18,8 +19,14 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
         $this->id = '1337';
         $this->a = range('a', 'Z');
     }
-
-    public function fn1($arg1, $arg2, $arg3, $arg4)
+	public function __debugInfo(){
+		 return [
+            //'id' => $this->id,
+			'a' => $this->a,
+						
+        ];
+	}
+	    public function fn1($arg1, $arg2, $arg3, $arg4)
     {
         //
     }
@@ -31,4 +38,5 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
 
 
 $objA = new A();
-var_Dump($objA);
+var_dump($objA);
+//echo $objA->a;
