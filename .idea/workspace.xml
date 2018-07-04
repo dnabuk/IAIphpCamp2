@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8261cf5d-5ff0-4b83-a001-306c3b75855b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error/error1.php" beforeDir="false" afterPath="$PROJECT_DIR$/error/error1.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,7 +13,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="error1.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/error/error1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,6 +53,12 @@
         <option value="$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/image.php" />
         <option value="$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/form.php" />
         <option value="$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie3/Wyswietlanie.php" />
+        <option value="$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/VirtualProduct.php" />
+        <option value="$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/Product.php" />
+        <option value="$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/ProductBase.php" />
+        <option value="$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/index.php" />
+        <option value="$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/notatki.txt" />
+        <option value="$PROJECT_DIR$/error/error1.php" />
       </list>
     </option>
   </component>
@@ -66,6 +83,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -82,13 +100,12 @@
               <item name="Camp2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Camp2" type="462c0819:PsiDirectoryNode" />
               <item name="pl.phpcamp" type="462c0819:PsiDirectoryNode" />
-              <item name="DzienDrugi_BazyDanych" type="462c0819:PsiDirectoryNode" />
+              <item name="DzienTrzeciDziwneUMnieDziala" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -98,16 +115,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych\Zadanie6Token" />
-      <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych\Zadanie5" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienTrzeciDziwneUMnieDziala\OOPPHP" />
       <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych" />
       <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych\zadanie2" />
       <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych\zadanie1" />
       <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\Dzien1Podstawy" />
-      <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych\Zadanie6Token" />
+      <recent name="C:\xampp\htdocs\Camp2\pl.phpcamp\DzienDrugi_BazyDanych\Zadanie5" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -157,6 +174,7 @@
       <workItem from="1530532517628" duration="10118000" />
       <workItem from="1530545730027" duration="4820000" />
       <workItem from="1530601176616" duration="21223000" />
+      <workItem from="1530687167590" duration="16675000" />
     </task>
     <servers />
   </component>
@@ -166,31 +184,32 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36161000" />
+    <option name="totallyTimeSpent" value="52836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13489583" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32943678" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13489583" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="12" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,9 +307,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie4.Bezpieczenstwo.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie4.Bezpieczenstwo.php" />
     <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/zadanie1/Connect.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -319,33 +336,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="34" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="41" selection-start-column="41" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/process.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#font#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/image.php" />
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/form.php" />
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie6Token/process.php" />
     <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienDrugi_BazyDanych/Zadanie5/Wstrzykiwanie.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -364,6 +357,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="29" column="145" selection-start-line="29" selection-start-column="145" selection-end-line="29" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/OOPPHP/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/OOPPHP/notatki.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/OOPPHP/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/OOPPHP/VirtualProduct.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pl.phpcamp/DzienTrzeciDziwneUMnieDziala/OOPPHP/ProductBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error/error1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

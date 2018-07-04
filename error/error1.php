@@ -6,7 +6,7 @@ function foo($a)
 {
 	echo 'foo';
 }
-fo();
+foo();
 var_Dump($value['a']['b']);
 
 foo();
