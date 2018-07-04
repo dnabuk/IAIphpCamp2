@@ -18,21 +18,24 @@ class Productbase
             throw new Exception('Nie ma takiej wartości');
         }
     }
-    public function __get($id){
-        if(property_exists($this,$id)){
-            echo 'Pobieram id'.$id;
-        }else{
+
+    public function __get($id)
+    {
+        if (property_exists($this, $id)) {
+            echo 'Pobieram id' . $id;
+        } else {
             throw new Exception('Nie ma takiej wartości');
         }
         return $this->id;
     }
+
     public function __call($name, $arguments)
     {
-       throw new Exception('Funkcja '.$name.' nie istnieje!');
+        throw new Exception('Funkcja ' . $name . ' nie istnieje!');
     }
+
     public function __isset($name)
     {
-        echo 'setowane';
         return false;
     }
 

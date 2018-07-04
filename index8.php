@@ -11,9 +11,9 @@ $product = new Products;
 $vp = new VirtualProducts;
 
 if(isset($vp->a)){
-    echo 'qqqqq';
+    echo 'Wartość jest zasetowna';
 }else{
-    echo 'aa';
+    echo 'Nie jest ustawiona wartość';
 }
 
 try{
