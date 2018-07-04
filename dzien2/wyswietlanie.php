@@ -96,7 +96,7 @@ $query = "select * from clients limit $liczba_wierszy offset $offset ";
 	
 	if($page == 1) $j = 1;
 	else $j = $offset + 1;
-	$nowa ="<table class=\"wyglad\"style=\"border: solid 1px;\"><tr ><td style=\"width:60px\">LP</td>
+	$nowa ="<form action=\"akcja.php\" method=\"POST\" ><table class=\"wyglad\"style=\"border: solid 1px;\"><tr ><td style=\"width:60px\">LP</td>
 			<td style=\"width:120px\">IMIE</td><td style=\"width:150px\">NAZWISKO</td>
 			<td style=\"width:90px\">PŁEĆ</td><td style=\"width:180px\">DATA URODZENIA</td>
 			<td style=\"width:100px\">LICZBA ZAMÓWIEŃ</td><td style=\"width:200px\">ULICA</td>
@@ -104,16 +104,20 @@ $query = "select * from clients limit $liczba_wierszy offset $offset ";
 			<td style=\"width:100px\">PAŃSTWO</td><td>NOTATKI</td><td style=\"width:200px;\">AKCJA</td></tr>";
 			
 	while($wynik = mysqli_fetch_assoc($zapytanie)){
+		if(isset($_GET['page']))$stronadopobrania = $_GET['page'];
+		else $stronadopobrania = 1;
 		$nowa .= "<tr><td>$j</td>";
 		$j++;
 		$nowa .= "<td>" . $wynik['name'] . " </td><td> ". $wynik['surname'];
 		$nowa .= " </td><td> " . $wynik['gender'] . " </td><td> "  . $wynik['date_of_birth'];
 		$nowa .= " </td><td> " . $wynik['orders_count'] . " </td><td> " .$wynik['street']. " </td><td> ". $wynik['city'];	
 		$nowa .= " </td><td> ". $wynik['postcode'] . " </td><td> " . $wynik['country'] . "</td><td>" . $wynik['notes'] ." </td>";
-		$nowa .= '<td><input type="hidden" name ="hidden" value="'.$wynik['id'].'"/> <button name=\"edyt\" id=\"'.$wynik['id'].'\"style=\"width:80px;\">EDYTUJ</button>';
+		$nowa .= '<td><input type="hidden" name ="hidden" value="'.$wynik['id'].'"/><input type="hidden" name ="hiddenNR" value="'.$stronadopobrania.'"/>
+					<input type="submit" id="button" name="edyt" value="EDYTUJ">';
+		//$nowa .= '<td><input type="hidden" name ="hidden" value="'.$wynik['id'].'"/><a href="?edyt='.$wynik['id'].'">EDYTUJ  </a><br/>';
 		$nowa .= '<a href="?delete='.$wynik['id'].'">USUŃ</a></td></tr> ';
 	}
-	$nowa .= "</table>";
+	$nowa .= "</table></form>";
 	echo $nowa;
 	
 	if(isset($_GET['delete']))
