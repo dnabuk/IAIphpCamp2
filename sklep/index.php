@@ -13,6 +13,13 @@ try {
 } catch (Exception $e) {
     echo "u w0t m8";
 }
+
+try{
+    echo $q->__get('price');
+}
+catch(Exception $e){
+    echo "fail";
+}
 $q->set_link('omegalul.jpg');
 var_dump($q);
 unset($q);

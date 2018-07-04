@@ -13,20 +13,7 @@ class Product extends Product_base{
     function __destruct(){
         echo "removed";
     }
-    public function set_params($params){
-        $this->params = $params;
-    }
-    public function set_img($img){
-        $this->img = $img;
-    }
-    
-    
-    public function get_params(){
-        return $this->params;
-    }
-    public function get_img(){
-        return $this->img;
-    }
+
 }
 
 

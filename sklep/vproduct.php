@@ -14,26 +14,7 @@ class Vproduct extends Product_base{
         $this->key = $key;
     }
    
-    public function set_link($link){
-        $this->link = $link;
-    }
-    public function set_size($size){
-        $this->size = $size;
-    }
-    public function set_key($key){
-        $this->key = $key;
-    }
-    
-   
-    public function get_link(){
-        return $this->link;
-    }
-    public function get_size(){
-        return $this->size;
-    }
-    public function get_key(){
-        return $this->key;
-    }
+
 }
 
 

@@ -21,36 +21,19 @@ class Product_base{
         if(property_exists($this, $name)){
             $this->$name = $value;
         }else{
-            throw new Exception("Has anyone really been far even as decided to go even want to do more like?");
+            throw new Exception("ERROR: Attempted setting unavailable/inaccessible variable");
         }
     }
-    public function set_price($price){
-        $this->price = $price;
+    function __get($name){
+        if(property_exists($this, $name)){
+            return $this->$name;
+        }
+        else{
+            throw new Exception("Propert doesn't exist or is inaccessible");
+        }
     }
-    public function set_id($id){
-        $this->product_id = $id;
-    }
-    public function set_desc($desc){
-        $this->desc = $desc;
-    }
-    public function set_currency($currency){
-        $this->currency = $currency;
-    }
-
     
     
     
-    public function get_price(){
-        return $this->price;
-    }
-    public function get_id(){
-        return $this->product_id;
-    }
-    public function get_desc(){
-        return $this->desc;
-    }
-    public function get_currency(){
-        return $this->currency;
-    }
 
 }
