@@ -86,7 +86,7 @@ else {
 	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.($page+1).' > &gt; </a>'.' ';
 	echo '<a href='. $_SERVER['PHP_SELF'] . '?page='.$strony.' > &gt;&gt; </a>'.' ';
 }
-
+echo "";
 echo "</div><br/><br/><br/>";
 
 $offset = ($page-1) * $liczba_wierszy;
