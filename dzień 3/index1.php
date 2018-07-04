@@ -1,4 +1,5 @@
 <?php
+require_once('ProductBase.php');
 require_once('Product.php');
 require_once('ProductVirtual.php');
 
@@ -11,9 +12,9 @@ var_dump($product);
 
 
 $product = new ProductVirtual();
-echo $product->__get('ProductVirtualName').'<br/>';
-$product->__set('ProductVirtualName', 'Ebook 123');
-echo $product->__get('ProductVirtualName').'<br/>';
+echo $product->__getV('ProductFilesize').'<br/>';
+$product->__setV('ProductFilesize', '9999');
+echo $product->__getV('ProductFilesize').'<br/>';
 
 var_dump($product);
 die('doszedlem do konca<br/>');
