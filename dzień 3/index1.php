@@ -16,7 +16,7 @@ try{
 	//echo $test;
 	
 	isset($product->ProductName);
-	
+	unset($product->ProductName);
 	
 } catch (Exception $e) {
     echo 'Caught exception: <b>',  $e->getMessage(), "</b><br/>";

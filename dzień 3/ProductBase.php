@@ -1,5 +1,7 @@
 <?php
 class ProductBase{
+	protected $data = array();
+	
 	protected $ProductId;
 	protected $ProductName;
 	protected $ProductCategory;
@@ -16,6 +18,7 @@ class ProductBase{
 		$this->ProductQuantity = 6;
     }	
 	public function __destruct(){
+		var_dump($this->data);
 		echo 'Obiekt klasy ProductBase został zniszczony.<br/>';
 	}
 	public function __set($property, $value){
@@ -41,6 +44,10 @@ class ProductBase{
     }	
     public function __isset($isset){
         echo "Is '$isset' set?\n";
-        return false;
+        return isset($this->data[$isset]);
+    }
+    public function __unset($unset){
+        echo "Unsetting '$unset'\n";
+        unset($this->data[$unset]);
     }	
 }
