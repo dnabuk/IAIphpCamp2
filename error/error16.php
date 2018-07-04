@@ -6,22 +6,22 @@ class Product {
     {
         //w tej metodzie wykonują się bardzo skomplikowane operacje
         if ($useCache) {
-            if (!isset(self::$cache)) {
-                self::$cache =_getName($id);
+            if (!isset($this->cache[$id])) {
+                $this->cache[$id]=$this->_getName($id);
             }
 
-            return self::$cache;
+            return $this->cache[$id];
         }
         return $this->_getName($id);
     }
     private function _getName($id)
     {
-        sleep(0.5);
+        sleep(1);
         return 'Nazwa towaru o id:' . $id;
     }
 }
 
 $objProduct = new Product();
-foreach (range(1,20) as $id) {
-    echo $objProduct->getName($id) . '<br>';
+foreach (range(1,5) as $id) {
+    echo $objProduct->getName($id, true) . '<br>';
 }

@@ -39,10 +39,14 @@ class C extends A {
 }
 class G {
 
-    public function test2()
+    public function test()
     {
         return date('H:m:s');
     }
 }
 $name = $_GET['name'];
-var_Dump((new $name())->test());
+if(class_exists($name)){
+var_Dump((new $name())->test());}
+else{
+    echo 'Funkcja nie istnieje';
+}
