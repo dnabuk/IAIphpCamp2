@@ -20,9 +20,10 @@ echo '</pre>';
 
 
 $product2 = new VirtualProduct();
+$product2->testowe();
 
 try{
-    $product2->a = 1;
+    $product2->variable = 1;
 }catch (Exception $exception){
     echo 'Caught exception: ', $exception->getMessage(), "\n";
 }
