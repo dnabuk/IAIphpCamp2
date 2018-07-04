@@ -36,15 +36,48 @@ class Product{
         echo '<br />' .'destruktor'. '<br/>';
     }
 
+    /**
+     * @param int $price
+     */
+    public function setPrice($price){
+        $this->price = $price;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name){
+        $this->name = $name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPrice(){
+        return $this->price;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(){
+        return $this->name;
+    }
+
+
+
+
+
 
 }
 
 $product1 = new Product();
 $product1-> a = 1;
-echo '<pre>';
-print_r($product1);
-echo '</pre>';
+$product1->setPrice(1000);
+$product1->setName("Złoty latajacy kubek");
 echo '<pre>';
 var_dump($product1);
 echo '</pre>';
+echo $product1->getName() . '<br>';
+echo $product1->getPrice() . '<br>';
 die('koncze');
