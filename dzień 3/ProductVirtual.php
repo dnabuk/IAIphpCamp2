@@ -5,6 +5,12 @@ class ProductVirtual extends ProductBase{
 	private $ProductFilesize;
 	
     public function __construct(){
+		$this->ProductId = 2;
+		$this->ProductName = 'Ebook fajny';
+		$this->ProductCategory = 'ebook';
+		$this->ProductDescription = 'Eook na wieczór.';
+		$this->ProductPrice = 12.99;
+		$this->ProductQuantity = 123;
 		$this->ProductDownloadLink = 'GwiezneWojny.pdf';
 		$this->ProductKey = '1234-1234-1234-1234';
 		$this->ProductFilesize = 1234567;	

@@ -6,6 +6,7 @@ class ProductBase{
 	protected $ProductDescription;
 	protected $ProductPrice;
 	protected $ProductQuantity;
+	protected $ProductCurrency;
 	
     public function __construct(){
 		$this->ProductId = 1;
