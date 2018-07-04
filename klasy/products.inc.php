@@ -3,8 +3,8 @@ require_once('productbase.inc.php');
 
 class Products extends Productbase
 {
-    public
-        $opis_produktu,
+    protected
+        $waga_produktu,
         $wymiar_produktu;
 
 
@@ -24,7 +24,7 @@ class Products extends Productbase
     {
         echo '<br>Wywołanie destruktora klasy produkt';
     }
-
+/*
     public function ustawProdukt($id, $nazwa, $zdjecie, $cena, $opis,$waga,$wymiar)
     {
         $this->id_produktu = $id;
@@ -49,5 +49,5 @@ class Products extends Productbase
         return $this->cena_produktu;
 //}
     }
-
+*/
 }
