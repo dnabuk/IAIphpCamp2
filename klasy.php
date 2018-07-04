@@ -32,7 +32,7 @@ catch(Exception $e){
 	var_dump($e);
 	
 }
-
+isset($obiekt->wagahfc);
 
 //var_dump($obiekt);
 die("<br /> <br />koncze skrypt ");

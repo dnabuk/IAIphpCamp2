@@ -45,10 +45,9 @@ class baseclass{
         echo "<br />Wywolanie metody $nazwa.";
     }
 	
-	function __isset($opis) {
-        $this->opis;
-		return $opis;
+	public function __isset($name) {
         echo 'isset';
+		return isset($this->$name);
     }
 
 }

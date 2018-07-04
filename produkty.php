@@ -1,7 +1,7 @@
 <?php
 class produkty extends baseclass{
-	private $waga;
-	private $wymiar;
+	public $waga;
+	public $wymiar;
 	
 	/*function __construct(){
 		return $this->id="1";
