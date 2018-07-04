@@ -30,12 +30,12 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
         //
     }
 }
-if ($_GET['number']%2 == 1) {
-    Utils::fooConstInit();
+if (isset($_GET['number'])){
+if ($_GET['number']%2 == 1) { //nie sprawdza czy w ogóle _GET['number'] jest ustawiony
+    Utils::fooConstInit(); // tu wywołuje błąd w pliku utils.php
     echo 'nieparzysta';
+
 } else {
     echo 'parzysta';
 }
-
-
-
+}
