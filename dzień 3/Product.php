@@ -20,10 +20,15 @@ class Product{
 	public function __destruct(){
 		echo 'Obiekt klasy Product został zniszczony.<br/>';
 	}
-	public function setProductName($name){
-		$this->ProductName = $name;
+	public function __set($property, $value){
+		if (property_exists($this, $property)){
+			$this->$property = $value;
+		}
+		return $this;
 	}	
-	public function getProductName(){
-		return $this->ProductName;
+	public function __get($property){
+		if (property_exists($this, $property)){
+			return $this->$property;
+		}
 	}		
 }

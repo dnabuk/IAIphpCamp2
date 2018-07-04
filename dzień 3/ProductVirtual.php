@@ -19,16 +19,20 @@ class ProductVirtual{
 		$this->ProductVirtualQuantity = 10;
 		$this->ProductVirtualDownloadLink = 'GwiezneWojny.pdf';
 		$this->ProductVirtualKey = '1234-1234-1234-1234';
-		$this->ProductVirtualFilesize = 1234567;
-		
+		$this->ProductVirtualFilesize = 1234567;	
     }	
 	public function __destruct(){
 		echo 'Obiekt klasy Product został zniszczony.<br/>';
 	}
-	public function setProductVirtualName($name){
-		$this->ProductVirtualName = $name;
+	public function __set($property, $value){
+		if (property_exists($this, $property)){
+			$this->$property = $value;
+		}
+		return $this;
 	}	
-	public function getProductVirtualName(){
-		return $this->ProductVirtualName;
-	}		
+	public function __get($property){
+		if (property_exists($this, $property)){
+			return $this->$property;
+		}
+	}
 }
