@@ -38,6 +38,10 @@ class Productbase
     {
         return false;
     }
+    public function __unset($name)
+    {
+       echo '<br>Wartość unsetowana';
+    }
 
 
 }

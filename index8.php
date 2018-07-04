@@ -16,6 +16,9 @@ if(isset($vp->a)){
     echo 'Nie jest ustawiona wartość';
 }
 
+$vp->a = null;
+unset($vp->a);
+
 try{
     $vp ->test();
 }catch(Exception $e){
