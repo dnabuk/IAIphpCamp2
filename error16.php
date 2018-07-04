@@ -1,0 +1,34 @@
+<?php
+error_reporting(E_ALL);
+class Product {
+    private $cache;
+    public function getName($id, $useCache = false)
+    {
+        echo "pobranie nazwy dla id" . $id . "<br/>";
+        //w tej metodzie wykonują się bardzo skomplikowane operacje
+        if ($useCache) {
+            if (!isset($this->$cache[$id])) {
+                $this->$cache[$id] = $this->_getName($id);
+            }
+
+            return $this->$cache[$id];
+        }
+        return $this->_getName($id);
+    }
+    private function _getName($id)
+    {
+        sleep(1);
+        return 'Nazwa towaru o id:' . $id;
+    }
+}
+
+$objProduct = new Product(); //było 1 20 pętli
+foreach (range(1,5) as $id) {
+    echo $objProduct->getName($id) . '<br>';
+}
+foreach (range(1,5) as $id) {
+    echo $objProduct->getName($id) . '<br>';
+}
+foreach (range(1,5) as $id) {
+    echo $objProduct->getName($id) . '<br>';
+}
