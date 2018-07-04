@@ -10,19 +10,19 @@ require_once('klasy/virtualproducts.inc.php');
 $product = new Products;
 $vp = new VirtualProducts;
 
-if(isset($vp->a)){
+if (isset($vp->a)) {
     echo 'Wartość jest zasetowna';
-}else{
+} else {
     echo 'Nie jest ustawiona wartość';
 }
 
 $vp->a = null; //zakomentowanie tej funkcji pokaże dwa dodatkowe exceptiony
 unset($vp->a);
 
-try{
-    $vp ->test();
-}catch(Exception $e){
-    echo '<b>'.$e.'</b>';
+try {
+    $vp->test();
+} catch (Exception $e) {
+    echo '<b>' . $e . '</b>';
 }
 
 ?><br><?php
@@ -30,12 +30,12 @@ try {
     $vp->a = 1;
 
 } catch (Exception $e) {
-    echo '<b>'.$e.'</b>';
+    echo '<b>' . $e . '</b>';
 }
 ?><br><?php
-try{
+try {
     echo $vp->b;
-}catch(Exception $e){
-    echo '<b>'.$e.'</b>';
+} catch (Exception $e) {
+    echo '<b>' . $e . '</b>';
 }
 
