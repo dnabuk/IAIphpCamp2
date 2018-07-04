@@ -20,15 +20,12 @@ echo '</pre>';
 
 
 $product2 = new VirtualProduct();
-$product2->setId(2);
-$product2->setName("Virtual Kubek");
-$product2->setColor("Złoty");
-$product2->setPrice(45);
-$product2->setFileSize(3);
-$product2->setDescription("super bomba kubek");
-$product2->setKey(123);
-$product2->setAttach("plk.pdf");
-$product2->setCurrency("$");
+
+try{
+    $product2->a = 1;
+}catch (Exception $exception){
+    echo 'Caught exception: ', $exception->getMessage(), "\n";
+}
 echo '<pre>';
 var_dump($product2);
 echo '</pre>';

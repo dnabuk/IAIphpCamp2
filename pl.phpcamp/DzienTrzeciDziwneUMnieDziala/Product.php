@@ -10,23 +10,14 @@ class Product{
     public $weight;
     public $description;
 
-    /**
-     * Product constructor.
-     * @param $id
-     * @param $name
-     * @param $color
-     * @param $price
-     * @param $width
-     * @param $height
-     * @param $weight
-     * @param $description
-     */
+
     public function __construct(){
     }
 
     public function __destruct(){
         echo '<br />' .'destruktor'. '<br/>';
     }
+
 
     /**
      * @return mixed

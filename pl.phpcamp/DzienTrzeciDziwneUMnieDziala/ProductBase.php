@@ -7,6 +7,8 @@ class ProductBase{
     protected $description;
     protected $currency;
 
+
+
     /**
      * @return mixed
      */
@@ -15,13 +17,6 @@ class ProductBase{
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
     /**
      * @return mixed
@@ -31,13 +26,6 @@ class ProductBase{
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
 
     /**
      * @return mixed
@@ -48,14 +36,6 @@ class ProductBase{
     }
 
     /**
-     * @param mixed $color
-     */
-    public function setColor($color)
-    {
-        $this->color = $color;
-    }
-
-    /**
      * @return mixed
      */
     public function getPrice()
@@ -63,13 +43,6 @@ class ProductBase{
         return $this->price;
     }
 
-    /**
-     * @param mixed $price
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-    }
 
     /**
      * @return mixed
@@ -79,13 +52,6 @@ class ProductBase{
         return $this->description;
     }
 
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
 
     /**
      * @return mixed
@@ -95,15 +61,26 @@ class ProductBase{
         return $this->currency;
     }
 
-    /**
-     * @param mixed $currency
-     */
-    public function setCurrency($currency)
-    {
-        $this->currency = $currency;
+
+    public function __set($name, $value){
+        echo "Ustawiam $name o wartości $value\n";
+        if (property_exists($this, $name)){
+            $this->name=$value;
+        }else{
+            throw new Exception('Division by zero.');
+        }
     }
 
+    public function __get($name){
+        /*echo "Ustawiłem wartość $name";
+        if (property_exists($this, $name)){
+            return $this->name;
+        }else{
+            throw new Exception('Błąd z __get');
+        }*/
+        return $this->name;
 
+    }
 
 
 }
