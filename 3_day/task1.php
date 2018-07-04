@@ -15,11 +15,12 @@ echo $prod->Getcena();
 $vprod->Setcena(489);
 $vprod->Setklucz('CXSIF-JSGFU-HSUUD-NFUKS');
 $vprod->Setopis('Opis');
-$prod->Setname('PHP Storm');
+$vprod->Setname('PHP Storm');
 
 echo $vprod->Getcena();
 
 var_dump($prod);
 var_dump($vprod);
+//echo $vprod->cena;
 echo "bangla";
 die();

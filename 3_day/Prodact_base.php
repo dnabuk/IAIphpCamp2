@@ -9,12 +9,13 @@ class Prodact_base
 	protected $zdjęcie;
 	protected $opis;
 	protected $kategoria;
+	protected $waluta;
 	function __construct()
 	{
-		$this->cena=200;
-		$this->id=1;
-		$this->nazwa='Kubek';
-		$this->waga=10;
+		//$this->cena=200;
+		//$this->id=1;
+		//$this->nazwa='Kubek';
+		//$this->waga=10;
 	
 
 		echo "construktor";
@@ -23,21 +24,66 @@ class Prodact_base
 	{
 		$this->cena=$cena;
 	}
-	public function Setwaga($waga)
+	public function Setwaluta($waluta)
 	{
-		$this->waga=$waga;
+		$this->waluta=$waluta;
 	}
+	public function Setproducent($producent)
+	{
+		$this->producent=$producent;
+	}
+	public function Setzdjęcie($zdjęcie)
+	{
+		$this->zdjęcie=$zdjęcie;
+	}
+	public function Setkategoria($kategoria)
+	{
+		$this->kategoria=$kategoria;
+	}
+	
 	public function Setopis($opis)
 	{
 		$this->opis=$opis;
 	}
 	public function Setname($name)
 	{
-		$this->name=$name;
+		$this->nazwa=$name;
+	}
+	public function Setid($id)
+	{
+		$this->id=$id;
+	}
+	public function Getid()
+	{
+		return $this->id;
 	}
 	public function Getcena()
 	{
 		return $this->cena;
+	}
+	public function Getwaluta()
+	{
+		return $this->waluta;
+	}
+	public function Getnazwa()
+	{
+		return $this->nazwa;
+	}
+	public function Getopis()
+	{
+		return $this->opis;
+	}
+	public function Getzdjęcie()
+	{
+		return $this->zdjęcie;
+	}
+	public function Getkategoria()
+	{
+		return $this->kategoria;
+	}
+	public function Getproducent()
+	{
+		return $this->producent;
 	}
 	function __destruct()
 	{
