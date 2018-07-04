@@ -27,6 +27,10 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
     {
         //
     }
+	
+	public function __debugInfo() {
+		return ['id' => $this->id];
+	}
 }
 
 
