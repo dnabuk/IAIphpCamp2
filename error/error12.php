@@ -7,7 +7,8 @@ class A {
     public function printInfo($name, $validateName)
     {
         if ($validateName == true) {
-            if ( strpos('Mateusz', $name)) {
+			//strpos wypisuje pozycje na ktorej znajduje sie dany szablon
+            if ( $name === "Mateusz") {
                 //sprawdzamy czy imie mateusz znajduje sie w przekazanej nazwie
                 echo 'Witaj Mateusz!';
             } else {
@@ -18,8 +19,5 @@ class A {
         }
     }
 }
-
-
-
 
 (new A)->printInfo($_GET['name'], $_GET['validateName']);

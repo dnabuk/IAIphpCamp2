@@ -9,7 +9,7 @@ class A {
             var_Dump('zle dane');
             die;
         }
-        echo 'czesc ' . $name . ', twój wiek to: ' . $age;
+			echo 'czesc ' . $name . ', twój wiek to: ' . $age;
     }
 }
 
