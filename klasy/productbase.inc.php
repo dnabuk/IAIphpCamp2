@@ -19,7 +19,22 @@ class Productbase
         }
     }
     public function __get($id){
-        echo '<br>'.$id;
+        if(property_exists($this,$id)){
+            echo 'Pobieram id'.$id;
+        }else{
+            throw new Exception('Nie ma takiej wartości');
+        }
+        return $this->id;
     }
+    public function __call($name, $arguments)
+    {
+       throw new Exception('Funkcja '.$name.' nie istnieje!');
+    }
+    public function __isset($name)
+    {
+        echo 'setowane';
+        return false;
+    }
+
 
 }
