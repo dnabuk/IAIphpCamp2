@@ -14,9 +14,9 @@ function getBigTable()
 
 $all = [];
 
-foreach (range(1,100) as $stockId) {
+foreach ($all=range(1,100) as $stockId) {
     require 'bigtable.php';
     $all[$stockId] = getBigTable();
 }
 
-var_Dump('tablica zawiera ' . count() . 'Elementow');
+var_Dump('tablica zawiera ' . count($all) . 'Elementow');
