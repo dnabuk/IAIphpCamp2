@@ -2,26 +2,19 @@
 require_once('ProductBase.php');
 require_once('ProductVirtual.php');
 
-$product = new ProductBase();
-echo $product->__get('ProductName').'<br/>';
-$product->__set('ProductName', 'Masło kakaowe');
-echo $product->__get('ProductName').'<br/>';
-
-var_dump($product);
-
-
 $product = new ProductVirtual();
-echo $product->__get('ProductFilesize').'<br/>';
-$product->__set('ProductFilesize', '9999');
-echo $product->__get('ProductFilesize').'<br/>';
 
-echo $product->__get('ProductName').'<br/>';
-$product->__set('ProductName', 'Masło kakaowe');
-echo $product->__get('ProductName').'<br/>';
-
-echo $product->__get('ProductDownloadLink').'<br/>';
-$product->__set('ProductDownloadLink', '99.99');
-echo $product->__get('ProductDownloadLink').'<br/>';
-
-var_dump($product);
+try{
+	
+	$product->ProductName = '123';
+	echo $product->ProductName;
+	
+	$product->ProductNamee = '123';
+	echo $product->ProductNameeee;	
+		
+	
+} catch (Exception $e) {
+    echo 'Caught exception: <b>',  $e->getMessage(), "</b><br/>";
+}
+//var_dump($product);
 die('doszedlem do konca<br/>');

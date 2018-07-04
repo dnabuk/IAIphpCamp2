@@ -23,7 +23,7 @@ class ProductBase{
 			$this->$property = $value;
 		}
 		else{
-			throw new Exception('Nie istnieje taka zmienna.');
+			throw new Exception('Nie istnieje taki obiekt.');
 		}
 		return $this;
 	}	
@@ -32,7 +32,7 @@ class ProductBase{
 			return $this->$property;
 		}
 		else{
-			throw new Exception('Nie istnieje taka zmienna.');
+			throw new Exception('Nie istnieje taki obiekt.');
 		}
 	}		
 }
