@@ -16,7 +16,7 @@ if(isset($vp->a)){
     echo 'Nie jest ustawiona wartość';
 }
 
-$vp->a = null;
+$vp->a = null; //zakomentowanie tej funkcji pokaże dwa dodatkowe exceptiony
 unset($vp->a);
 
 try{
