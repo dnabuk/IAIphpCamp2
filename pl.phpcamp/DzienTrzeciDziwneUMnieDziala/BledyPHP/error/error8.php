@@ -8,8 +8,9 @@ class A {
         foreach ($basket as $product) {
             $name .= $product['name'];
             $name .= ' , wartość pozycji ' . $product['quantity'] * $product['price'] . '<br>';
-            echo $name;
+
         }
+        echo $name;
     }
 }
 
@@ -22,6 +23,7 @@ $basket = [
     ['productId' => 19879, 'quantity' => 41, 'name' => 'Product 4',  'price' => 0.19],
 ];
 
+echo '<pre>';
 var_Dump($basket);
+echo '</pre>';
 $objA->printName($basket);
-
