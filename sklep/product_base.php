@@ -1,6 +1,6 @@
 <?php
 class Product_base{
-    protected $product_id;
+    public $product_id;
     protected $price;
     protected $desc;
     protected $currency;
@@ -15,6 +15,14 @@ class Product_base{
     }
     function __destruct(){
         echo "removed";
+    }
+    
+    function __set($name, $value){
+        if(property_exists($this, $name)){
+            $this->$name = $value;
+        }else{
+            throw new Exception("Has anyone really been far even as decided to go even want to do more like?");
+        }
     }
     public function set_price($price){
         $this->price = $price;
