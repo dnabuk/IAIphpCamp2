@@ -7,7 +7,7 @@ class Product {
         //w tej metodzie wykonują się bardzo skomplikowane operacje
         if ($useCache) {
             if (!isset(self::$cache)) {
-                self::$cache =_getName($id);
+                self::$cache =$this->_getName($id);
             }
 
             return self::$cache;
@@ -23,5 +23,5 @@ class Product {
 
 $objProduct = new Product();
 foreach (range(1,20) as $id) {
-    echo $objProduct->getName($id) . '<br>';
+    echo $objProduct->getName($id, true) . '<br>';
 }

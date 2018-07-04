@@ -1,10 +1,10 @@
 <?php
-error_reporting(0);
+error_reporting(E_ALL);
 
 
 class A {
 
-    public function printInfo($name, $age, $validateName)
+    public function printInfo($name, $validateName,$age)
     {
         if ($validateName == true && strlen($name) == 0) {
             var_Dump('zle dane');
@@ -15,8 +15,8 @@ class A {
 }
 
 
-
-if ($_GET['validateName'] = 1) {
+$validateName = false;
+if ($_GET['validateName'] == 1) {
     //sprawdzamy czy przeslany jest parametr odpowiadajacy za walidacje nazwy
     $validateName = true;
 }

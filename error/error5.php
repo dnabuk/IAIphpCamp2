@@ -31,7 +31,8 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
     }
 }
 if ($_GET['number']%2 == 1) {
-    Utils::fooConstInit();
+    if(!defined('FOO')){
+        Utils::fooConstInit();}
     echo 'nieparzysta';
 } else {
     echo 'parzysta';

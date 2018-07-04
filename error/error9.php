@@ -8,6 +8,7 @@ class A {
         foreach ($basket as $product) {
             $amount += $product['quantity'] * $product['price'];
         }
+        return $amount;
     }
 }
 
@@ -38,12 +39,16 @@ $basket = [
     ['productId' => 19879, 'quantity' => 100, 'name' => 'Product 4',  'price' => 272.96],
 ];
 $paymentAmount = 27308.2;
+$paymentAmount = ((int)($paymentAmount*10))/10;
+$amount = ((int)($objA->getAmount($basket)*10))/10;
+echo $amount;
 var_dump('Koszyk', $basket);
 var_dump('******************************************************');
 var_dump('wysokość wpłaty: '.  $paymentAmount);
 var_dump('******************************************************');
 
-if ($paymentAmount == $objA->getAmount($basket)) {
+
+if ($paymentAmount == $amount) {
     echo 'wpłata pokrywa całą wartość koszyka';
 } else {
     echo 'Wartość wplaty jest inna niż wartość koszyka';

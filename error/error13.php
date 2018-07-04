@@ -1,12 +1,12 @@
-<?php
-error_reporting(0);
+<?php       
+error_reporting(E_ALL);
 
 
 class A {
 
     public function getTime($timestamp)
     {
-        return date('H:m:s',$timestamp);
+        return date('h:i:s',$timestamp);
     }
 }
 
