@@ -11,7 +11,12 @@ require_once('klasy/virtualproducts.inc.php');
 $product = new Products;
 $vp = new VirtualProducts;
 
-$vp->a=1;
+
+try {
+    $vp->a = 1;
+} catch (Exception $e) {
+    echo '<b>'.$e.'</b>';
+}
 /*
 $vp->ustawProdukt(2,'Ebook PHP','foto.jpg','100','Fajny Ebook','wp.pl/zalacznik/','key10','100MB');
 var_dump($vp);
