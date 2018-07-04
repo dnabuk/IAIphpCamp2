@@ -6,11 +6,11 @@ class Product {
     {
         //w tej metodzie wykonują się bardzo skomplikowane operacje
         if ($useCache) {
-            if (!isset(self::$cache)) {
-                self::$cache =_getName($id);
+            if (!isset(self::$cache[$id])) {
+                self::$cache[$id] =_getName($id);
             }
 
-            return self::$cache;
+            return self::$cache[$id];
         }
         return $this->_getName($id);
     }
