@@ -6,7 +6,7 @@ class A {
     {
         $sum = 0;
         foreach ($basket as $product) {
-            $sum = $product['quantity'];
+            $sum += $product['quantity']; //brakujący plus
         }
         echo 'Łączna liczba sztuk: '.  $sum;
     }
