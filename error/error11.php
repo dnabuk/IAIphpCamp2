@@ -21,4 +21,5 @@ if ($_GET['validateName'] = 1) {
     $validateName = true;
 }
 $age = (int)$_GET['age'];
-(new A)->printInfo($_GET['name'], $validateName, $age);
+
+(new A)->printInfo($_GET['name'], $age,$validateName);
