@@ -52,7 +52,7 @@ if (isset($_GET['name'])){
 		case 'C':
 		case 'D':
 		case 'E':var_Dump((new $name())->test()); break;
-		case 'A':var_Dump((new $name())->test2());
+		case 'A':var_Dump((new $name())->test2()); break;
 		default: die;
 	}
 }
