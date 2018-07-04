@@ -39,10 +39,10 @@ class C extends A {
 }
 class G {
 
-    public function test2()
+    public function test()
     {
         return date('H:m:s');
     }
 }
 $name = $_GET['name'];
-var_Dump((new $name())->test());
+var_Dump(($d = new $name())->test());
