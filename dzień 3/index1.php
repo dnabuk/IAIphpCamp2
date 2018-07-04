@@ -1,30 +1,18 @@
 <?php
-class Product
-{
-	private $ProductId;
-	private $ProductName;
-	private $ProductCategory;
-	private $ProductDescription;
-	private $ProductPrice;
-	private $ProductQuantity;
-	
-    public function __construct()
-	{
-		$this->ProductId = 1;
-		$this->ProductName = 'Masło orzechowe';
-		$this->ProductCategory = 'nabiał';
-		$this->ProductDescription = 'Super pyszne masło na kanapkę';
-		$this->ProductPrice = 5.23;
-		$this->ProductQuantity = 6;
-		
-        echo 'Obiekt klasy Product został stworzony.<br/>';
-    }	
-	public function __destruct()
-	{
-		echo 'Obiekt klasy Product został zniszczony.<br/>';
-	}
-}
-$product = new Product();
+require_once('Product.php');
+require_once('ProductVirtual.php');
 
-die('<br/>doszedlem do konca<br/>');
-?>
+$product = new Product();
+echo $product->getProductName();
+$product->setProductName('Masło kakaowe');
+echo $product->getProductName();
+var_dump($product);
+
+
+$productvirtual = new ProductVirtual();
+echo $productvirtual->getProductVirtualName();
+$productvirtual->setProductVirtualName('Ebook');
+echo $productvirtual->getProductVirtualName();
+
+var_dump($product);
+die('doszedlem do konca<br/>');
