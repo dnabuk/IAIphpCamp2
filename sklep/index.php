@@ -8,19 +8,8 @@ var_dump($p);
 $q = new Vproduct(1, 2, 3, 4, 5, 6, 7);
 
 
-try {
-    $q->__set('product_id', 44);
-} catch (Exception $e) {
-    echo "u w0t m8";
-}
 
-try{
-    echo $q->__get('price');
-}
-catch(Exception $e){
-    echo "fail";
-}
-$q->set_link('omegalul.jpg');
+$q->get('product_id');
 var_dump($q);
 unset($q);
 unset($p);
