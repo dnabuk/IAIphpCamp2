@@ -48,6 +48,6 @@ $name = $_GET['name'];
 
 if(class_exists($name))
 {
-	if($name === 'g') var_Dump((new $name())->test2());
-	else var_Dump((new $name())->test());
+	if(method_exists($name, 'test')) var_Dump((new $name())->test());
+	else var_Dump((new $name())->test2());
 }
