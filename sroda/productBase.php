@@ -18,33 +18,42 @@ class ProductBase{
 		//echo 'destruktor';
 	}
 	
+	public function __isset($name){
+		
+		if (isset($this->$name)){ 
+			echo 'Zmienna '.$name.' ma jakąś wartość';
+			//return true;
+		} else {
+			echo 'Nie wpisano wartości zmiennej '.$name;
+			return false;
+		}
+	}
+	
+	public function __unset($name){
+		echo 'Zwalniam pole '.$name;
+		$this->$name=null;
+		unset($this->$name);
+	}
+	
+	public function __call($name, $args){
+		echo 'Wywołałeś nieistniejącą metodę "'.$name.'"';
+	}
+	
 	public function __set($name, $val){
 		//echo 'Ustawiam '.$name.' o wartości '.$val;
 		if (property_exists($this, $name)){
 			$this->$name = $val;
 		} else {
-			throw new Exception ('<p>Robię coś głupiego</p>');
+			throw new Exception ('<p>Robię coś głupiego - zapis do nieistniejącego pola</p>');
 		}
 	}
 	
-	
-	public function getPrice(){
-		return $this->price.' '.$this->currency;
+	public function __get($name){
+		//echo 'Ustawiam '.$name.' o wartości '.$val;
+		if (property_exists($this, $name)){
+			return $this->$name;
+		} else {
+			throw new Exception ('<p>Robię coś głupiego - odczyt z nieistniejącego pola</p>');
+		}
 	}
-	public function getName(){
-		return $this->name;
-	}
-	public function getDesc(){
-		return $this->desc;
-	}
-	public function getPhoto(){
-		return $this->photo;
-	}
-	public function getReviews(){
-		return $this->reviews;
-	}
-	public function getCurrency(){
-		return $this->currency;
-	}
-	
 }

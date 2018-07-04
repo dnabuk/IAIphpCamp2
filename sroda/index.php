@@ -13,5 +13,20 @@ try {
 } catch (exception $e){
 	echo $e->getMessage();
 }
-echo 'Nazwa: '.$towar->getName().' cena: '.$towar->getPrice();
-echo '<br />';
+
+try {
+	echo 'Nazwa: '.$towar->name.' cena: '.$towar->price.' '.$towar->currency;
+	echo $towar->sdfdgdfgdfgd;
+} catch (exception $e){
+	echo $e->getMessage();
+}
+$towar->currency='zł';
+$towar->jakasFunkcja('abc');
+echo '<br>';
+echo $towar->currency.'<br>';
+echo isset($towar->currency);
+
+echo '<br>';
+unset($towar->currency);
+echo '<br>';
+echo isset($towar->currency);
