@@ -19,50 +19,65 @@
 		<table>
 				<tr>
 					<td><label> IMIE </label><br/><br/></td>
-					<td><input style="width:300px" name="imie" required="required" value="<?php $wynik['name'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="imie" required="required" value="<?php echo $wynik['name']; ?>"><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> NAZWISKO </label><br/><br/></td>
-					<td><input style="width:300px" name="nazwisko" required="required" value="<?php $wynik['surname'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="nazwisko" required="required" value="<?php echo $wynik['surname']; ?>"><br/><br/></td>
 					
 				</tr>
 				<tr>
 					<td><label> PŁEĆ </label><br/><br/></td>
 					<td>
-						<select name="plec" value="<?php $wynik['gender'] ?>">
-							<option>FEMALE</option>
+					<?php 
+						if($wynik['gender'] == 'female')
+							echo "<select name=\"plec\">
+							<option selected=\"selected\">FEMALE</option>
 							<option>MALE</option>
 							<option>UNKNOWN</option>
-						</select><br/><br/>
+							</select><br/><br/>";
+						else if($wynik['gender'] == 'male')
+							echo "<select name=\"plec\">
+							<option>FEMALE</option>
+							<option selected=\"selected\">MALE</option>
+							<option>UNKNOWN</option>
+							</select><br/><br/>";
+						else
+						echo "<select name=\"plec\">
+							<option>FEMALE</option>
+							<option>MALE</option>
+							<option selected=\"selected\">UNKNOWN</option>
+							</select><br/><br/>";
+					?>
 					</td>
 				</tr>
 				<tr>
 					<td><label> DATA URODZENIA: </label><br/><br/></td>
-					<td><input style="width:300px" name="data" required="required" value="<?php $wynik['date_of_birth'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="data" required="required" value="<?php echo $wynik['date_of_birth']; ?>"><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> LICZBA ZAMÓWIEŃ </label><br/><br/></td>
-					<td><input style="width:300px" name="liczbazam" value="<?php $wynik['orders_count'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="liczbazam" value="<?php echo $wynik['orders_count']; ?>"><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> ULICA </label><br/><br/></td>
-					<td><textarea rows="2" cols="40" name="ulica" required="required" value="<?php $wynik['street'] ?>"></textarea><br/><br/></td>
+					<td><textarea rows="2" cols="40" name="ulica" required="required" value="<?php echo $wynik['street']; ?>"></textarea><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> MIASTO </label><br/><br/></td>
-					<td><input style="width:300px" name="miasto" required="required" value="<?php $wynik['city'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="miasto" required="required" value="<?php echo $wynik['city']; ?>"><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> KOD POCZTOWY </label><br/><br/></td>
-					<td><input style="width:300px" name="kod" required="required" value="<?php $wynik['postcode'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="kod" required="required" value="<?php echo $wynik['postcode']; ?>"><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> PAŃSTWO</label><br/><br/></td>
-					<td><input style="width:300px" name="panstwo" value="<?php $wynik['country'] ?>"><br/><br/></td>
+					<td><input style="width:300px" name="panstwo" value="<?php echo $wynik['country']; ?>"><br/><br/></td>
 				</tr>
 				<tr>
 					<td><label> NOTATKI </label><br/><br/></td>
-					<td><textarea rows="2" cols="40" name="notki" value="<?php $wynik['notes'] ?>"></textarea><br/><br/></td>
+					<td><textarea rows="2" cols="40" name="notki" value="<?php echo $wynik['notes']; ?>"></textarea><br/><br/></td>
 				</tr>
 				<tr>
 					<td><td><input type="submit" id="button" name="edycjaWyslij" value="OK"></td></td>
