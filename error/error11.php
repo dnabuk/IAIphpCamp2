@@ -5,7 +5,7 @@ error_reporting(0);
 
 class A {
 
-    public function printInfo($name, $age, $validateName)
+    public function printInfo($name, $validateName, $age)
     {
         if ($validateName == true && strlen($name) == 0) {
             var_Dump('zle dane');
@@ -14,8 +14,6 @@ class A {
         echo 'czesc ' . $name . ', twój wiek to: ' . $age;
     }
 }
-
-
 
 if ((isset($_GET['validateName'])) && ($_GET['validateName'] == 1)) {
     //sprawdzamy czy przeslany jest parametr odpowiadajacy za walidacje nazwy
