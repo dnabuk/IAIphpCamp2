@@ -29,13 +29,13 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
     {
         $ret = '';
         if ($get['name']) {
-            $tmp = 'czesc ' . $get['name'] . '!';
+            $tmp = 'czesc ' . $get['name'] . '! ';
         }
 
         if ($get['age'] > 35) {
             return $tmp . ' Możesz startować na prezydenta ';
         } else {
-            $ret = 'jestes za mlody(a) na prezydenta';
+            return $ret = $tmp.'jestes za mlody(a) na prezydenta';
         }
     }
 }
