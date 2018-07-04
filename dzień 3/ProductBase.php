@@ -35,12 +35,12 @@ class ProductBase{
 			throw new Exception('Nie istnieje taki obiekt.');
 		}
 	}
-    public function __call($name, $args){
-        if(isset($this->$name)) {
-            if(isset($args[0]))
-                return $this->$name = $args[0];
-            return $this->$name;
-        }
+    public function __call($name, $arguments){
+        echo "Calling object method '$name' "
+             . implode(', ', $arguments). "\n";
+    }	
+    public function __isset($isset){
+        echo "Is '$isset' set?\n";
         return false;
     }	
 }

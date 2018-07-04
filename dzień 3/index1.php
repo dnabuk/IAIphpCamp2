@@ -6,14 +6,17 @@ $product = new ProductVirtual();
 
 try{
 	
-	$product->ProductName = '123';
-	echo $product->ProductName.'<br/>';
+	//$product->ProductName = '123';
+	//echo $product->ProductName.'<br/>';
 	
 	//$product->ProductNamee = '123';
 	//echo $product->ProductNameeee;	
 	
-	$test = $product->ProductId('NewProductId');
-	echo $test;
+	//$test = $product->ProductId('NewProductId');
+	//echo $test;
+	
+	isset($product->ProductName);
+	
 	
 } catch (Exception $e) {
     echo 'Caught exception: <b>',  $e->getMessage(), "</b><br/>";
