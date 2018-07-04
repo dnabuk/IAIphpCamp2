@@ -12,13 +12,13 @@ class ProductVirtual extends ProductBase{
 	public function __destruct(){
 		echo 'Obiekt klasy Product został zniszczony.<br/>';
 	}
-	public function __setV($property, $value){
+	public function __set($property, $value){
 		if (property_exists($this, $property)){
 			$this->$property = $value;
 		}
 		return $this;
 	}	
-	public function __getV($property){
+	public function __get($property){
 		if (property_exists($this, $property)){
 			return $this->$property;
 		}

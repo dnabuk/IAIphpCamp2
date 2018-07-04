@@ -12,9 +12,9 @@ var_dump($product);
 
 
 $product = new ProductVirtual();
-echo $product->__getV('ProductFilesize').'<br/>';
-$product->__setV('ProductFilesize', '9999');
-echo $product->__getV('ProductFilesize').'<br/>';
+echo $product->__get('ProductFilesize').'<br/>';
+$product->__set('ProductFilesize', '9999');
+echo $product->__get('ProductFilesize').'<br/>';
 
 var_dump($product);
 die('doszedlem do konca<br/>');

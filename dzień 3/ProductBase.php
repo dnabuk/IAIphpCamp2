@@ -1,11 +1,11 @@
 <?php
 class ProductBase{
-	private $ProductId;
-	private $ProductName;
-	private $ProductCategory;
-	private $ProductDescription;
-	private $ProductPrice;
-	private $ProductQuantity;
+	protected $ProductId;
+	protected $ProductName;
+	protected $ProductCategory;
+	protected $ProductDescription;
+	protected $ProductPrice;
+	protected $ProductQuantity;
 	
     public function __construct(){
 		$this->ProductId = 1;
