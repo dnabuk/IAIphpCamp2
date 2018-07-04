@@ -1,5 +1,5 @@
 <?php
-require_once('productbase.php');
+require_once('productbase.inc.php');
 
 class VirtualProducts extends Productbase {
 
