@@ -41,6 +41,31 @@ class Produkt {
 		$this->jakosc = $jakosc;            
 	}
 
+	////
+	public function getNazwa() {
+		return $this->nazwa;            
+	}
+
+	public function getCena() {
+		return $this->cena;            
+	}
+
+	public function getzdjecie() {
+		return $this->zdjecie;            
+	}
+
+	public function getkategoria() {
+		return $this->kategoria;            
+	}
+
+	public function getkolor() {
+		return $this->kolor;            
+	}
+
+	public function getjakosc() {
+		return $this->jakosc;            
+	}
+
 	public function __destruct(){
 		echo 'koniec';
 	}
@@ -49,5 +74,6 @@ class Produkt {
 
 $produkt = new Produkt();
 $produkt->setNazwa("dasdas");
+echo $produkt->getNazwa();
 var_dump($produkt);
 die('das');
