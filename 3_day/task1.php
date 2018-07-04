@@ -12,7 +12,8 @@ $vprod->a=1;
 	var_dump($e);
 }
 $prod->cena=1000;
-//$prod->Setwaga(10000000);
+$vprod->cena=134;
+$vprod->Setwaga(10000000);
 //$prod->Setopis('Opis');
 //$prod->Setname('Kubeczek');
 
@@ -23,10 +24,11 @@ $prod->cena=1000;
 //$vprod->Setopis('Opis');
 //$vprod->Setname('PHP Storm');
 
-//echo $vprod->Getcena();
+//echo $vprod->Getcenavat();
 
 var_dump($prod);
 var_dump($vprod);
 echo $prod->cena;
+echo $vprod->cena;
 echo "bangla";
 //die();

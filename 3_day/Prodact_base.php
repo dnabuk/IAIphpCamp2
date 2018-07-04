@@ -36,6 +36,11 @@ class Prodact_base
 		return $this->{$name};
 	}
 
+public function __call($name,$arg)
+{
+	echo "próba wywołania metody $name";
+}
+
 	/*
 	public function Setcena($cena)
 	{
