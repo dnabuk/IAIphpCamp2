@@ -7,9 +7,9 @@ class A {
         $name = '';
         foreach ($basket as $product) {
             $name .= $product['name'];
-            $name .= ' , wartość pozycji ' . $product['quantity'] * $product['price'] . '<br>';
-            echo $name;
+            $name .= ' , wartość pozycji ' . $product['quantity'] * $product['price'] . '<br>';  
         }
+		echo $name;
     }
 }
 
