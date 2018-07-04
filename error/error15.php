@@ -3,11 +3,11 @@ error_reporting(E_ALL);
 
 class A {
     private $prefix = 'Pan(i)';
-    public static function printName($name)
+    public function printName($name)
     {
         $ret = '';
         if (strlen($name) > 5) {
-            $ret = $this->prefix . ' ' . $name;
+            $ret = $this->prefix . ' ' . $name; //brakuje prefiksu
         } else {
             $ret = 'Siemanko ' . $name;
         }
@@ -16,4 +16,4 @@ class A {
     }
 }
 
-echo A::printName($_GET['name']);
+if (isset($_GET['name']))echo (new A)->printName($_GET['name']);
