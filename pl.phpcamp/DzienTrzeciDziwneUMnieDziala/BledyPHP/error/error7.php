@@ -6,7 +6,7 @@ class A {
     {
         $sum = 0;
         foreach ($basket as $product) {
-            $sum = $product['quantity'];
+            $sum = $sum + $product['quantity'];
         }
         echo 'Łączna liczba sztuk: '.  $sum;
     }
@@ -20,7 +20,8 @@ $basket = [
     ['productId' => 4523, 'quantity' => 1],
     ['productId' => 19879, 'quantity' => 41],
 ];
-
+echo '<pre>';
 var_Dump($basket);
+echo '</pre>';
 $objA->getSum($basket);
 

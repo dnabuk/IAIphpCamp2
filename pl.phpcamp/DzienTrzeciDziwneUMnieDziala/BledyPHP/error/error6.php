@@ -35,7 +35,7 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
         if ($get['age'] > 35) {
             return $tmp . ' Możesz startować na prezydenta ';
         } else {
-            $ret = 'jestes za mlody(a) na prezydenta';
+            return $ret = $tmp .' jestes za mlody(a) na prezydenta';
         }
     }
 }
