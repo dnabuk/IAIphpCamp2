@@ -29,7 +29,7 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
     {
         $ret = '';
         if ($get['name']) {
-            $tmp = 'czesc ' . $get['name'] . '!';
+            $tmp = 'czesc ' . strip_tags($get['name']) . '!';
         }
 
         if ($get['age'] > 35) {
