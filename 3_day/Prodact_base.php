@@ -18,8 +18,20 @@ class Prodact_base
 		//$this->waga=10;
 	
 
-		echo "construktor";
+		//echo "construktor";
 	}
+	public function __set($name,$value)
+	{
+		if(property_exists($this, $name)){
+		echo 'ustawiam '.$name.'  wartością '.$value;
+		
+		$this->{$name}=$value;
+	}else{
+		throw new Exception("podana wartość nie istnieje",10);
+		
+		//echo "podana wartość nie istnieje";
+	}
+	}/*
 	public function Setcena($cena)
 	{
 		$this->cena=$cena;
@@ -52,7 +64,7 @@ class Prodact_base
 	public function Setid($id)
 	{
 		$this->id=$id;
-	}
+	}*/
 	public function Getid()
 	{
 		return $this->id;

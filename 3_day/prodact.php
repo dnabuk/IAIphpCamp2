@@ -12,7 +12,7 @@ class Product extends Prodact_base
 		//$this->waga=10;
 	
 
-		echo "construktor";
+		//echo "construktor";
 	}
 	public function Setwaga($waga)
 	{

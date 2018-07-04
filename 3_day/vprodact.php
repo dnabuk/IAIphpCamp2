@@ -16,7 +16,7 @@ class Vproduct extends Prodact_base
 		//$this->opis='Ciekawa książka';
 	
 
-		echo "construktor";
+		//echo "construktor";
 	}
 	/*public function Setcena($cena)
 	{

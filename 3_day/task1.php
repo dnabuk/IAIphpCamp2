@@ -5,22 +5,28 @@ require_once 'Vprodact.php';
 
 $prod = new Product;
 $vprod = new Vproduct;
-$prod->Setcena(1000);
-$prod->Setwaga(10000000);
-$prod->Setopis('Opis');
-$prod->Setname('Kubeczek');
+try{
+$vprod->a=1;
 
-echo $prod->Getcena();
+}catch(Exception $e){
+	var_dump($e);
+}
+//$prod->Setcena(1000);
+//$prod->Setwaga(10000000);
+//$prod->Setopis('Opis');
+//$prod->Setname('Kubeczek');
 
-$vprod->Setcena(489);
-$vprod->Setklucz('CXSIF-JSGFU-HSUUD-NFUKS');
-$vprod->Setopis('Opis');
-$vprod->Setname('PHP Storm');
+//echo $prod->Getcena();
 
-echo $vprod->Getcena();
+//$vprod->Set('cena',450);
+//$vprod->Setklucz('CXSIF-JSGFU-HSUUD-NFUKS');
+//$vprod->Setopis('Opis');
+//$vprod->Setname('PHP Storm');
+
+//echo $vprod->Getcena();
 
 var_dump($prod);
 var_dump($vprod);
 //echo $vprod->cena;
 echo "bangla";
-die();
+//die();
