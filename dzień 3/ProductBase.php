@@ -6,7 +6,6 @@ class ProductBase{
 	protected $ProductDescription;
 	protected $ProductPrice;
 	protected $ProductQuantity;
-	protected $ProductCurrency;
 	
     public function __construct(){
 		$this->ProductId = 1;
@@ -23,11 +22,17 @@ class ProductBase{
 		if (property_exists($this, $property)){
 			$this->$property = $value;
 		}
+		else{
+			throw new Exception('Nie istnieje taka zmienna.');
+		}
 		return $this;
 	}	
 	public function __get($property){
 		if (property_exists($this, $property)){
 			return $this->$property;
+		}
+		else{
+			throw new Exception('Nie istnieje taka zmienna.');
 		}
 	}		
 }
