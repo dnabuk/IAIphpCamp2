@@ -1,7 +1,9 @@
 <?php
 
 error_reporting(E_ALL);
-define('FOO', 'foo');
+if(defined('FOO')){
+    define('FOO', 'foo');
+}
 require_once ('utils.php');
 
 class A {
