@@ -16,7 +16,7 @@ class A {
 
 
 
-if ($_GET['validateName'] = 1) {
+if ($_GET['validateName'] == 1) {
     //sprawdzamy czy przeslany jest parametr odpowiadajacy za walidacje nazwy
     $validateName = true;
 }
