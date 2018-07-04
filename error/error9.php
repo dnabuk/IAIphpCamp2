@@ -8,7 +8,7 @@ class A {
         foreach ($basket as $product) {
             $amount += $product['quantity'] * $product['price'];
         }
-		return $amount;
+		return round($amount,1);
     }
 }
 
