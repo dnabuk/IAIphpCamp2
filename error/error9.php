@@ -8,7 +8,7 @@ class A {
         foreach ($basket as $product) {
             $amount += $product['quantity'] * $product['price'];
         }
-		return $amount;
+		return round($amount, 1);
     }
 }
 
@@ -39,6 +39,7 @@ $basket = [
     ['productId' => 19879, 'quantity' => 100, 'name' => 'Product 4',  'price' => 272.96],
 ];
 $paymentAmount = 27308.2;
+//echo $objA->getAmount($basket);
 var_dump('Koszyk', $basket);
 var_dump('******************************************************');
 var_dump('wysokość wpłaty: '.  $paymentAmount);
