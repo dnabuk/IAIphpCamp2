@@ -46,7 +46,7 @@ class G extends A {
 }
 $name = $_GET['name'];
 echo '<pre>';
-if (($name >= 'A') && ($name <= 'G') || ($name == 'G')){
+if (($name >= 'A') && ($name <= 'E') || ($name == 'G')){
     var_Dump((new $name())->test());
 }else{
     echo 'nic';
