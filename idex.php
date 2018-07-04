@@ -30,7 +30,8 @@ try{
 var_dump($pierwszyObiekt);
 
 
-if (isset ($pierwszyObiekt->weight)) {}
+var_dump(isset($weight));
+var_dump(unset($weight));
 
 //var_dump($drugiObiekt);
 //die('<br>kończe skrypt<br>');

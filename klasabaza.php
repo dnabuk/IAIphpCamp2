@@ -42,11 +42,11 @@ class Base{
         }
 
      public function __isset($name){
-            echo "Czy $name jest";
+            echo "Czy $name jest?";
      }
 
      public function  __unset($name){
-
+            echo "Czy $name nie ma?";
      }
 
 }
