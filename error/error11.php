@@ -1,12 +1,12 @@
 <?php
-error_reporting(1);
+error_reporting(0);
 
 
 class A {
 
     public function printInfo($name, $age, $validateName)
     {
-        if ($validateName == true && strlen($name) == 0) {
+        if ($validateName !== false || strlen($name) == 0) {
             var_Dump('zle dane');
             die;
         }
@@ -14,11 +14,11 @@ class A {
     }
 }
 
+$validateName = false;
 
-
-if ($_GET['validateName'] = 1) {
+if ($_GET['validateName'] === 1) {
     //sprawdzamy czy przeslany jest parametr odpowiadajacy za walidacje nazwy
     $validateName = true;
 }
 $age = (int)$_GET['age'];
-(new A)->printInfo($_GET['name'], $validateName, $age);
+(new A)->printInfo($_GET['name'], $age, $validateName);
