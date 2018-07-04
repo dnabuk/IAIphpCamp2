@@ -1,13 +1,10 @@
 <?php
 
-class Vproduct extends Prodact_base
+class Prodact_base
 {
 	protected $cena;
 	protected $id;
 	protected $nazwa;
-	protected $załącznik;
-	protected $klucz;
-	protected $rozmiar_pliku;
 	protected $producent;
 	protected $zdjęcie;
 	protected $opis;
@@ -15,9 +12,9 @@ class Vproduct extends Prodact_base
 	function __construct()
 	{
 		$this->cena=200;
-		$this->id=2;
-		$this->nazwa='ebook';
-		$this->opis='Ciekawa książka';
+		$this->id=1;
+		$this->nazwa='Kubek';
+		$this->waga=10;
 	
 
 		echo "construktor";
@@ -26,17 +23,17 @@ class Vproduct extends Prodact_base
 	{
 		$this->cena=$cena;
 	}
-	public function Setklucz($klucz)
+	public function Setwaga($waga)
 	{
-		$this->klucz=$klucz;
+		$this->waga=$waga;
 	}
 	public function Setopis($opis)
 	{
 		$this->opis=$opis;
 	}
-	public function Setname($nazwa)
+	public function Setname($name)
 	{
-		$this->nazwa=$nazwa;
+		$this->name=$name;
 	}
 	public function Getcena()
 	{

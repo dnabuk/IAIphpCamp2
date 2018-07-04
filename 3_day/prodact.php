@@ -1,5 +1,5 @@
 <?php
-class Product
+class Product extends Prodact_base
 {
 	protected $cena;
 	protected $id;
@@ -27,6 +27,14 @@ class Product
 	public function Setwaga($waga)
 	{
 		$this->waga=$waga;
+	}
+	public function Setopis($opis)
+	{
+		$this->opis=$opis;
+	}
+	public function Setname($name)
+	{
+		$this->name=$name;
 	}
 	public function Getcena()
 	{
