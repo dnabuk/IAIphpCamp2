@@ -1,2 +1,6 @@
 Dzien Czwarty: Dziwne u mnie działa - błędy oraz magia PHP;
 Dziedziczenie - klasa pochodna i bazowa!
+isset();
+unset();
+__call();
+Magia WOW;
