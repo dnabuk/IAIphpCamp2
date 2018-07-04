@@ -37,12 +37,17 @@ class C extends A {
         return date('H:m:s');
     }
 }
-class G {
+class G extends A {
 
     public function test2()
     {
         return date('H:m:s');
     }
+
 }
 $name = $_GET['name'];
+if(class_exists($name)){
 var_Dump((new $name())->test());
+}else{
+    echo "brak klasy";
+}
