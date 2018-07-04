@@ -1,11 +1,8 @@
 <?php
 
-Class ProductVirtual {
+Class ProductVirtual extends ProductBase{
 
-    Private $ProductVirtualID;
-    Private $ProductVirtualName;
-    Private $ProductVirtualPrice;
-    Private $ProductVirtualDescription;
+   
     function __construct()
     {
         $this->ProductVirtualID = 1;
@@ -19,13 +16,56 @@ Class ProductVirtual {
         // TODO: Implement __destruct() method.
         print "<br>DESTRUKCJA ! :)";
     }
-    function SetPrice($Price)
+
+
+    private function SetVirtualPrice($Price)
     {
-        $this->ProductVirtualPricePrice = $Price;
+        $this->ProductVirtualPrice = $Price;
     }
-    function GetPrice()
+    private function GetVirtualPrice()
     {
         return $this->ProductVirtualPrice;
     }
-
+    private function SetVirtualName($Name)
+    {
+        $this->ProductVirtualPrice = $Name;
+    }
+    private function GetVirtualName()
+    {
+        return $this->ProductVirtualName;
+    }
+  
+    private function GetVirtualDescription()
+    {
+        return $this->ProductVirtualDescription;
+    }
+    private function SetVirtualDescription($desc)
+    {
+        $this->ProductVirtualDescription = $desc;
+    }
+  
+    private function SetVirtualWeight($weight)
+    {
+        $this->ProductVirtualWeight = $weight;
+    }
+    private function GetVirtualWeight()
+    {
+        return $this->ProductVirtualWeight;
+    }
+    private function SetVirtualAttachment($attachment)
+    {
+        $this->ProductVirtualAttachment = $attachment;
+    }
+    private function GetVirtualAttachment()
+    {
+        return $this->ProductVirtualAttachment;
+    }
+    private function SetVirtualkey($key)
+    {
+        $this->ProductVirtualWeight = $key;
+    }
+    private function GetVirtualkey()
+    {
+        return $this->ProductVirtualkey;
+    }
 }

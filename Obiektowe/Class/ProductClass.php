@@ -19,13 +19,30 @@ Class Product {
         // TODO: Implement __destruct() method.
         print "<br>DESTRUKCJA ! :)";
     }
-    function SetPrice($Price)
+    public function SetPrice($Price)
     {
         $this->ProductPrice = $Price;
     }
-    function GetPrice()
+    public function GetPrice()
     {
         return $this->ProductPrice;
     }
+    public function SetDescription($desc)
+    {
+        $this->ProductDescription = $desc;
+    }
+    public function GetDescription()
+    {
+        return $this->ProductDescription;
+    }
+    public function SetName($name)
+    {
+        $this->ProductName = $name;
+    }
+    public function GetName()
+    {
+        return $this->ProductName;
+    }
+
 
 }
