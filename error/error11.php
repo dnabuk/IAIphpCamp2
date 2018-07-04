@@ -4,9 +4,9 @@ error_reporting(0);
 
 class A {
 
-    public function printInfo($name, $age, $validateName)
+    public function printInfo($name, $validateName, $age)
     {
-        if ($validateName == true && strlen($name) == 0) {
+        if ($validateName == false || strlen($name) == 0) {
             var_Dump('zle dane');
             die;
         }
@@ -16,7 +16,7 @@ class A {
 
 
 
-if ($_GET['validateName'] = 1) {
+if (1 == $_GET['validateName']) {
     //sprawdzamy czy przeslany jest parametr odpowiadajacy za walidacje nazwy
     $validateName = true;
 }
