@@ -2,11 +2,11 @@
 
 //error_reporting(0);
 
-function foo($a)
+function foo()
 {
 	echo 'foo';
 }
-fo();
+foo();
 var_Dump($value['a']['b']);
 
 foo();
