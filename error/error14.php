@@ -45,4 +45,10 @@ class G {
     }
 }
 $name = $_GET['name'];
-var_Dump((new $name())->test());
+if (class_exists($name)) {
+	if ($name == "G") {
+		var_Dump((new $name())->test2());
+	}
+	else var_Dump((new $name())->test());
+}
+else echo "Nie ma takiej klasy :(";
