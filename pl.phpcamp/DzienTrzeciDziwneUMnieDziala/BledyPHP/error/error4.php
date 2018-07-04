@@ -16,7 +16,7 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
     public function __debugInfo()
     {
         return[
-            'prop' =>$this->id ** 2,
+            'prop' =>$this->id,
         ];
     }
     public $arr = [1,2,3,4,5];
@@ -39,4 +39,6 @@ Integer efficitur nunc nec nunc facilisis, dignissim aliquam ligula dignissim. N
 
 
 $objA = new A();
+echo '<pre>';
 var_Dump($objA);
+echo '</pre>';
