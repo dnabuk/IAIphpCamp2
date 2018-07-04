@@ -6,7 +6,7 @@ class A {
 
     public function printInfo($name, $validateName)
     {
-        if ($validateName == true) {
+        if ($validateName == 1) {
             if ( strpos($name, 'Mateusz') !== false ) {
                 //sprawdzamy czy imie mateusz znajduje sie w przekazanej nazwie
                 echo 'Witaj Mateusz!';
