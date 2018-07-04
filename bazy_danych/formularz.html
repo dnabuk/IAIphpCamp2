@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>PA IAI - dodawanie klienta</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="formAction.php" method="post">
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Dodaj klienta</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="name">Imie</label>
+                <div class="col-md-4">
+                    <input id="name" name="name" type="text" placeholder="Podaj imie" class="form-control input-md">
+
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="surname">Nazwisko</label>
+                <div class="col-md-4">
+                    <input id="surname" name="surname" type="text" placeholder="Podaj Nazwisko" class="form-control input-md">
+
+                </div>
+            </div>
+
+
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="street">Ulica</label>
+                <div class="col-md-4">
+                    <input id="street" name="street" type="text" placeholder="Podaj ulice" class="form-control input-md">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="date_of_birth">Data urodzenia</label>
+                <div class="col-md-4">
+                    <input type="date" name="date_of_birth" class="form-control" id="date_of_birth"  class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="gender">Płeć</label>
+                <div class="col-md-4">
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="unknow">Unknow</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="city">Miasto</label>
+                <div class="col-md-4">
+                    <input id="city" name="city" type="text" placeholder="Podaj miasto" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="postcode">Kod pocztowy</label>
+                <div class="col-md-4">
+                    <input id="postcode" name="postcode" type="text" placeholder="Podaj kod pocztowy" class="form-control input-md">
+
+                </div>
+            </div>
+            <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton">Zapisz zmiany</label>
+            <div class="col-md-4">
+                <button id="singlebutton"  name="save" class="btn btn-primary">Zapisz</button>
+            </div>
+        </div>
+        </fieldset>
+    </form>
+
+</form>
+</body>
+</html>

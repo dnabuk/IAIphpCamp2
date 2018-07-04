@@ -1,9 +1,11 @@
 <?php
 require_once "config.php";
+$query=mysqli_query($mysqli,"select count(id) from `clients`");
+$row = mysqli_fetch_row($query);
 
 $rows = $row[0];
 
-$page_rows = 10;
+$page_rows = 20;
 
 $last = ceil($rows/$page_rows);
 
@@ -34,7 +36,7 @@ if($last != 1){
 
     if ($pagenum > 1) {
         $previous = $pagenum - 1;
-        $paginationCtrls .= '<a href="'.$_SERVER['PHP_SELF'].'?pn='.$previous.'" class="btn btn-default">Previous</a> &nbsp; &nbsp; ';
+        $paginationCtrls .= '<a href="'.$_SERVER['PHP_SELF'].'?pn='.$previous.'" class="btn btn-default">Poprzednia</a> &nbsp; &nbsp; ';
 
         for($i = $pagenum-4; $i < $pagenum; $i++){
             if($i > 0){
@@ -54,7 +56,7 @@ if($last != 1){
 
     if ($pagenum != $last) {
         $next = $pagenum + 1;
-        $paginationCtrls .= ' &nbsp; &nbsp; <a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" class="btn btn-default">Next</a> ';
+        $paginationCtrls .= ' &nbsp; &nbsp; <a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" class="btn btn-default">Następna</a> ';
     }
 }
 
