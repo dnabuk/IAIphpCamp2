@@ -37,7 +37,7 @@ class C extends A {
         return date('H:m:s');
     }
 }
-class G {
+class G extends A{
 
     public function test()
     {
