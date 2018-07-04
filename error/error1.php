@@ -1,12 +1,14 @@
 <?php
 
-error_reporting(0);
+error_reporting(1);
 
-function foo($a)
+function foo()// usunięty argument($a)
 {
 	echo 'foo';
 }
-fo();
-var_Dump($value['a']['b']);
+
+//poprawiona nazwa zmiennej
+foo();
+var_Dump($value['a']['b']); //element tablicy o kluczu a, b jest pusty
 
 foo();
