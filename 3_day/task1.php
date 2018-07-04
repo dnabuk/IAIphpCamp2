@@ -30,7 +30,10 @@ echo $prod->opis;
 unset($prod->opis);
 var_dump($prod);
 var_dump($vprod);
-echo $prod->cena;
+
+echo $prod->cena.' ';
+unset($prod->cena);
+echo $prod->cena.'cena';
 echo $vprod->cena;
 echo "bangla";
 //die();
