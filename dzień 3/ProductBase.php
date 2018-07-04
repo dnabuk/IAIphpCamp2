@@ -44,10 +44,8 @@ class ProductBase{
     }	
     public function __isset($isset){
         echo "Is '$isset' set?\n";
-        return isset($this->data[$isset]);
     }
     public function __unset($unset){
         echo "Unsetting '$unset'\n";
-        unset($this->data[$unset]);
     }	
 }
