@@ -5,9 +5,14 @@ class A {
     public function getAmount($basket)
     {
         $amount = 0;
+        $amountt = 0;
         foreach ($basket as $product) {
-            $amount += $product['quantity'] * $product['price'];
+            $amount = $product['quantity'] * $product['price'];
+            $amountt = $amountt + ($product['quantity'] * $product['price']);
+
         }
+        //echo '<b>'.$amountt.'</b>';
+        return $amountt;
     }
 }
 
