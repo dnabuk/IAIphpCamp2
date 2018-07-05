@@ -36,12 +36,12 @@
 	$name = $_GET['name'];
 	$price = $_GET['price'];
 	
+	$return = null;
+	
 	if ($action == "checkProduct") {
 		foreach ($products as $prod) {
 			if ($prod['name'] == $name) {
-				echo '<pre>';
-				print_r($prod);
-				echo '</pre>';
+				$return = $prod;
 			}
 		}
 	}	
@@ -51,17 +51,13 @@
 			'name' => $name,
 			'price' => $price
 		);
-		echo '<pre>';
-		print_r($products);
-		echo '</pre>';
+		$return = $products;
 	}
 	elseif ($action == "removeProduct") {
 		foreach ($products as $prod) {
 			if ($prod['id'] == $product) {
 				unset($prod);
-				echo '<pre>';
-				print_r($products);
-				echo '</pre>';
+				$return = $products;
 			}
 		}
 	}
@@ -70,6 +66,12 @@
 		echo "<li>checkProduct</li>";
 		echo "<li>addProduct</li>";
 		echo "<li>removeProduct</li>";
+	}
+	
+	if ($return !== null) {
+		echo '<pre>';
+		print_r($return);
+		echo '</pre>';
 	}
 	
 	
