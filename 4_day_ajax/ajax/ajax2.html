@@ -7,8 +7,7 @@
     </head>
     <body onload=show()>
         <div id="demo">
-            <h2>PHP Camp</h2>
-            <button type="button">Czary mary jQuery</button>
+           
         </div>
         
         <script type="text/javascript">
@@ -44,7 +43,7 @@
         }
 
 
-         function show_ins_form(id) {
+         function show_ins_form() {
            $(document).ready(function() {
               // $("button").click(function(){
                 $.ajax({
@@ -55,6 +54,25 @@
            // });
 
             });
+        }
+         function show_up_form(id) {
+           $(document).ready(function() {
+			  
+			//alert(price);
+		$.ajax ({
+			type: "POST",
+			url: "form_up.php",
+			data: {
+				id:id
+			}
+		})
+		.done(function(data) {
+			var newHTML;
+			newHTML = data;
+			$('#form').html(newHTML);
+			
+	});
+		});
         }
         function add() {
            
@@ -69,6 +87,35 @@
 			type: "POST",
 			url: "task4_5.php",
 			data: {
+				action:action,
+				name:name,
+				price:price
+			}
+		})
+		.done(function(data) {
+			var newHTML;
+			newHTML = data;
+			$('#demo').html(newHTML);
+			var newHTML2;
+			newHTML2 = '';
+			$('#form').html(newHTML2);
+	});
+		});
+        }
+        function update(id) {
+           
+            
+			  $(document).ready(function() {
+			  
+			var action = 'updateProduct';
+			var name = $('#name').val();
+			var price = $('#price').val();
+			//alert(price);
+		$.ajax ({
+			type: "POST",
+			url: "task4_5.php",
+			data: {
+				id:id,
 				action:action,
 				name:name,
 				price:price
