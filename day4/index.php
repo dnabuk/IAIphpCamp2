@@ -1,6 +1,6 @@
 <?php
 
-//error_reporting(E_ERROR | E_WARNING | E_PARSE);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 $products = array
   (
@@ -31,7 +31,7 @@ $products = array
 	)
   );
 
-var_dump($products);
+//var_dump($products);
 
 $action = $_GET['action'];
 $id = $_GET['id'];
@@ -67,7 +67,7 @@ elseif($action === 'removeProduct'){
 else{
 	$result=$products;
 }
-echo '<pre>';
-print_r(json_encode($result));
+//echo '<pre>';
+echo(json_encode($result));
 //var_dump($result);
-echo '</pre>';
+//echo '</pre>';
