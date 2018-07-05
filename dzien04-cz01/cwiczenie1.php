@@ -48,11 +48,33 @@
 		}
 	}	
 	elseif ($action == "addProduct") {
-		$products[] = array(
-			'id' => $product,
-			'name' => $name,
-			'price' => $price
-		);
+		$productWarning = 0;
+		
+		if ($product !== null 
+		&& $name !== null 
+		&& $price !== null) {
+			foreach ($products as $prod) {
+				if ($prod['id'] == $product) {
+					echo "Istnieje już produkt o parametrze id = $product. Podaj inną wartość parametru product.<br>";
+					$productWarning = 1;
+					break;
+				}
+			}	
+			if ($productWarning !== 1) {
+				$products[] = array(
+					'id' => $product,
+					'name' => $name,
+					'price' => $price
+				);
+			}
+		}
+		else {
+			echo "Uzupełnij brakujące parametry!<br>"; 
+			if ($product === null) echo "<li>product</li>";
+			if ($name === null) echo "<li>name</li>";
+			if ($price === null) echo "<li>price</li>";
+		}
+		
 		$return = $products;
 	}
 	elseif ($action == "removeProduct") {
