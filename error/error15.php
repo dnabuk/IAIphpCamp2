@@ -1,8 +1,10 @@
 <?php
 error_reporting(E_ALL);
 
-class A {
+class A
+{
     private $prefix = 'Pan(i)';
+
     public function printName($name)
     {
         $ret = '';
@@ -11,9 +13,9 @@ class A {
         } else {
             $ret = 'Siemanko ' . $name;
         }
-
         return $ret;
     }
 }
+
 $d = new A;
 echo $d->printName($_GET['name']);
