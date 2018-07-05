@@ -91,11 +91,15 @@
 		echo "<li>addProduct</li>";
 		echo "<li>removeProduct</li>";
 	}
-	
+	/*
 	if ($return !== null) {
 		echo '<pre>';
 		print_r($return);
 		echo '</pre>';
+	}*/
+	
+	if ($return !== null) {
+		print_r(json_encode($return));
 	}
 	
 	
