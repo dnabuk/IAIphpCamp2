@@ -10,12 +10,12 @@
             <h2>PHP Camp</h2>
             <button type="button">Czary mary jQuery</button>
         </div>
-        
+
         <script type="text/javascript">
             $(document).ready(function() {
                $("button").click(function(){
                 $.ajax({
-                    url: "http://localhost/ajax-info.txt", success: function(result){
+                    url: "http://localhost/PHPCamp/4/gitdemo-ajax/ajax/ajax-text.txt", success: function(result){
                         $("#demo").html(result);
                     }
                 });

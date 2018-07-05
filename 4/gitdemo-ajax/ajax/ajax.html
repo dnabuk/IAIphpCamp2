@@ -9,7 +9,9 @@
             <h2>PHP Camp</h2>
             <button type="button" onclick="loadNewText()">Czary mary</button>
         </div>
+
         
+
         <script type="text/javascript">
             function loadNewText() {
                 var xhttp = new XMLHttpRequest();
@@ -18,9 +20,10 @@
                     document.getElementById("demo").innerHTML = this.responseText;
                   }
                 };
-                xhttp.open("GET", "http://localhost/ajax-info.txt", true);
+                xhttp.open("GET", "http://localhost/PHPCamp/4/gitdemo-ajax/ajax/ajax-text.txt", true);
                 xhttp.send();
             }
+
         </script>
     </body>
 </html>
