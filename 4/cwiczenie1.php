@@ -8,6 +8,9 @@ $products = array(
   array('id'=>04,'nazwa'=>'zasilacz','cena'=>150.00),
   array('id'=>05,'nazwa'=>'drukarka','cena'=>550.00),
 );
+
+echo json_encode($products);
+/*
 if (isset($_GET['action'])){
   $action=$_GET['action'];
 }
@@ -20,7 +23,6 @@ if (isset($_GET['name'])){
 if (isset($_GET['price'])){
   $price=$_GET['price'];
 }
-
 
 
 if($action === 'checkProduct'){
@@ -49,3 +51,4 @@ else {
 }
 
 print_r($result);
+*/
