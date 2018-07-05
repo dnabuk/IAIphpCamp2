@@ -60,25 +60,19 @@ if (isset($_POST['action'])) {
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
-			echo('wysłano');
+			//echo('wysłano');
 		}
 		
 	}
-	$query='SELECT * from `product`';
-		if($result= mysqli_query($link,$query)){
-			echo "<table border=1>";
-	echo "<tr><td>id</td><td>name</td><td>price</td><td>atcion</td></tr>";
-
-			while ($data= mysqli_fetch_assoc($result)) {
-				//echo json_encode($data);
-				//var_dump($data);
-				echo '<tr><td>'.$data['id'].'</td><td>'.$data['nazwa'].'</td><td>'.$data['cena'].'</td><td><button type="button" onclick="del('.$data['id'].')">usuń</button></td></tr>';			
-			}
-			echo "</table>";
-		}
 	
+	echo show();
 }else{
-	$query='SELECT * from `product`';
+	echo show();
+	}
+	function show()
+	{
+		global $link;
+		$query='SELECT * from `product`';
 		if($result= mysqli_query($link,$query)){
 			echo "<table border=1>";
 	echo "<tr><td>id</td><td>name</td><td>price</td><td>atcion</td></tr>";
