@@ -9,9 +9,11 @@ $products = array(
   array('id'=>05,'nazwa'=>'drukarka','cena'=>550.00),
 );
 
-echo json_encode($products);
-/*
+
 if (isset($_GET['action'])){
+  $action=$_GET['action'];
+}
+if (isset($_GET['id'])){
   $action=$_GET['action'];
 }
 if (isset($_GET['product'])){
@@ -34,7 +36,7 @@ if($action === 'checkProduct'){
   $result=$product;
 }
 elseif ($action==='addProduct'){
-  $products[]=array('id'=>$id,'nazwa'=>$name,'cena'=>$price);
+  $products[]=array('id'=>01,'nazwa'=>$name,'cena'=>$price);
   $result=$products;
 }
 elseif ($action==='removeProduct'){
@@ -50,5 +52,7 @@ else {
   $result=$products;
 }
 
-print_r($result);
-*/
+//print_r($result);
+
+$response=json_encode($result);
+echo $response;
