@@ -13,9 +13,12 @@ switch ($method){
 	case 'GET':
 		switch($pathArray[1]){
 			case 'insert':
+				//echo $pathArray[2].$pathArray[3];
 				$stmt = $link->prepare("INSERT INTO `products` (`id`, `nazwa`, `cena`) VALUES (NULL, ?, ?)");
-				$stmt->bind_param('sd', $pathArray[3], $pathArray[4]);
+				$stmt->bind_param('sd', $pathArray[2], $pathArray[3]);
 				$stmt->execute();
+				
+				header("Location: http://localhost"); 
 				break;
 			case 'products':
 				$result = $link->query("SELECT * FROM `products`");
@@ -61,7 +64,7 @@ switch ($method){
 				$stmt = $link->prepare("DELETE FROM `products` WHERE `id` = ?");
 				$stmt->bind_param('i', $pathArray[2]);
 				$stmt->execute();
-				echo 'Usunięto';
+				header("Location: http://localhost"); 
 				break;
 			case 'productName':
 				$stmt = $link->prepare("SELECT * FROM `products` WHERE `nazwa` like ?");
