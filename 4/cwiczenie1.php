@@ -13,17 +13,32 @@ $products = array(
 if (isset($_GET['action'])){
   $action=$_GET['action'];
 }
+else{
+  $action='';
+}
 if (isset($_GET['id'])){
   $action=$_GET['id'];
+}
+else{
+  $action='';
 }
 if (isset($_GET['product'])){
   $product=$_GET['product'];
 }
+else{
+  $action='';
+}
 if (isset($_GET['name'])){
   $name=$_GET['name'];
 }
+else{
+  $action='';
+}
 if (isset($_GET['price'])){
   $price=$_GET['price'];
+}
+else{
+  $action='';
 }
 
 
