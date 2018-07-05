@@ -25,6 +25,16 @@
         <div id="show2">
 
         </div>
+        <div>
+            <h2>Edycja wartości</h2>
+            Id produktu<input type="text" id="wid"><br>
+            Nowa nazwa:<input type="text" id="wname"><br>
+            Nowa cena:<input type="text" id="wprice"><br>
+            <input type="submit" id="edit">
+        </div>
+        <div id="show3">
+
+        </div>
         <!--
         http://localhost/phppc/index11.php/products/create/nazwaproduktu/cena/
                 -->
@@ -57,6 +67,16 @@
                         method: "PUT",
                         url: url, success: function(result){
                             $("#show2").html(result);
+
+                        }
+                    });
+                });
+                $("#edit").click(function(){
+                    var url = "http://localhost/phppc/index11.php/products/edit/"+$('#wid').val()+"/"+$('#wname').val()+"/"+$('#wprice').val()+"/";
+                    $.ajax({
+                        method: "GET",
+                        url: url, success: function(result){
+                            $("#show3").html(result);
 
                         }
                     });

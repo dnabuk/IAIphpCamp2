@@ -43,6 +43,18 @@ switch ($method) {
                     //echo json_encode($result);
                     echo '</table>';
                 }
+                if ($pathArray[2] == 'edit') {
+                    //$params = json_decode(file_get_contents('php://input'), 1);
+                    //echo $pathArray[3]; //nazwa
+                    //echo $pathArray[4]; //price
+                    $sql = 'UPDATE `products` SET `name` = ?, `price` = ? WHERE `id` = ?';
+                    $c = GetPDO()->prepare($sql);
+                    $c->bindParam(1, $pathArray[4]);
+                    $c->bindParam(2,$pathArray[5]);
+                    $c->bindParam(3,$pathArray[3]);
+                    $c->execute();
+                    echo 'dodano produkt '.$pathArray[3].' o cenie '.$pathArray[4];
+                }
             }
             if ($pathArray[1] == 'clients') {
                 $sql = 'SELECT * FROM `clients` WHERE id = ?';
@@ -56,6 +68,7 @@ switch ($method) {
                     echo 'Price: ' . $row['surname'] . '<br>';
                 }
             }
+
         }
         break;
     case 'PUT':
