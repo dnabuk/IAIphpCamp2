@@ -15,7 +15,7 @@ $kolekcja=$pathArray[1];
 $nazwa=$pathArray[2];
 $method=$_SERVER['REQUEST_METHOD'];
 $result='';
-//var_dump($pathArray);
+var_dump($_SERVER['PATH_INFO']);
 
 switch ($method){
   case 'GET':
