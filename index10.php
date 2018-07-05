@@ -30,14 +30,14 @@ if (isset($_GET['action'])) {
                 echo 'Price: '.$d['price'].'<br>';
             }
         }*/
-    }else if ($action == 'put'){
+    } else if ($action == 'put') {
         $ch = curl_init('http://localhost/phppc/index11.php');
 //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_URL, "http://localhost/phppc/index11.php/products/" . $product . "/");
+        curl_setopt($ch, CURLOPT_URL, "http://localhost/phppc/index11.php/products/create/" . $name . "/" . $price . "/");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
         $result = curl_exec($ch);
     }
-    else if ($action == 'post'){
+    else if ($action == 'post') {
         $data = array("account" => "1234", "dob" => "30051987", "site" => "mytestsite.com");
         $data = json_encode($data);
         $ch = curl_init('http://localhost/phppc/index11.php');
@@ -46,8 +46,6 @@ if (isset($_GET['action'])) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-        //http_build_query($data);
-        //curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         $result = curl_exec($ch);
     }
 }

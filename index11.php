@@ -25,7 +25,7 @@ switch ($method) {
                     echo 'Name: ' . $row['name'] . '<br>';
                     echo 'Price: ' . $row['price'] . '<br>';
                 }
-                if($pathArray[2] == null){
+                if ($pathArray[2] == null) {
                     $sql = 'SELECT * FROM `products`';
                     $c = GetPDO()->prepare($sql);
                     $c->bindParam(1, $pathArray[2]);
@@ -37,9 +37,10 @@ switch ($method) {
                         echo '<td>Product id: ' . $row['id'] . '</td>';
                         echo '<td>Name: ' . $row['name'] . '</td>';
                         echo '<td>Price: ' . $row['price'] . '</td>';
+                        echo '<td><button type="button" id="d1" class="delete" value="' . $row['id'] . '">Usun uzytkownika</button></td>';
                         echo '</tr>';
                     }
-                    echo json_encode($result);
+                    //echo json_encode($result);
                     echo '</table>';
                 }
             }
@@ -55,18 +56,25 @@ switch ($method) {
                     echo 'Price: ' . $row['surname'] . '<br>';
                 }
             }
-
         }
         break;
     case 'PUT':
         $params = json_decode(file_get_contents('php://input'), 1);
-        echo 'put';
+        //echo $pathArray[3]; //nazwa
+        //echo $pathArray[4]; //price
+        $sql = 'INSERT INTO `products`(`name`, `price`) VALUES (?,?)';
+        $c = GetPDO()->prepare($sql);
+        $c->bindParam(1, $pathArray[3]);
+        $c->bindParam(2,$pathArray[4]);
+        $c->execute();
+        echo 'dodano produkt '.$pathArray[3].' o cenie '.$pathArray[4];
         break;
     case 'POST':
-        //$params = json_decode(file_get_contents('php://input'),1);
-        $fp = fopen('php://input', 'r');
-        $params = stream_get_contents($fp);
-        var_dump($params);
+        //var_dump($result);
+        $params = json_decode(file_get_contents('php://input'), 1);
+
+        echo 'dd';
+        print(json_encode($params));
         break;
     case 'DELETE':
         if (isset($pathArray)) {
