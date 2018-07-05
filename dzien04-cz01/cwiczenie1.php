@@ -57,14 +57,12 @@
 		echo '</pre>';
 	}
 	elseif ($action == "removeProduct") {
-		foreach ($products as $keyProd => $prod) {
-			foreach ($prod as $key => $val) {
-				if ($key == 'id' && $val == $product) {
-					unset($products[$keyProd]);
-					echo '<pre>';
-					print_r($products);
-					echo '</pre>';
-				}
+		foreach ($products as $prod) {
+			if ($prod['id'] == $product) {
+				unset($prod);
+				echo '<pre>';
+				print_r($products);
+				echo '</pre>';
 			}
 		}
 	}
@@ -74,13 +72,12 @@
 		echo "<li>addProduct</li>";
 		echo "<li>removeProduct</li>";
 	}
-	echo '<pre>';
-	print_r($products);
-	echo '</pre>';
+	
 	
 	/* przykłady:
 	http://localhost/iai/03/dzien04-cz01/cwiczenie1.php?action=checkProduct&name=Pluszowa%20wiewi%C3%B3rka
 	http://localhost/iai/03/dzien04-cz01/cwiczenie1.php?action=addProduct&name=Pluszowy%20konik&product=6&price=100
-	
+	http://localhost/iai/03/dzien04-cz01/cwiczenie1.php?action=removeProduct&product=5
+
 	*/
 ?>
