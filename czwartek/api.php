@@ -1,54 +1,29 @@
 <?php
+$products=[['id'=>1, 'nazwa'=>'Rower', 'cena'=>1250],['id'=>2, 'nazwa'=>'Longboard', 'cena'=>989],['id'=>3, 'nazwa'=>'Rolki', 'cena'=>199],['id'=>4, 'nazwa'=>'Kask', 'cena'=>340],['id'=>5, 'nazwa'=>'Ochraniacze', 'cena'=>140]];
 
-if (isset($_GET['action'])){
-	$action = $_GET['action'];
-	if (isset($_GET['name'])){
-		$name = $_GET['name'];
-	} else {
-		$name='';
-	}
-	if (isset($_GET['price'])){
-		$price = $_GET['price'];
-	} else {
-		$price=0;
-	}
-	if (isset($_GET['product'])){
-		$id=$_GET['product'];
-	}
-} else {
-	echo 'Błąd';
-	die;
+$path=$_SERVER['PATH_INFO'];
+$pathArray = explode('/', $path);
+$method = $_SERVER['REQUEST_METHOD'];
+
+switch ($method){
+	case 'GET':
+		foreach ($products as $row){
+			//echo $pathArray[2];
+			if ($row['id'] == $pathArray[2])
+				echo json_encode($row);
+		}
+		//zwrotka na podstawie tab $pathArray
+		break;
+	case 'PUT':
+		$params = json_decode(file_get_contents('php://input'),1);
+		break;
+	case 'POST':
+		$params = json_decode(file_get_contents('php://input'),1);
+		//aktualizacja danych
+		break;
+	case 'DELETE':
+		//usuwanie
+		break;	
+	default:
 }
-
-
-$link = mysqli_connect("localhost", "php2", "jcSxS71poOmxo4pu", "Czwartek");
-if ($link->connect_errno){
-	echo 'Błąd połączenia z bazą';
-	die;
-}
-
-$res='';
-switch ($action){
-	case 'checkProduct':	$stmt = $link->prepare("SELECT * FROM `products` WHERE `id` = ?");
-							$stmt->bind_param('i', $id);
-							$stmt->execute();
-
-							$result = $stmt->get_result();
-							
-							while ($row = $result->fetch_assoc()) {
-								$res = json_encode($row);
-							}
-							break;
-	
-	case 'addProduct':		$stmt = $link->prepare("INSERT INTO `products` (`id`, `nazwa`, `cena`) VALUES (NULL, ?, ?)");
-							$stmt->bind_param('sd', $name, $price);
-							$stmt->execute();
-							var_dump($stmt->get_result());
-	
-	case 'removeProduct':	$stmt = $link->prepare("DELETE FROM `products` WHERE `products`.`id` = ?");
-							$stmt->bind_param('i', $id);
-							$stmt->execute();
-							break;
-	default:				echo 'błędne dane';
-}
-echo $res;
+//echo json_encode($pathArray);
