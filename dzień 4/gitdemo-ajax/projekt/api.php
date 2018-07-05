@@ -52,7 +52,7 @@ switch ($method) {
 					echo $value;
 					echo '</td>';
 				}
-				echo '<td>Usun</td>';
+				echo '<td><button type="button" name="btnUsun" id="'.$row['id'].'">Usun rekord</button></td>';
 				echo '</tr>';
 			}
 			
@@ -76,7 +76,7 @@ switch ($method) {
 		}
 		else
 		{
-			echo json_encode(array('jakiej szukasz metody w GET?'));
+			echo 'jakiej szukasz metody w GET?';
 		}
 		break;
 	case 'DELETE':

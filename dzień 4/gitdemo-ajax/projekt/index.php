@@ -10,7 +10,7 @@
 
 <div id="main">
 	<h2>PHP Camp</h2>
-	<button type="button">Wczytaj rekordy</button>
+	<button type="button" name="btnWczytaj">Wczytaj rekordy</button>
 		<table border="1" width="100%">
 		<tr>
 			<td>ID</td>
@@ -26,14 +26,23 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("button").click(function(){
+	$("button[name='btnWczytaj']").click(function(){
 		$.ajax({
 			url: "http://localhost/dzie%C5%84%204/gitdemo-ajax/projekt/api.php/getProducts", success: function(result){
 				$("#demo").replaceWith(result);
+				
+				$("button[name='btnUsun']").click(function(){
+					id = this.id;
+					$.ajax({
+						url: "http://localhost/dzie%C5%84%204/gitdemo-ajax/projekt/api.php/removeProduct/" + id, success: function(result){
+							$("#demo").replaceWith("test");
+						}
+					});
+				});
+				
 			}
 		});
 	});
-
 });
 	</script>
 	</body>
