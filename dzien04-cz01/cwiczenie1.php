@@ -34,4 +34,11 @@
 	echo '<pre>';
 	print_r($products);
 	echo '</pre>';
+	
+	$product = $_GET['product'];
+	$action = $_GET['action'];
+	$name = $_GET['name'];
+	$price = $_GET['price'];
+	
+	
 ?>
