@@ -29,7 +29,18 @@ switch ($method) {
                 }
                 //var_dump($result);
             }
-
+            if($pathArray[1] == 'clients'){
+                $sql = 'SELECT * FROM `clients` WHERE id = ?';
+                $c = GetPDO()->prepare($sql);
+                $c->bindParam(1, $pathArray[2]);
+                $c->execute();
+                $result = $c->fetchAll(PDO::FETCH_ASSOC); //poprawka do poprawnego pobierania danych
+                foreach ($result as $row) {
+                    echo 'Client id: '.$row['id'].'<br>';
+                    echo 'Name: '.$row['name'].'<br>';
+                    echo 'Price: '.$row['surname'].'<br>';
+                }
+            }
         }
         break;
     case 'PUT':
@@ -39,6 +50,15 @@ switch ($method) {
         $params = json_decode(file_get_contents('php://input'),1);
         break;
     case 'DELETE':
+        if(isset($pathArray)){
+            if($pathArray[1] == 'products') {
+                echo $pathArray[2];
+                $sql = 'DELETE FROM `products` WHERE `products`.`id` = ?';
+                $c = GetPDO()->prepare($sql);
+                $c->bindParam(1, $pathArray[2]);
+                $c->execute();
+                echo 'Usunięto produkt!';
+            }}
         break;
 }
 //print_r($pathArray);
