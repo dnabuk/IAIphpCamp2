@@ -32,6 +32,7 @@ if((isset($_GET['id']))
 				while($k=mysqli_fetch_assoc($wynik)){
 					echo $k['id']." ". $k['nazwa']." ". $k['cena']."<br/>";}
 				break;
+			default:echo"zła akcja<br/>";break;
 			};
 		}else{
 			echo "błąd";}
