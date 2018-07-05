@@ -1,6 +1,5 @@
 <?php
 
-
 $products = array(
   array('id'=>01,'nazwa'=>'komputer','cena'=>3000.00),
   array('id'=>02,'nazwa'=>'myszka','cena'=>50.00),
@@ -26,6 +25,7 @@ if( $kolekcja=='products'){
     }
   }
 }
+
   //zwrotka na podsstawie tablicy $pathArray
   break;
   case 'PUT':
