@@ -14,7 +14,7 @@ $pathArray=explode('/',$path);
 
 $method=$_SERVER['REQUEST_METHOD'];
 
-print_r($pathArray);
+//print_r($pathArray);
 
 switch ($method){
   case 'GET':
@@ -32,5 +32,4 @@ switch ($method){
 
 }
 
-var_dump($products[0]['cena']);
-//echo json_encode($products);
+echo json_encode($products);

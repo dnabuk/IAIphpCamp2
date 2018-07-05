@@ -5,4 +5,5 @@ $result=curl_exec($ch);
 //print_r($result);
 //$response=json_decode($response,true);
 
-var_dump(json_decode($result,true));
+echo $result;
+//var_dump(json_decode($result,true));
