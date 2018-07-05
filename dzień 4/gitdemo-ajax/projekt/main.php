@@ -34,27 +34,24 @@ switch ($method) {
 	case 'GET':
 		if($request[0] == 'getProduct')
 		{
-			$product = isset($request[1]) ? $request[1] : null;
-			if($product)
+			$product = $request[1];
+			if($product > 0)
 			{
 				$sql = "SELECT *, COUNT(id) AS ilosc FROM product WHERE id = '$product' LIMIT 1";
 			}
 			else 
 			{
-				$sql = "SELECT * FROM product ORDER BY id DESC";
+				$sql = "SELECT *, COUNT(id) AS ilosc FROM product ORDER BY id DESC";
 			}
 			$result = $conn->query($sql);
-			print_r($result);
-			while($wynik = $result->fetch_assoc()){
-				$json[] = $wynik;
-			}
-			if(count($json) ==  1)
+			$wynik = $result->fetch_assoc();
+			if($wynik['ilosc'] === '1')
 			{
-				echo json_encode(array($json, 'popranie pokazano rekord o id: '.$product));
+				echo json_encode(array($wynik, 'popranie pokazano rekord o id: '.$product));
 			}
-			else if(count($json) >  1)
+			else if($wynik['ilosc'] > 1)
 			{
-				echo json_encode(array($json, 'popranie pobrano rekordy'));
+				echo json_encode(array($wynik, 'popranie pobrano rekordy'));
 			}			
 			else
 			{
