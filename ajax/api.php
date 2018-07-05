@@ -12,6 +12,11 @@ if ($link->connect_errno){
 switch ($method){
 	case 'GET':
 		switch($pathArray[1]){
+			case 'insert':
+				$stmt = $link->prepare("INSERT INTO `products` (`id`, `nazwa`, `cena`) VALUES (NULL, ?, ?)");
+				$stmt->bind_param('sd', $pathArray[3], $pathArray[4]);
+				$stmt->execute();
+				break;
 			case 'products':
 				$result = $link->query("SELECT * FROM `products`");
 				
@@ -30,6 +35,7 @@ switch ($method){
 				$res=array();
 				
 				echo '<tr><td>ID</td><td>Nazwa</td><td>Cena</td><td>Operacje</td></tr>';
+	
 				while ($row = $result->fetch_assoc()){
 					//array_push($res, $row);
 					//var_dump($row);
@@ -39,8 +45,8 @@ switch ($method){
 						echo '<td>'.$val.'</td>';
 					
 					echo '<td><a href="http://localhost/api.php/DELETE/'.$row['id'].'">USUŃ</a></td></tr>';
+					//echo '<tr><td>'.++$row['id'].'</tr>';
 				}
-				
 				break;
 			case 'product':
 				$stmt = $link->prepare("SELECT * FROM `products` WHERE `id` = ?");
@@ -71,8 +77,10 @@ switch ($method){
 		$params = json_decode(file_get_contents('php://input'),1);
 		break;
 	case 'POST':
-		$params = json_decode(file_get_contents('php://input'),1);
-		//aktualizacja danych
+		//$params = json_decode(file_get_contents('php://input'),1);
+		$stmt = $link->prepare("INSERT INTO `products` (`id`, `nazwa`, `cena`) VALUES ?, ?, ?");
+		$stmt->bind_param('isd', $_POST['id'], $_POST['name'], $_POST['price']);
+		$stmt->execute();
 		break;
 	case 'DELETE':
 		//usuwanie

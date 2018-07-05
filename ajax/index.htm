@@ -8,16 +8,30 @@
     <body>
         <table id="tabelka">
 		<tr><td>ID</td><td>Nazwa</td><td>Cena</td><td>Operacje</td></tr>
-		</tabelka>
+		</table>
         <script type="text/javascript">
             $(document).ready(function() {
                 $.ajax({
 					url    : "http://localhost/api.php/productsHTM", 
 					success: function(result){
 						$("#tabelka").html(result);
-						
+						$("#tabelka").append('<td>AI</td>');
+						$("#tabelka").append('<td><input type="text" id="nazwa" size="10" /></td>');
+						$("#tabelka").append('<td><input type="text" id="cena" size="3"/></td>');
+						$("#tabelka").append('<td><button id="sub">DODAJ</button></td>');
+						$("#tabelka").append('</tr>');
                     }
                 });
+				
+				$("#sub").click(function(){
+					var nazwa=$("#nazwa").val();
+					var cena=$("#cena").val();
+					$.ajax({
+						url : "http://localhost/api.php/insert/"+nazwa+"/"+cena,
+						success : alert('Dodano')
+					});
+				})
+				
 
             });
         </script>
