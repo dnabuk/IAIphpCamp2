@@ -19,12 +19,11 @@ if (isset($_GET['action'])) {
         $c = GetPDO()->prepare($sql);
         $c->bindParam(1, $_GET['product']);
         $c->execute();
-        $result = $c->fetchAll();
+        $result = $c->fetchAll(PDO::FETCH_ASSOC); //poprawka do poprawnego pobierania danych
         foreach ($result as $row) {
-            echo 'Wyświetlanie produktu o id: ' . $row['id'] . '<br>';
-            echo 'Nazwa produktu: ' . $row['name'] . '<br>';
-            echo 'Cena: ' . $row['price'] . '<br>';
+
         }
+        echo json_encode($result);
     } else if ($_GET['action'] == 'add') {
         $sql = 'INSERT INTO `products`(`name`, `price`) VALUES (?,?)';
         $c = GetPDO()->prepare($sql);
