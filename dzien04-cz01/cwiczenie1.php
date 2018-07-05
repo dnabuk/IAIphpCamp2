@@ -58,7 +58,24 @@
 		print_r($newProduct);
 		echo '</pre>';
 	}
-	
+	elseif ($action == "removeProduct") {
+		foreach ($products as $keyProd => $prod) {
+			foreach ($prod as $key => $val) {
+				if ($key == 'id' && $val == $product) {
+					unset($products[$keyProd]);
+					echo '<pre>';
+					print_r($products);
+					echo '</pre>';
+				}
+			}
+		}
+	}
+	else {
+		echo "Niewłaściwa wartość parametru action. Możliwe wartości: <br>";
+		echo "<li>checkProduct</li>";
+		echo "<li>addProduct</li>";
+		echo "<li>removeProduct</li>";
+	}
 	echo '<pre>';
 	print_r($products);
 	echo '</pre>';
