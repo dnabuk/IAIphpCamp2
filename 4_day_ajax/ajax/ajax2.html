@@ -5,14 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
-    <body onload=ajax()>
+    <body onload=show()>
         <div id="demo">
             <h2>PHP Camp</h2>
             <button type="button">Czary mary jQuery</button>
         </div>
         
         <script type="text/javascript">
-            function ajax() {
+            function show() {
                
             
             $(document).ready(function() {
@@ -25,6 +25,22 @@
            // });
 
             });
+        }
+         function del(id) {
+            $(document).ready(function() {
+			var action = 'removeProduct';
+		$.ajax ({
+			type: "POST",
+			url: "task4_5.php",
+			data: {
+				id:id,
+				action:action
+			},
+			success: function(result){
+                        $("#demo").html(result);
+                    }
+        });
+	});
         }
         </script>
     </body>
