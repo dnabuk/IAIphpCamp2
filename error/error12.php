@@ -1,13 +1,13 @@
 <?php
 error_reporting(0);
 
-
 class A {
 
     public function printInfo($name, $validateName)
     {
+        //var_dump (strpos('Mateusz',$name));
         if ($validateName == true) {
-            if ( strpos('Mateusz', $name)) {
+            if (strpos($name,'Mateusz')!== false) {
                 //sprawdzamy czy imie mateusz znajduje sie w przekazanej nazwie
                 echo 'Witaj Mateusz!';
             } else {
@@ -21,5 +21,5 @@ class A {
 
 
 
-
-(new A)->printInfo($_GET['name'], $_GET['validateName']);
+echo $_GET['validatename'];
+(new A)->printInfo($_GET['name'], $_GET['validatename']);
