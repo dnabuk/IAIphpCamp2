@@ -1,0 +1,4 @@
+#RewriteEngine On
+#RewriteCond %{QUERY_STRING} (^|&)action=show($|&)
+#RewriteCond %{QUERY_STRING} (^|&)product=5($|&)
+#RewriteRule ^index10\.php$ /index10.php/show/product/5?&%{QUERY_STRING}
