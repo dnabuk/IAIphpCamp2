@@ -1,39 +1,47 @@
 <?php
-	$products = array();
+	function showProducts() {
 	
-	$connect = new mysqli("localhost", "root", "", "phpcamp_madamczak");
+		$products = array();
 	
-	$sql = "SELECT `id`, `name`, `price` FROM `products`";
-	$result = $connect->query($sql);
-	$control = $result->num_rows;
-	if ($control > 0) {
-    	while($row = $result->fetch_assoc()) {
-			$products[] = array(
-				'id' => $row['id'],
-				'name' => $row['name'],
-				'price' => $row['price']
-			);
-    	}
-	}
+		$connect = new mysqli("localhost", "root", "", "phpcamp_madamczak");
 	
-	$style = "border: 1px solid black";
+		$sql = "SELECT `id`, `name`, `price` FROM `products`";
+		$result = $connect->query($sql);
+		$control = $result->num_rows;
+		if ($control > 0) {
+			while($row = $result->fetch_assoc()) {
+				$products[] = array(
+					'id' => $row['id'],
+					'name' => $row['name'],
+					'price' => $row['price']
+				);
+			}
+		}
+	
+		$style = "border: 1px solid black";
+	
+		$result = '';
+		$result .= '<table>';
+		$result .= '<tr>';
+		$result .= '<th style="' . $style . '">ID</th>';
+		$result .= '<th style="' . $style . '">Nazwa</th>';
+		$result .= '<th style="' . $style . '">Cena</th>';
+		$result .= '<th style="' . $style . '">Operacje</th>';
+		$result .= '</tr>';
 		
-	echo '<table>';
-	echo '<tr>';
-	echo '<th style="' . $style . '">ID</th>';
-	echo '<th style="' . $style . '">Nazwa</th>';
-	echo '<th style="' . $style . '">Cena</th>';
-	echo '<th style="' . $style . '">Operacje</th>';
-	echo '</tr>';
-		
-	foreach ($products as $prod) {
-		echo '<tr>';
-		echo '<td style="' . $style . '">' . $prod['id'] . '</td>';
-		echo '<td style="' . $style . '">' . $prod['name'] . '</td>';
-		echo '<td style="' . $style . '">' . $prod['price'] . '</td>';
-		echo '<td style="' . $style . '">' . '<button type="button">Usuń</button>' . '</td>';
-		echo '</tr>';
-	}
+		foreach ($products as $prod) {
+			$result .= '<tr>';
+			$result .= '<td style="' . $style . '">' . $prod['id'] . '</td>';
+			$result .= '<td style="' . $style . '">' . $prod['name'] . '</td>';
+			$result .= '<td style="' . $style . '">' . $prod['price'] . '</td>';
+			$result .= '<td style="' . $style . '">' . '<button type="button" id="button">Usuń</button>' . '</td>';
+			$result .= '</tr>';
+		}
  
-	echo '</table>';
+		$result .= '</table>';
+	
+		echo $result;
+			
+	}
+
 ?>
