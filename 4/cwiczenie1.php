@@ -11,7 +11,7 @@ $products = array(
 if (isset($_GET['action'])){
   $action=$_GET['action'];
 }
-if (isset($_GET['product']){
+if (isset($_GET['product'])){
   $product=$_GET['product'];
 }
 if (isset($_GET['name'])){
