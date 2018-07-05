@@ -4,7 +4,7 @@
 $products = array(
   array('id'=>01,'nazwa'=>'komputer','cena'=>3000.00),
   array('id'=>02,'nazwa'=>'myszka','cena'=>50.00),
-  array('id'=>03,'nazwa'=>'podkładka','cena'=>25.00),
+  array('id'=>03,'nazwa'=>'podkladka','cena'=>25.00),
   array('id'=>04,'nazwa'=>'zasilacz','cena'=>150.00),
   array('id'=>05,'nazwa'=>'drukarka','cena'=>550.00),
 );
