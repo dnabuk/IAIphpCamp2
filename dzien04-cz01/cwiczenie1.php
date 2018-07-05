@@ -1,4 +1,6 @@
 <?php
+	error_reporting(0);
+	
 	$products = array();
 	
 	$products[] = array(
@@ -54,9 +56,9 @@
 		$return = $products;
 	}
 	elseif ($action == "removeProduct") {
-		foreach ($products as $prod) {
+		foreach ($products as $index => $prod) {
 			if ($prod['id'] == $product) {
-				unset($prod);
+				unset($products[$index]);
 				$return = $products;
 			}
 		}
