@@ -1,5 +1,4 @@
 <?php
-
 $products=[['id'=>1, 'nazwa'=>'Rower', 'cena'=>1250],['id'=>2, 'nazwa'=>'Longboard', 'cena'=>989],['id'=>3, 'nazwa'=>'Rolki', 'cena'=>199],['id'=>4, 'nazwa'=>'Kask', 'cena'=>340],['id'=>5, 'nazwa'=>'Ochraniacze', 'cena'=>140]];
 
 $id = $_GET['product'];
@@ -19,7 +18,6 @@ if (isset($_GET['price'])){
 } else {
 	$price=0;
 }
-
 
 switch ($action){
 	case 'checkProduct':	foreach ($products as $row){
