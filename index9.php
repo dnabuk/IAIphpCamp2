@@ -34,11 +34,13 @@ if (isset($_GET['action'])) {
         $c->bindParam(1, $name);
         $c->bindParam(2, $price);
         $c->execute();
+        echo 'Dodano produkt!';
     } else if ($_GET['action'] == 'delete') {
         $sql = 'DELETE FROM `products` WHERE `products`.`id` = ?';
         $c = GetPDO()->prepare($sql);
         $c->bindParam(1, $_GET['product']);
         $c->execute();
+        echo 'Usunięto produkt!';
     } else {
         echo 'Nieznana funkcja! (action=)';
     }
