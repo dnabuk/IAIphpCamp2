@@ -4,28 +4,29 @@ require 'connect.php';
 if (isset($_GET['action'])) {
 	if ($_GET['action'] == 'checkProduct') {
 		if (!isset($_GET['name'])) {
-			echo "Podaj nazwę produktu";
+			echo json_encode("Podaj nazwę produktu");
 			die();
 		}
 		$name = mysqli_real_escape_string($link,htmlentities($_GET['name']));
 		$query="SELECT * from `product` WHERE nazwa='$name'";
 		if($result= mysqli_query($link,$query)){
 			if (mysqli_num_rows($result)==0) {
-				echo 'Brak porduktu o podanyej nazwie';
+				echo json_encode('Brak porduktu o podanyej nazwie');
 				die();
 			}
 			while ($data= mysqli_fetch_assoc($result)) {
-				var_dump($data);
+				echo json_encode($data);
+				//var_dump($data);
 			}
 		}
 	}
 	if ($_GET['action'] == 'addProduct'){
 		if (!isset($_GET['name'])) {
-			echo "Podaj nazwę produktu";
+			echo json_encode("Podaj nazwę produktu");
 			die();
 		}
 		if (!isset($_GET['price'])) {
-			echo "Podaj nazwę produktu";
+			echo json_encode("Podaj nazwę produktu");
 			die();
 		}
 		$name = mysqli_real_escape_string($link,htmlentities($_GET['name']));
@@ -34,12 +35,13 @@ if (isset($_GET['action'])) {
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
-			echo 'wysłano';
+			echo json_encode('wysłano');
 		}
 		$query='SELECT * from `product`';
 		if($result= mysqli_query($link,$query)){
 			while ($data= mysqli_fetch_assoc($result)) {
-				var_dump($data);
+				echo json_encode($data);
+				//var_dump($data);
 			}
 		}
 	}
@@ -54,7 +56,7 @@ if (isset($_GET['action'])) {
 		$query="SELECT * from `product` WHERE id='$id'";
 		if($result= mysqli_query($link,$query)){
 			if (mysqli_num_rows($result)==0) {
-				echo 'Brak porduktu o podanym id';
+				echo json_encode('Brak porduktu o podanym id');
 				die();
 			}
 
@@ -64,15 +66,16 @@ if (isset($_GET['action'])) {
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
-			echo 'wysłano';
+			echo json_encode('wysłano');
 		}
 		$query='SELECT * from `product`';
 		if($result= mysqli_query($link,$query)){
 			while ($data= mysqli_fetch_assoc($result)) {
-				var_dump($data);
+				echo json_encode($data);
+				//var_dump($data);
 			}
 		}
 	}
 }else{
-	echo 'Brak parametru action';
+	echo json_encode('Brak parametru action');
 }
