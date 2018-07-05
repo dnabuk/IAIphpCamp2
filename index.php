@@ -11,18 +11,18 @@ if((isset($_GET['id']))
 		$action=$_GET['action'];
 		switch ($action) {
 			case 'checkProduct':
-				wysw($link,$name);
+				wysw($name);
 				break;
 			case 'addProduct':
 				$zap="insert into products(id,nazwa,cena)values('$id','$name','$price');";
 				mysqli_query($link,$zap);
-				wysw($link,'0');
+				wysw('0');
 				break;
 			
 			case 'removeProduct':
 				$zap="delete from products where id='$id';";
 				mysqli_query($link,$zap);
-				wysw($link,'0');
+				wysw('0');
 				break;
 			default:echo"zła akcja<br/>";break;
 			};

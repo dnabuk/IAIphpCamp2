@@ -1,5 +1,6 @@
 ﻿<?php
-function wysw($link,$name){
+function wysw($name){
+	global $link;
 	if($name=='0'){
 				$zap="select * from products;";
 				$wynik=mysqli_query($link,$zap);
