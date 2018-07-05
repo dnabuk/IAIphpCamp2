@@ -11,13 +11,21 @@ $products = array(
 
 $path=$_SERVER['PATH_INFO'];
 $pathArray=explode('/',$path);
-
+$kolekcja=$pathArray[1];
+$nazwa=$pathArray[2];
 $method=$_SERVER['REQUEST_METHOD'];
-
-//print_r($pathArray);
+$result='';
+//var_dump($pathArray);
 
 switch ($method){
   case 'GET':
+if( $kolekcja=='products'){
+  foreach( $products as $product ){
+    if($product['nazwa']==$nazwa){
+      $result=json_encode($product);
+    }
+  }
+}
   //zwrotka na podsstawie tablicy $pathArray
   break;
   case 'PUT':
@@ -32,4 +40,4 @@ switch ($method){
 
 }
 
-echo json_encode($products);
+echo $result;

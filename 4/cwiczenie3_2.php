@@ -1,5 +1,5 @@
 <?php
-$ch = curl_init('http://localhost/PHPCamp/4/cwiczenie1.php');
+$ch = curl_init('http://localhost/PHPCamp/4/cwiczenie3_1.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result=curl_exec($ch);
 //print_r($result);
