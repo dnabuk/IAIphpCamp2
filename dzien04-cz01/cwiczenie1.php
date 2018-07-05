@@ -46,14 +46,13 @@
 		}
 	}	
 	elseif ($action == "addProduct") {
-		$newProduct = array(
+		$products[] = array(
 			'id' => $product,
 			'name' => $name,
 			'price' => $price
 		);
-		$products[] = $newProduct; 
 		echo '<pre>';
-		print_r($newProduct);
+		print_r($products);
 		echo '</pre>';
 	}
 	elseif ($action == "removeProduct") {
