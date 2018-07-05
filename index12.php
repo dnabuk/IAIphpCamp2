@@ -1,7 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sturm
- * Date: 05/07/2018
- * Time: 14:15
- */
+
+
+?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script>
+
+</script>

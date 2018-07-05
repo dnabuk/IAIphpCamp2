@@ -2,6 +2,12 @@
 if (isset($_GET['product'])) {
     $product = $_GET['product'];
 }
+if (isset($_GET['name'])) {
+    $name = $_GET['name'];
+}
+if (isset($_GET['price'])) {
+    $price = $_GET['price'];
+}
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     if ($action == 'delete') {
@@ -29,6 +35,19 @@ if (isset($_GET['action'])) {
 //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_URL, "http://localhost/phppc/index11.php/products/" . $product . "/");
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+        $result = curl_exec($ch);
+    }
+    else if ($action == 'post'){
+        $data = array("account" => "1234", "dob" => "30051987", "site" => "mytestsite.com");
+        $data = json_encode($data);
+        $ch = curl_init('http://localhost/phppc/index11.php');
+        curl_setopt($ch, CURLOPT_URL, "http://localhost/phppc/index11.php/products/" . $product);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        //http_build_query($data);
+        //curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         $result = curl_exec($ch);
     }
 }
