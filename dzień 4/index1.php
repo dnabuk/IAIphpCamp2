@@ -1,6 +1,3 @@
-<a href="./index1.php?product=1&action=checkProduct">Pokaz produkt o ID 1</a><br/>
-<a href="./index1.php?action=addProduct&name=piwo&price=13.00">Dodaj produkt</a><br/>
-<a href="./index1.php?product=1&action=removeProduct">Usun produkt o ID</a><br/>
 <?php
 $servername = 'localhost';
 $username = 'root';
@@ -21,10 +18,17 @@ $price = isset($_GET['price']) ? $_GET['price'] : null;
 
 if(isset($product) && ($action == 'checkProduct'))
 {
-	$sql = "SELECT * FROM product WHERE id = '$product' LIMIT 1";
+	$sql = "SELECT *, COUNT(id) AS ilosc FROM product WHERE id = '$product' LIMIT 1";
 	$result = $conn->query($sql);
-	$wynik = $result->fetch_assoc();
-	echo json_encode($wynik);
+	$wynik = $result->fetch_assoc();	
+	if($wynik['ilosc'] === '1')
+	{
+		echo json_encode(array($wynik, 'popranie pokazano rekord o id: '.$product));
+	}
+	else
+	{
+		echo json_encode(array('Nie znalezniono rekordu'));
+	}
 	
 }
 else if(($action == 'addProduct') && isset($name) && isset($price))
@@ -37,7 +41,7 @@ else if(($action == 'addProduct') && isset($name) && isset($price))
 	$sql = "SELECT * FROM product WHERE id = '$id' LIMIT 1";
 	$result = $conn->query($sql);
 	$wynik = $result->fetch_assoc();
-	echo json_encode($wynik);	
+	echo json_encode(array($wynik, 'Dodano popranie produkt'));	
 }
 else if($action == 'removeProduct')
 {
@@ -49,18 +53,21 @@ else if($action == 'removeProduct')
 		$sql = "DELETE FROM product WHERE id = '$product' LIMIT 1";
 		if ($conn->query($sql) === TRUE)
 		{
-			echo 'popranie usunięto rekord o id: '.$product;
-			echo json_encode($wynik);
+
+			echo json_encode(array($wynik, 'popranie usunieto rekord o id: '.$product));
 		}
 		else
 		{
-			echo 'blad usuwania';
+			echo json_encode(array('Blad usuwania!'));
 		}
 	}
-
+	else
+	{
+		echo json_encode(array('Nie odnaleziono rekordu o ID!'));
+	}
 	
 }
 else
 {
-	echo 'Niepoprawna akcja';
+	echo json_encode(array('Niepoprawna akcja!'));
 }
