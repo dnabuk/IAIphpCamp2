@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+ <?php 
+	require_once('zad.php');
+?>
 <html>
     <head>
         <title>AJAX #2</title>
@@ -6,16 +9,13 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <div id="demo">
-            <h2>PHP Camp</h2>
-            <button type="button">Czary mary jQuery</button>
-        </div>
-        
+       
+        <?php echo tablica();?>
         <script type="text/javascript">
             $(document).ready(function() {
                $("button").click(function(){
                 $.ajax({
-                    url: "http://localhost:8080/IAI_Camp/ajax/ajax-info.txt", success: function(result){
+                    url: "http://localhost:8080/IAI_Camp/ajax/get.php", success: function(result){
                         $("#demo").html(result);
                     }
                 });
