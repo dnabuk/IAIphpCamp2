@@ -38,12 +38,10 @@
 	
 	if ($action == "checkProduct") {
 		foreach ($products as $prod) {
-			foreach ($prod as $key => $val) {
-				if ($key == 'name' && $val == $name) {
-					echo '<pre>';
-					print_r($prod);
-					echo '</pre>';
-				}
+			if ($prod['name'] == $name) {
+				echo '<pre>';
+				print_r($prod);
+				echo '</pre>';
 			}
 		}
 	}	
