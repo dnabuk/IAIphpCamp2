@@ -9,8 +9,12 @@
 require_once('config.php');
 
 $product = intval($_GET['product']);
-if(isset($_GET['name'])){$name = $_GET['name'];}
-if(isset($_GET['price'])){ $price = (float)$_GET['price']; }
+if (isset($_GET['name'])) {
+    $name = $_GET['name'];
+}
+if (isset($_GET['price'])) {
+    $price = (float)$_GET['price'];
+}
 
 if (isset($_GET['action'])) {
     if ($_GET['action'] == 'show') {
