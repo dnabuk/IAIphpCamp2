@@ -43,9 +43,18 @@ switch ($method) {
 			$sql = "SELECT id, name, price FROM product ORDER BY id DESC";
 			$result = $conn->query($sql);
 			
+			echo '<table border="1" width="100%" id="demo">
+			<tr>
+			<th>ID</th>
+			<th>Nazwa</th>
+			<th>Cena</th>
+			<th>Akcja</th>
+			</tr>';
+
 			while($row = $result->fetch_assoc())
 			{
-				echo '<tr width="100%">';
+
+				echo '<tr>';
 				foreach($row as $key => $value)
 				{
 					echo '<td>';
@@ -55,6 +64,7 @@ switch ($method) {
 				echo '<td><button type="button" name="btnUsun" id="'.$row['id'].'">Usun rekord</button></td>';
 				echo '</tr>';
 			}
+			echo '</table>';
 			
 		}
 		else if($request[0] == 'getProduct')
@@ -86,12 +96,11 @@ switch ($method) {
 			$sql = "DELETE FROM product WHERE id = '$product' LIMIT 1";
 			if ($conn->query($sql) === TRUE)
 			{
-			
-				echo json_encode(array($wynik, 'popranie usunieto rekord o id: '.$product));
+				echo '<table border="0" width="100%" id="demo"><tr><td>popranie usunieto rekord o id: '.$product.'</td></tr></table>';
 			}
 			else
 			{
-				echo json_encode(array('Blad usuwania!'));
+				echo 'blad usuwania';
 			}
 			
 		}

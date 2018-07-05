@@ -11,14 +11,14 @@
 <div id="main">
 	<h2>PHP Camp</h2>
 	<button type="button" name="btnWczytaj">Wczytaj rekordy</button>
-		<table border="1" width="100%">
+		<table border="1" width="100%" id="demo">
 		<tr>
-			<td>ID</td>
-			<td>Nazwa</td>
-			<td>Cena</td>
-			<td>Akcja</td>
+			<th>ID</th>
+			<th>Nazwa</th>
+			<th>Cena</th>
+			<th>Akcja</th>
 		</tr>
-		<tr id="demo">
+		<tr>
 			<td colspan="4">Brak rekordow</td>
 		</tr>		
 	</table>
@@ -34,8 +34,9 @@ $(document).ready(function() {
 				$("button[name='btnUsun']").click(function(){
 					id = this.id;
 					$.ajax({
+						type: 'DELETE',
 						url: "http://localhost/dzie%C5%84%204/gitdemo-ajax/projekt/api.php/removeProduct/" + id, success: function(result){
-							$("#demo").replaceWith("test");
+							$("#demo").replaceWith(result);
 						}
 					});
 				});
