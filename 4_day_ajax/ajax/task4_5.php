@@ -56,9 +56,14 @@ show;
 			echo"Podaj nazwę produktu";
 			die();
 		}
+		if (!isset($_POST['id'])) {
+			echo"Podaj nazwę produktu";
+			die();
+		}
+		$id=(int)$_POST['id'];
 		$name = mysqli_real_escape_string($link,htmlentities($_POST['name']));
 		$price = mysqli_real_escape_string($link,htmlentities($_POST['price']));
-		$query_ins="INSERT INTO `product` values(null,'$name','$price')";
+		$query_ins="UPDATE `product` set nazwa='$name',cena='$price' WHERE id = $id";
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
