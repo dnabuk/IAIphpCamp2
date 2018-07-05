@@ -24,7 +24,7 @@ if(isset($product) && ($action == 'checkProduct'))
 	$sql = "SELECT * FROM product WHERE id = '$product' LIMIT 1";
 	$result = $conn->query($sql);
 	$wynik = $result->fetch_assoc();
-	print_r($wynik);
+	echo json_encode($wynik);
 	
 }
 else if(($action == 'addProduct') && isset($name) && isset($price))
@@ -37,7 +37,7 @@ else if(($action == 'addProduct') && isset($name) && isset($price))
 	$sql = "SELECT * FROM product WHERE id = '$id' LIMIT 1";
 	$result = $conn->query($sql);
 	$wynik = $result->fetch_assoc();
-	print_r($wynik);	
+	echo json_encode($wynik);	
 }
 else if($action == 'removeProduct')
 {
@@ -50,7 +50,7 @@ else if($action == 'removeProduct')
 		if ($conn->query($sql) === TRUE)
 		{
 			echo 'popranie usunięto rekord o id: '.$product;
-			print_r($wynik);
+			echo json_encode($wynik);
 		}
 		else
 		{
