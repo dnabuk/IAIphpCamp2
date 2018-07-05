@@ -1,24 +1,36 @@
 <!DOCTYPE html>
+
 <html>
     <head>
-        <title>AJAX #1</title>
+        <title>AJAX</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body>
-        <div id="demo">
-            <h2>PHP Camp</h2>
-            <button type="button" onclick="loadNewText()">Czary mary</button>
-        </div>
-        
+       
+        <?php 
+			require_once('zad3.php');
+			
+			$akcja = (isset($_GET['akcja'])) ? $_GET['akcja'] : null;
+			switch($akcja)
+			{
+				case 'usun':
+					if(isset($_GET['id']))
+						delete($_GET['id']);
+				break;
+				
+			}
+			table();
+		?>
         <script type="text/javascript">
-            function loadNewText() {
+                function usun(id) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function() {
                   if (this.readyState === 4 && this.status === 200) {
                     document.getElementById("demo").innerHTML = this.responseText;
                   }
                 };
-                xhttp.open("GET", "http://localhost/phpcamp/ajax/ajax-text.txt", true);
+                xhttp.open("GET", "http://localhost/phpcamp/ajax/ajax3.php?akcja=usun&id="+id, true);
                 xhttp.send();
             }
         </script>
