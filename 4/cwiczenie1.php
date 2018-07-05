@@ -14,7 +14,7 @@ if (isset($_GET['action'])){
   $action=$_GET['action'];
 }
 if (isset($_GET['id'])){
-  $action=$_GET['action'];
+  $action=$_GET['id'];
 }
 if (isset($_GET['product'])){
   $product=$_GET['product'];
@@ -36,7 +36,7 @@ if($action === 'checkProduct'){
   $result=$product;
 }
 elseif ($action==='addProduct'){
-  $products[]=array('id'=>01,'nazwa'=>$name,'cena'=>$price);
+  $products[]=array('id'=>$id,'nazwa'=>$name,'cena'=>$price);
   $result=$products;
 }
 elseif ($action==='removeProduct'){
