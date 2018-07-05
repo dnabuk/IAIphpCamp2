@@ -30,30 +30,42 @@
 		'name' => 'Pluszowy burak',
 		'price' => 33
 	);
-	/*
-	echo '<pre>';
-	print_r($products);
-	echo '</pre>';
-	*/
+	
 	$product = $_GET['product'];
 	$action = $_GET['action'];
 	$name = $_GET['name'];
 	$price = $_GET['price'];
 	
-	switch ($action) {
-		case "checkProduct":
-			foreach ($products as $prod) {
-				foreach ($prod as $key => $val) {
-					if ($key == 'name' && $val == $name) {
-						echo '<pre>';
-						print_r($prod);
-						echo '</pre>';
-					}
+	if ($action == "checkProduct") {
+		foreach ($products as $prod) {
+			foreach ($prod as $key => $val) {
+				if ($key == 'name' && $val == $name) {
+					echo '<pre>';
+					print_r($prod);
+					echo '</pre>';
 				}
 			}
-			break;
+		}
+	}	
+	elseif ($action == "addProduct") {
+		$newProduct = array(
+			'id' => $product,
+			'name' => $name,
+			'price' => $price
+		);
+		$products[] = $newProduct; 
+		echo '<pre>';
+		print_r($newProduct);
+		echo '</pre>';
 	}
 	
-	//http://localhost/iai/03/dzien04-cz01/cwiczenie1.php?action=checkProduct&name=Pluszowa%20wiewi%C3%B3rka
+	echo '<pre>';
+	print_r($products);
+	echo '</pre>';
 	
+	/* przykłady:
+	http://localhost/iai/03/dzien04-cz01/cwiczenie1.php?action=checkProduct&name=Pluszowa%20wiewi%C3%B3rka
+	http://localhost/iai/03/dzien04-cz01/cwiczenie1.php?action=addProduct&name=Pluszowy%20konik&product=6&price=100
+	
+	*/
 ?>
