@@ -5,3 +5,7 @@ $ch = curl_init('http://localhost/czwartek/api.php?action='.$action.'&product='.
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $result = curl_exec($ch);
 print_r($result);
+
+echo '<br>';
+
+print_r(json_decode($result));
