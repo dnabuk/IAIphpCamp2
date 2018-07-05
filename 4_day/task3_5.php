@@ -1,5 +1,5 @@
 <?php
-require_once 'connect.php';
+require 'connect.php';
 
 if (isset($_GET['action'])) {
 	if ($_GET['action'] == 'checkProduct') {
