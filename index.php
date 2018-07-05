@@ -13,10 +13,17 @@ switch($method){
     case'PUT':
         $params = json_decode(file_get_contents('php://input'),1);
     case'POST':
-        $$params = json_decode(file_get_contents('php://input'),1);
+        $params = json_decode(file_get_contents('php://input'),1);
         break;
     case'DELETE':
     default:
 }
 
 echo json_encode($products);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_POST,1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+&response = curl_exec($ch);
+$productList = json_decode
