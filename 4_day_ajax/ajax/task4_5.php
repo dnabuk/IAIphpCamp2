@@ -21,16 +21,17 @@ if (isset($_POST['action'])) {
 		}
 	}
 	if ($_POST['action'] == 'addProduct'){
+		//echo 'dodawanie';
 		if (!isset($_POST['name'])) {
-			echo("Podaj nazwę produktu");
+			echo"Podaj nazwę produktu";
 			die();
 		}
 		if (!isset($_POST['price'])) {
-			echo("Podaj nazwę produktu");
+			echo"Podaj nazwę produktu";
 			die();
 		}
-		$name = mysqli_real_escape_string($link,htmlentities($_GET['name']));
-		$price = mysqli_real_escape_string($link,htmlentities($_GET['price']));
+		$name = mysqli_real_escape_string($link,htmlentities($_POST['name']));
+		$price = mysqli_real_escape_string($link,htmlentities($_POST['price']));
 		$query_ins="INSERT INTO `product` values(null,'$name','$price')";
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
@@ -80,7 +81,7 @@ if (isset($_POST['action'])) {
 			while ($data= mysqli_fetch_assoc($result)) {
 				//echo json_encode($data);
 				//var_dump($data);
-				echo '<tr><td>'.$data['id'].'</td><td>'.$data['nazwa'].'</td><td>'.$data['cena'].'</td><td><button type="button" onclick="del('.$data['id'].')">usuń</button></td></tr>';			
+				echo '<tr><td>'.$data['id'].'</td><td>'.$data['nazwa'].'</td><td>'.$data['cena'].'</td><td><button type="button" onclick="del('.$data['id'].')">usuń</button> <button type="button" onclick="show_ins_form()">dodaj</button></td></tr>';			
 			}
 			echo "</table>";
 		}

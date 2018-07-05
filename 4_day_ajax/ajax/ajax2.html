@@ -42,6 +42,50 @@
         });
 	});
         }
+
+
+         function show_ins_form(id) {
+           $(document).ready(function() {
+              // $("button").click(function(){
+                $.ajax({
+                    url: "form.php", success: function(result){
+                        $("#form").html(result);
+                    }
+                });
+           // });
+
+            });
+        }
+        function add() {
+           
+            
+			  $(document).ready(function() {
+			  
+			var action = 'addProduct';
+			var name = $('#name').val();
+			var price = $('#price').val();
+			//alert(price);
+		$.ajax ({
+			type: "POST",
+			url: "task4_5.php",
+			data: {
+				action:action,
+				name:name,
+				price:price
+			}
+		})
+		.done(function(data) {
+			var newHTML;
+			newHTML = data;
+			$('#demo').html(newHTML);
+			var newHTML2;
+			newHTML2 = '';
+			$('#form').html(newHTML2);
+	});
+		});
+        }
+
         </script>
+        <div id="form"></div>
     </body>
 </html>
