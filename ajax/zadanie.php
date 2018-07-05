@@ -1,5 +1,5 @@
 <?php
-	function showProducts() {
+	function getProducts() {
 	
 		$products = array();
 	
@@ -17,7 +17,15 @@
 				);
 			}
 		}
+		
+		return $products;
+		
+	}
 	
+	function showTable() {
+		
+		$products = getProducts();
+		
 		$style = "border: 1px solid black";
 	
 		$result = '';
@@ -34,14 +42,13 @@
 			$result .= '<td style="' . $style . '">' . $prod['id'] . '</td>';
 			$result .= '<td style="' . $style . '">' . $prod['name'] . '</td>';
 			$result .= '<td style="' . $style . '">' . $prod['price'] . '</td>';
-			$result .= '<td style="' . $style . '">' . '<button type="button" id="button">Usuń</button>' . '</td>';
+			$result .= '<td style="' . $style . '">' . '<button type="button" class="button">Usuń</button>' . '</td>';
 			$result .= '</tr>';
 		}
  
 		$result .= '</table>';
 	
 		echo $result;
-			
+	
 	}
-
 ?>

@@ -8,7 +8,8 @@
     <body>
         <?php
 			require_once('zadanie.php');
-			showProducts();
+			showTable();
+			$products = getProducts();
 		?>
         
         
