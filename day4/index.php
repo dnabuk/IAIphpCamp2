@@ -45,7 +45,8 @@ if($action === "checkProduct"){
 			break;
 		}
 	}
-	$result = $product;
+	echo json_encode($product);
+
 }
 elseif($action === 'addProduct'){
 	$products[] = array (

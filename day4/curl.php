@@ -1,11 +1,11 @@
 <?php
 
-$ch = curl_init('http://localhost/gitdemo/day4/?nazwa=szalik&action=addProduct&id=10&cena=999');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$result = curl_exec($ch);
 
-$response = json_decode($result, true);
-//print_r($response);
-echo '<pre>';
-var_dump($response);
-echo '</pre>';
+
+$ch = curl_init('http://localhost/gitdemo/day4/api.php/productsList/');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response = curl_exec($ch);
+
+$productList = json_decode($response, 1);
+print_r($productList);
+die;
