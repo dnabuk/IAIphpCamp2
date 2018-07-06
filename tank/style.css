@@ -7,6 +7,9 @@ td{
 table{
 	border-collapse: collapse;
 }
+p{
+	font-family: "Times New Roman", Times, serif;
+}
 .naszCzolg{
 	background-color: #f06;
 }
