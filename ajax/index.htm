@@ -1,61 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Paweł Lica - AJAX</title>
-		<meta charset="UTF-8" />
+        <title>AJAX #2</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
     </head>
     <body>
-        <table>
-			<tr>
-				<th>Id</th>
-				<th>Nazwa</th>
-				<th>Cena</th>
-				<th>Operacje</th>
-			</tr>
-			<tbody id="tabelka">
-			
-			</tbody>
-			<tr>
-				<td>AI</td>
-				<td><input type="text" id="nazwa" /></td>
-				<td><input type="text" id="cena" /></td>
-				<td><button id="dodaj">DODAJ</button></td>
-			</tr>
-		</table>
+        <div id="map">
+            
+        </div>
+        <div id="stats">
+		
+		</div>
+        <script type="text/javascript">
+			$(document).ready(function(){
+				refreshDiv('map');
+				refreshDiv('stats');
+				
+			});
 
-		<script type="text/javascript">
-            $(document).ready(function() {
-                $.ajax({
-					url    : "http://localhost/api.php/products", 
-					success: function(result){
-						var obj = JSON.parse(result);
-						for (var i=0; i<obj.length; i++){
-							var rowLine = '';
-							rowLine+='<tr><td>';
-							rowLine+=obj[i].id;
-							rowLine+='</td><td>';
-							rowLine+=obj[i].nazwa;
-							rowLine+='</td><td>';
-							rowLine+=obj[i].cena;
-							rowLine+='</td><td>';
-							rowLine+='<a href="/api.php/DELETE/'+obj[i].id+'">USUŃ</a>';
-							rowLine+='</td></tr>';
-							$("#tabelka").append(rowLine);
-						}
-						
-						$("#tabelka").append();
-                    }
-                });
-				$("#dodaj").click(function(){
-					alert("http://localhost/api.php/insert/"+$("#nazwa").val()+'/'+$("#cena").val());
-					location.href="http://localhost/api.php/insert/"+$("#nazwa").val()+'/'+$("#cena").val();
-					
-				});
-
-            });
+		function refreshDiv(var id){
+			$(id).load('localhost/wyswietl.php?nazwa=gracz_3&'+id, function(){
+				setTimeout(refreshTable, 500);
+			});
+        });
         </script>
     </body>
 </html>
