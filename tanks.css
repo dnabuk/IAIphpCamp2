@@ -1,0 +1,33 @@
+.empty
+{
+	background-color: white;
+}
+
+.player
+{
+	background-color: red;
+}
+
+.ourPlayer
+{
+	background-color: green;
+}
+
+.obstacle
+{
+	background-color: orange;
+}
+
+.player_base
+{
+	background-color: #800000;
+}
+.ourBase
+{
+	background-color: #006600;
+}
+
+.missile
+{
+	background-color: black;
+}
