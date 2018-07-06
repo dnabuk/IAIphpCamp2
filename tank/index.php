@@ -12,7 +12,10 @@ $tab = json_decode($result, true);
 $size = $tab['settings']['boardSize'];
 
 $plansza=$tab['board'];
-
+if (!isset($plansza)){
+	echo'Brak aktywnej gry'; 
+	die;
+}
 //Przygotowuje dużą tablicę znaków A, B, C, ..., AA, AB, AC, ..., BA, BB, ..., ZZ
 $alphabet = createColumnsArray('ZZ');
 
