@@ -1,0 +1,18 @@
+<?php
+class LoginToGame
+{
+	public function __construct()
+	{
+	}
+	public Login()
+	{
+		$ch = curl_init('http://localhost/dzie%C5%84%204/index2.php/addProduct');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		$result = curl_exec($ch);
+		print_r($result);
+		$result = json_decode($result);
+		curl_close($ch);
+	}
+}
