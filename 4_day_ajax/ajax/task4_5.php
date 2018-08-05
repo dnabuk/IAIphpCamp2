@@ -21,13 +21,13 @@ if (isset($_POST['action'])) {
 echo <<< show
 	<input type="text" name="name" id="name" value="$name">
 	<input type="text" name="price" id="price" value="$price">
-	<button onclick="update($id)">Dodaj</button>
+	<button onclick="update($id)">Aktualizuj</button>
 show;
 			}
 		}
 	}
 	if ($_POST['action'] == 'addProduct'){
-		//echo 'dodawanie';
+		
 		if (!isset($_POST['name'])) {
 			echo"Podaj nazwę produktu";
 			die();
@@ -42,22 +42,22 @@ show;
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
-			//echo json_encode('wysłano');
+			echo 'dodano';
 		}
 		
 	}
 	if ($_POST['action'] == 'updateProduct'){
-		//echo 'dodawanie';
+		
 		if (!isset($_POST['name'])) {
 			echo"Podaj nazwę produktu";
 			die();
 		}
 		if (!isset($_POST['price'])) {
-			echo"Podaj nazwę produktu";
+			echo"Podaj cenę produktu";
 			die();
 		}
 		if (!isset($_POST['id'])) {
-			echo"Podaj nazwę produktu";
+			echo"Podaj id produktu";
 			die();
 		}
 		$id=(int)$_POST['id'];
@@ -67,7 +67,7 @@ show;
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
-			//echo json_encode('wysłano');
+			echo 'zaktualizowano';
 		}
 		
 	}
@@ -92,7 +92,7 @@ show;
 		if(!$result= mysqli_query($link,$query_ins)){
 			echo (mysqli_error($link));
 		}else{
-			//echo('wysłano');
+			echo 'usunięto';
 		}
 		
 	}
@@ -111,8 +111,7 @@ show;
 	echo "<tr><td>id</td><td>name</td><td>price</td><td>atcion</td></tr>";
 
 			while ($data= mysqli_fetch_assoc($result)) {
-				//echo json_encode($data);
-				//var_dump($data);
+						
 				echo '<tr><td>'.$data['id'].'</td><td>'.$data['nazwa'].'</td><td>'.$data['cena'].'</td><td><button type="button" onclick="del('.$data['id'].')">usuń</button> <button type="button" onclick="show_ins_form()">dodaj</button><button type="button" onclick="show_up_form('.$data['id'].')">aktualizuj</button></td></tr>';			
 			}
 			echo "</table>";
