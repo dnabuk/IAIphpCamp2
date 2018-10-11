@@ -19,4 +19,4 @@ foreach (range(1,100) as $stockId) {
     $all[$stockId] = getBigTable();
 }
 
-var_Dump('tablica zawiera ' . count() . 'Elementow');
+var_Dump('tablica zawiera ' . count($all) . ' Elementow');
