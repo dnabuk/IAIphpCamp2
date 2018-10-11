@@ -43,3 +43,25 @@ Różnica trzeciego rzędu to 6.
 W tym przykładzie suma kontrolna arkusza kalkulacyjnego wyniesie 8 + 4 + 6 = 18.
 
 Jaka jest suma kontrolna arkusza kalkulacyjnego w danych wejściowych puzzli?
+>
+<?php
+//zad3
+$puzzle=
+[
+[5,1,9,5],
+[7,5,3],
+[2,4,6,8]
+];
+function suma_kontrolna($arr)
+{
+	$arr_sum=[];
+	foreach ($arr as $key => $value) {
+		$max=max($value);
+		$min=min($value);
+		$arr_sum[]=$max-$min;
+	}
+
+	return array_sum($arr_sum);
+}
+
+echo suma_kontrolna($puzzle);
